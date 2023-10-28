@@ -3,4 +3,4 @@
 # // ---------------------------------------------------------------------
 
 # // Imports
-from .learn import command as learn
+from .teach import command as teach

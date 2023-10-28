@@ -40,7 +40,7 @@ tree = discord.app_commands.CommandTree(client)
 
 # // ---- Main
 # // Register commands
-slashCommands.learn(tree, chatbot)
+slashCommands.teach(tree, chatbot)
 
 # // Bot start
 @client.event

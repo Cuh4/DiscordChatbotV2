@@ -13,14 +13,7 @@ import learn
 # // Main
 def command(tree: discord.app_commands.CommandTree, chatbot: cbot.bot):
     # learn ui
-    class failedUI(discord.ui.Modal, title = "Failed"):
-        button = discord.ui.Button(
-            label = "Something went wrong. Please try again.",
-            emoji = "⚠",
-            style = discord.ButtonStyle.danger
-        )
-    
-    class learnUI(discord.ui.Modal, title = "Teach Chatbot"):
+    class teachUI(discord.ui.Modal, title = "Teach Chatbot"):
         queries = discord.ui.TextInput(
             label = "Queries (split by new line, exclude grammar)",
             style = discord.TextStyle.long,
@@ -60,8 +53,8 @@ def command(tree: discord.app_commands.CommandTree, chatbot: cbot.bot):
     
     # slash command
     @tree.command(
-        name = "learn",
+        name = "teach",
         description = "Teach the chatbot a response for a query."
     )
     async def command(interaction: discord.Interaction):
-        return await interaction.response.send_modal(learnUI())
+        return await interaction.response.send_modal(teachUI())
