@@ -37,3 +37,5 @@ py main.py
 ![Status updates in terminal](imgs/terminalMessages.png)
 
 ![Profanity detection](imgs/profanityDetection.png)
+
+![Teach the chatbot from Discord](imgs/teachingForm.png)
