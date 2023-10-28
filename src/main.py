@@ -8,6 +8,8 @@ import discord
 import config
 import chatbot
 import learn
+import slashCommands
+
 from helpers import discord as discordHelpers
 from helpers import general as helpers
 
@@ -33,12 +35,20 @@ client = discord.Client(
     )
 )
 
+tree = discord.app_commands.CommandTree(client)
+
 # // ---- Main
+# // Register commands
+slashCommands.learn(tree, chatbot)
+
 # // Bot start
 @client.event
 async def on_ready():    
     # notify
     helpers.prettyprint.success(f"{discordHelpers.utils.formattedName(client.user)} has started.")
+    
+    # sync
+    await tree.sync()
 
 # // Message send
 @client.event
@@ -122,4 +132,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start the bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
