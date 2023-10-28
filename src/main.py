@@ -4,6 +4,7 @@
 
 # // ---- Imports
 import discord
+import random
 
 import config
 import chatbot
@@ -120,7 +121,13 @@ async def on_message(message: discord.Message):
         # reply with error message
         errorMsg = {
             "profanity" : "Your message was deemed NSFW and has therefore been ignored.",
-            "unknown_query" : "Sorry! I couldn't come up with a response.",
+            "unknown_query" : random.choice([
+                "Sorry, I don't understand.",
+                "Can you rephrase? I don't understand what you said.",
+                "Sorry! I do not understand.",
+                "I don't understand. Sorry.",
+                "I don't understand. Could you say something else?"
+            ]),
             "no_answer" : "Sorry, I couldn't think of a response."
         }[reason]
     
