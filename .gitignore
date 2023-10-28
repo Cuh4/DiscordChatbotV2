@@ -1,0 +1,8 @@
+/src/__pycache__
+/src/chatbot/__pycache__
+/src/helpers/discord/__pycache__
+/src/helpers/general/__pycache__
+/src/helpers/__pycache__
+
+/src/config.py
+/src/bob_knowledge.json

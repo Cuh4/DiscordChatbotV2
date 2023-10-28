@@ -1,0 +1,4 @@
+colorama
+discord
+profanity_filter
+spacy
