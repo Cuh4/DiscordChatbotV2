@@ -153,6 +153,36 @@ add(
     ]
 )
 
+# "where are you"
+add(
+    query = [
+        "where are you",
+        "where do you live",
+        "where are you located"
+    ],
+    
+    answers = [
+        "I don't live anywhere. I'm a bot, silly.",
+        "I'm not a human, so I can't really live anywhere.",
+        "I'm a bot, silly.",
+        "I live in a... computer?"
+    ]
+)
+
+add(
+    query = [
+        "i live in",
+        "im located"
+    ],
+    
+    answers = [
+        "Be careful sharing that information online!",
+        "Be careful with what you say on here.",
+        "Awesome, but be careful with what you share on here.",
+        "Nice, but it's probably a good idea to not share your location with others."
+    ]
+)
+
 # greetings
 add(
     query = [
