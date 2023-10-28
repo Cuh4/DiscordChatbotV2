@@ -11,7 +11,7 @@ If you say "How are you?", the chatbot will respond with something like "I'm goo
 - Extendable code
 - Easy to setup
 
-### **How To Use**
+### **lnstallation**
 1) `git clone` this repo.
 ```
 git clone https://github.com/Cuh4/DiscordChatbotV2
