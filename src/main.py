@@ -108,7 +108,7 @@ async def on_message(message: discord.Message):
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
-        helpers.prettyprint.error(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} timed out/couldn't find an appropriate response.")
+        helpers.prettyprint.error(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {reason}")
         
         # notify cuh4 to add more training data
         logChannel = client.get_channel(1167331643363696640) #testing @ https://discord.gg/CymKaDE2pj
