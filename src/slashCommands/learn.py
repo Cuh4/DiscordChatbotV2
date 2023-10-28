@@ -41,16 +41,22 @@ def command(tree: discord.app_commands.CommandTree, chatbot: cbot.bot):
             answers = self.answers.value.split("\n")
             
             for query in queries:
-                learn.learn({
-                    query : answers
-                })
+                learn.learn(
+                    data = {
+                        query : answers
+                    },
+                    
+                    bot = chatbot
+                )
                 
             return await interaction.response.send_message(
                 embed = discordHelpers.embeds.success("Successfully taught the chatbot.")
             )
         
         async def on_error(self, interaction: Interaction, _: Exception):
-            return await interaction.response.send_modal(failedUI())
+            return await interaction.response.send_message(
+                embed = discordHelpers.embeds.success("Failed to teach the chatbot.")
+            )
     
     # slash command
     @tree.command(
