@@ -71,7 +71,7 @@ async def on_message(message: discord.Message):
     sentMessage = await message.channel.send(
         embed = discord.Embed(
             description = config.loadingEmoji,
-            color = discord.Colour.from_rgb(255, 125, 25)
+            color = discord.Colour.from_rgb(225, 225, 255)
         ),
         
         reference = message,
