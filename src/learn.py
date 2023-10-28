@@ -20,8 +20,11 @@ def add(query: list[str]|str, answers: list[str]):
     else:
         # add once
         data[query] = answers
+        
+def get():
+    return data
 
-def learn(bot: chatbot.bot):
+def learn(data: dict[str, list[str]], bot: chatbot.bot):
     for query, answers in data.items():
         helpers.prettyprint.info(f"✨| Learning responses for: {query}")
         bot.knowledge.learn(query, answers)

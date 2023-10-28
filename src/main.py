@@ -20,7 +20,7 @@ chatbot = chatbot.bot("Bob")
 chatbot.knowledge.addTag("AUTHOR", "Cuh4")
 chatbot.knowledge.addTag("GENDER", "Male")
 
-learn.learn(chatbot) # teach everything necessary i guess
+learn.learn(learn.get(), chatbot) # teach everything necessary i guess
 
 # // Discord Bot
 intents = discord.Intents.default()
