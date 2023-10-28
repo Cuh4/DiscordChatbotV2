@@ -228,7 +228,10 @@ add(
         "what's up",
         "hey",
         "howdy",
-        "wassup"
+        "wassup",
+        "good evening",
+        "good night",
+        "good morning"
     ], 
 
     answers = [
@@ -246,26 +249,14 @@ add(
         "goodbye",
         "cya",
         "see ya",
-        "see you"
+        "see you",
+        "have a good one",
+        "good night"
     ],
     
     answers = [
         "Bye! Have a good one!",
         "See you!",
         "Cya!"
-    ]
-)
-
-add(
-    query = [
-        "you?",
-        "how about you?",
-        "and you?"
-    ],
-    
-    answers = [
-        "Sorry, could you provide more information? I can't remember conversations well.",
-        "Could you provide more information?",
-        "Sorry, what do you mean?"
     ]
 )
