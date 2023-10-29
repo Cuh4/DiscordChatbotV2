@@ -44,7 +44,7 @@ tree = discord.app_commands.CommandTree(client)
 
 # // ---- Main
 # // Register commands
-teachCMD = slashCommands.cmdTeach(client, tree, chatbot)
+teachCMD = slashCommands.cmdTeach(client, tree, bot)
 slashCommands.cmdRestart(client, tree)
 
 # // Bot start
@@ -112,7 +112,7 @@ async def on_message(message: discord.Message):
             "character_limit" : "Your message goes over the character limit."
         }[messageBlockReason]
         
-        helpers.prettyprint.warn(f"❌| A message from {discordHelpers.utils.formattedName(message.author)} was ignored due to: {messageBlockReason}")
+        helpers.prettyprint.warn(f"A message from {discordHelpers.utils.formattedName(message.author)} was ignored due to: {messageBlockReason}")
         
         return await botMessage.edit(
             embed = discord.Embed(
@@ -179,4 +179,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start the bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
