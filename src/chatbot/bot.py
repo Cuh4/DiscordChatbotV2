@@ -60,27 +60,27 @@ class bot:
     def __getAnswer(self, question: str) -> str|None:
         return random.choice(self.knowledge.data.get(question, []))
         
-    def respond(self, query: str) -> tuple[str|None, bool, str|None]:
+    def respond(self, query: str) -> tuple[str|None, str|None, bool, str|None]:
         # simplify
         query = self.__simplifyText(query)
         
         # profanity check
         if self.isTextProfane(query): # wtf is this syntax
-            return None, False, "profanity"
+            return None, None, False, "profanity"
         
         # get the remembered query
         knownQuery = self.__getMatch(query)
         
         # doesn't exist, so return
         if knownQuery is None:
-            return None, False, "unknown_query"
+            return None, None, False, "unknown_query"
         
         # get the answer for the query
         answer = self.__getAnswer(knownQuery)
         
         # can't find one, so return
         if answer is None:
-            return None, False, "no_answer"
+            return None, None, False, "no_answer"
         
         # return the answer
-        return answer, True, None
+        return answer, knownQuery, True, None
