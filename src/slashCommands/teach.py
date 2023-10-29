@@ -54,7 +54,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
         
         async def on_error(self, interaction: Interaction, _: Exception):
             return await interaction.response.send_message(
-                embed = discordHelpers.embeds.success("Failed to teach the chatbot.")
+                embed = discordHelpers.embeds.failure("Failed to teach the chatbot.")
             )
     
     # slash command
