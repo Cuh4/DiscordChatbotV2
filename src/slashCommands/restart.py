@@ -20,12 +20,12 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree):
         # check if the user running this command is the person who created the bot
         if not discordHelpers.utils.isCreator(client, interaction.user):
             return await interaction.response.send_message(
-                embed = discordHelpers.embeds.failure(f"Invalid permissions.")
+                embed = discordHelpers.embeds.failure("Invalid permissions.")
             )
         
         # restart the bot
         await interaction.response.send_message(
-            embed = discordHelpers.embeds.success(f"{config.loadingEmoji} Restarting...")
+            embed = discordHelpers.embeds.load("Restarting...")
         )
         
         os.system("start py main.py")
