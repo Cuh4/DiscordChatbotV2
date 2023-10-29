@@ -29,11 +29,11 @@ def truncateIfTooLong(inp: str, max: int, endPartIfLong: str = ""):
 def fullyFilter(msg: str):
     return msg.replace("`", "\\`").replace("*", "\\*").replace("~", "\\~").replace("_", "\\_")
 
-def formattedName(member: discord.User):
-    return member.name if member.discriminator == "0" else f"{member.name}#{member.discriminator}" # supports discord's new username system
+def formattedName(user: discord.User):
+    return user.name if user.discriminator == "0" else f"{user.name}#{user.discriminator}" # supports discord's new username system
 
-def memberMention(member: discord.User):
-    return f"<@{member.id}>"
+def memberMention(user: discord.User):
+    return f"<@{user.id}>"
 
 def channelMention(channel: discord.TextChannel|discord.VoiceChannel|discord.ForumChannel):
     return f"<#{channel.id}>"
