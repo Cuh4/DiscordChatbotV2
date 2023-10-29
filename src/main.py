@@ -40,7 +40,7 @@ tree = discord.app_commands.CommandTree(client)
 
 # // ---- Main
 # // Register commands
-slashCommands.cmdTeach(client, tree, chatbot)
+teachCMD = slashCommands.cmdTeach(client, tree, chatbot)
 slashCommands.cmdRestart(client, tree)
 
 # // Bot start
@@ -128,7 +128,7 @@ async def on_message(message: discord.Message):
                 "Sorry! I do not understand.",
                 "I don't understand. Sorry.",
                 "I don't understand. Could you say something else?"
-            ]),
+            ]) + f"\nYou can teach me a response with </{teachCMD.name}:1168118613249622016>.",
             "no_answer" : "Sorry, I couldn't think of a response."
         }[reason]
     
