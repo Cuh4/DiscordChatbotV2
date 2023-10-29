@@ -3,5 +3,5 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-from .knowledge import knowledge
-from .bot import bot
+from .knowledge import *
+from .bot import *
