@@ -51,9 +51,13 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
                 bot = chatbot,
                 source = f"@{discordHelpers.utils.formattedName(interaction.user)}"
             )
-                
+
+            # response
+            queriesConcatenated = discordHelpers.utils.fullyFilter("\n".join(queries))
+            answersConcatenated = discordHelpers.utils.fullyFilter("\n".join(answers))
+            
             return await interaction.response.send_message(
-                embed = discordHelpers.embeds.success("Successfully taught the chatbot.")
+                embed = discordHelpers.embeds.success(f"The bot will now reply with:\n```{answersConcatenated}```\nto:\n```{queriesConcatenated}```")
             )
         
         async def on_error(self, interaction: Interaction, _: Exception):
