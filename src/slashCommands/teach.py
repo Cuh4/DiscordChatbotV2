@@ -1,9 +1,10 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Slash Commands Init
+# // ------- [Discord Chatbot v2] Teach Slash Command
 # // ---------------------------------------------------------------------
 
 # // Imports
 import discord
+from discord import app_commands
 from discord.interactions import Interaction
 
 from helpers import discord as discordHelpers
@@ -11,7 +12,7 @@ import chatbot as cbot
 import learn
 
 # // Main
-def command(tree: discord.app_commands.CommandTree, chatbot: cbot.bot):
+def command(client: discord.Client, tree: discord.app_commands.CommandTree, chatbot: cbot.bot):
     # learn ui
     class teachUI(discord.ui.Modal, title = "Teach Chatbot"):
         queries = discord.ui.TextInput(
@@ -52,7 +53,7 @@ def command(tree: discord.app_commands.CommandTree, chatbot: cbot.bot):
             )
     
     # slash command
-    @tree.command(
+    @app_commands.command(
         name = "teach",
         description = "Teach the chatbot a response for a query."
     )
