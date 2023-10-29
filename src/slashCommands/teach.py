@@ -53,11 +53,11 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
             )
 
             # response
-            queriesConcatenated = discordHelpers.utils.fullyFilter("\n".join(queries))
-            answersConcatenated = discordHelpers.utils.fullyFilter("\n".join(answers))
+            filteredAnswers = discordHelpers.utils.fullyFilter(self.answers.value)
+            filteredQueries = discordHelpers.utils.fullyFilter(self.queries.value)
             
             return await interaction.response.send_message(
-                embed = discordHelpers.embeds.success(f"The bot will now reply with:\n```{answersConcatenated}```\nto:\n```{queriesConcatenated}```")
+                embed = discordHelpers.embeds.success(f"**The bot will now reply with:**\n```{helpers.misc.truncateIfTooLong(filteredAnswers, 200)}```\n**to:**\n```{helpers.misc.truncateIfTooLong(filteredQueries, 200)}```")
             )
         
         async def on_error(self, interaction: Interaction, _: Exception):
