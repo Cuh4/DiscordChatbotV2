@@ -16,15 +16,15 @@ from helpers import general as helpers
 
 # // ---- Variables
 # // Chatbot
-chatbot = chatbot.bot(
+bot = chatbot.bot(
     name = "Bob",
     confidence = 0.53
 )
 
-chatbot.knowledge.addTag("AUTHOR", "Cuh4")
-chatbot.knowledge.addTag("GENDER", "Male")
+bot.knowledge.addTag("AUTHOR", "Cuh4")
+bot.knowledge.addTag("GENDER", "Male")
 
-learn.learn(learn.get(), chatbot) # teach everything necessary i guess
+learn.learn(learn.get(), bot) # teach everything necessary i guess
 
 # // Discord Bot
 intents = discord.Intents.default()
@@ -83,8 +83,8 @@ async def on_message(message: discord.Message):
     for user in message.mentions:
         content = content.replace(f"<@{user.id}>", "")
     
-    # Send loading message
-    sentMessage = await message.channel.send(
+    # send loading message
+    botMessage = await message.channel.send(
         embed = discord.Embed(
             description = config.loadingEmoji,
             color = discord.Colour.from_rgb(225, 225, 255)
@@ -95,19 +95,44 @@ async def on_message(message: discord.Message):
     )
 
     helpers.prettyprint.info(f"🧑| Received a message from {discordHelpers.utils.formattedName(message.author)}: {content}")
+    
+    # message checks
+    messageBlocked = False
+    messageBlockReason = ""
+    
+    if chatbot.isTextProfane(content) and not config.allowProfanity:
+        messageBlocked, messageBlockReason = True, "contains_profanity"
+    
+    if len(content) > config.maxQueryLength:
+        messageBlocked, messageBlockReason = True, "character_limit"
+        
+    if messageBlocked:
+        failureMessage = {
+            "contains_profanity" : "Your message contains profanity and was therefore ignored.",
+            "character_limit" : "Your message goes over the character limit."
+        }[messageBlockReason]
+        
+        helpers.prettyprint.warn(f"❌| A message from {discordHelpers.utils.formattedName(message.author)} was ignored due to: {messageBlockReason}")
+        
+        return await botMessage.edit(
+            embed = discord.Embed(
+                description = f"> :robot: :x: | **{failureMessage}**",
+                color = discord.Colour.from_rgb(255, 125, 125)
+            )
+        ) 
 
-    # Get chatbot response
+    # get chatbot response
     helpers.prettyprint.info(f"💻| Retrieving response.")
-    response = chatbot.respond(content)
+    response = bot.respond(content)
 
-    # Reply with response
+    # reply with response
     if response.success:
         # response length check check
         if len(response.text) > config.maxResponseLength:
             response.text = "Whoops! My original response was too long."
             
         # profanity check
-        if chatbot.isTextProfane(response.text):
+        if chatbot.isTextProfane(response.text) and not config.allowProfanity:
             response.text = "Oops! My original response was inappropriate."
             
         # get rid of markdown
@@ -117,7 +142,7 @@ async def on_message(message: discord.Message):
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response.text}")
 
         # reply with chatbot response
-        return await sentMessage.edit( # using return statement to prevent running timeout code below
+        return await botMessage.edit(
             embed = discord.Embed(
                 description = f"> :robot: :white_check_mark: | **{response.text}**",
                 color = discord.Colour.from_rgb(125, 255, 125)
@@ -136,7 +161,6 @@ async def on_message(message: discord.Message):
         
         # reply with error message
         errorMsg = {
-            "profanity" : "Your message has been deemed NSFW and has therefore been ignored.",
             "no_query" : random.choice([
                 "Sorry, I don't understand.",
                 "Can you rephrase? I don't understand what you said.",
@@ -147,7 +171,7 @@ async def on_message(message: discord.Message):
             "no_answer" : "Sorry, I couldn't think of a response."
         }[response.failureReason]
     
-        return await sentMessage.edit(
+        return await botMessage.edit(
             embed = discord.Embed(
                 description = f"> :robot: :x: | **{errorMsg}**",
                 color = discord.Colour.from_rgb(255, 125, 125)
@@ -155,4 +179,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start the bot
-client.run(config.botToken)
+client.run(config.botToken, log_handler = None)
