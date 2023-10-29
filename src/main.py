@@ -104,6 +104,10 @@ async def on_message(message: discord.Message):
     if success:
         # successful
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response}")
+        
+        # length of response check
+        if len(response) > 2000:
+            response = "Whoops! My original response was too long."
 
         # reply with chatbot response
         return await sentMessage.edit( # using return statement to prevent running timeout code below
