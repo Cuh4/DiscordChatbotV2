@@ -4,4 +4,3 @@
 
 # // ---- Imports
 from . import prettyprint
-from . import filter
