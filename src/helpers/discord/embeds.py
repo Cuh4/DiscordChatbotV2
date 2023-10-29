@@ -4,6 +4,7 @@
 
 # // ---- Imports
 import discord
+import config
 
 # // ---- Functions
 def __setup(emoji: str, msg: str):
@@ -29,6 +30,14 @@ def warning(msg: str):
     embed = discord.Embed(
         description = __setup(":warning:", msg), 
         color = discord.Colour.from_rgb(255, 125, 0)
+    )
+
+    return embed
+
+def load(msg: str):
+    embed = discord.Embed(
+        description = __setup(config.loadingEmoji, msg), 
+        color = discord.Colour.from_rgb(255, 255, 255)
     )
 
     return embed
