@@ -29,24 +29,30 @@ class knowledge:
     def removeTag(self, tagName: str):
         self.tags.pop(self.__tagName(tagName))
         
-    def learn(self, query: str, answers: list[str]):
+    def getAllQueries(self):
+        return list(self.data.keys())
+    
+    def getAnswersForQuery(self, query: str) -> list[dict[str, str]]:
+        return self.data.get(query, [])
+        
+    def learn(self, query: str, answers: list[str], source: str = "Default"):
         # tags system
         for index, answer in enumerate(answers):
             for tagName, tag in self.tags.items():
                 answer = answer.replace(tagName, tag)
                 
-            answers[index] = answer
+            answers[index] = {
+                "source" : source,
+                "answer" : answer
+            }
         
         # update
         data = self.read()
-        answersFromData = data.get(query, None)
+        answersFromData = data.get(query, answers)
         
-        if answersFromData is not None: # if answers for this query already exist, then join these new answers up with them
-            for answer in answers:
-                if answer not in answersFromData: # prevent adding two of the same answer
-                    answersFromData.append(answer)
-        else: # if they don't exist, then create
-            answersFromData = answers
+        for answer in answers:
+            if answer not in answersFromData: # prevent adding two of the same answer
+                answersFromData.append(answer)
             
         data[query] = answersFromData # apply changes
         

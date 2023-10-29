@@ -49,18 +49,17 @@ class bot:
         return string.lower()
         
     def __getMatch(self, query: str):
-        knownQueries = [knownQuery for knownQuery in self.knowledge.data]
-        matches = difflib.get_close_matches(query, knownQueries, 1, self.confidence)
+        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 1, self.confidence)
         
         if len(matches) > 0:
             return matches[0]
         
         return None
     
-    def __getAnswer(self, question: str) -> str|None:
-        return random.choice(self.knowledge.data.get(question, []))
+    def __getAnswer(self, query: str) -> str|None:
+        return random.choice(self.knowledge.getAnswersForQuery(query))
         
-    def respond(self, query: str) -> tuple[str|None, str|None, bool, str|None]:
+    def respond(self, query: str) -> tuple[str|None, str|None, str|None, bool, str|None]:
         # simplify
         query = self.__simplifyText(query)
         
@@ -83,4 +82,4 @@ class bot:
             return None, None, False, "no_answer"
         
         # return the answer
-        return answer, knownQuery, True, None
+        return answer["answer"], answer["source"], knownQuery, True, None
