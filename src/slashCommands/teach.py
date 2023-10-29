@@ -22,9 +22,9 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
         )
         
         answers = discord.ui.TextInput(
-            label = f"Answers (split by new line, include grammar, each answer has a character limit of {config.maxResponseLength})",
+            label = f"Answers (split by new line, include grammar)",
             style = discord.TextStyle.paragraph,
-            placeholder = "I'm great!\nI'm decent.\nI'm alright!"
+            placeholder = f"I'm great!\nI'm decent.\nI'm alright!\n\nEach answer has a character limit of {config.maxResponseLength}."
         )
         
         async def on_submit(self, interaction: Interaction):
