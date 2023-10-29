@@ -8,7 +8,7 @@ import config
 
 # // ---- Functions
 def __setup(emoji: str, msg: str):
-    return f"> {emoji} | {msg}"
+    return f">>> {emoji} | {msg}"
 
 def success(msg: str):
     embed = discord.Embed(
