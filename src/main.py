@@ -109,6 +109,9 @@ async def on_message(message: discord.Message):
         # profanity check
         if chatbot.isTextProfane(response):
             response = "Oops! My original response was inappropriate."
+            
+        # get rid of markdown
+        response = discordHelpers.utils.fullyFilter(response)
 
         # successful
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response}")
