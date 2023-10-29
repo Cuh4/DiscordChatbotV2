@@ -21,6 +21,15 @@ filter = ProfanityFilter(
 
 nlp.add_pipe(filter.spacy_component)
 
+class response:
+    def __init__(self, text: str = None, source: str = None, query: str = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+        self.text = text
+        self.source = source
+        self.query = query
+        
+        self.success = isSuccessful
+        self.failureReason = reasonForFailure
+
 class bot:
     def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4):
         # chatbot name
@@ -59,27 +68,40 @@ class bot:
     def __getAnswer(self, query: str) -> str|None:
         return random.choice(self.knowledge.getAnswersForQuery(query))
         
-    def respond(self, query: str) -> tuple[str|None, str|None, str|None, bool, str|None]:
+    def respond(self, query: str)
         # simplify
         query = self.__simplifyText(query)
         
         # profanity check
-        if self.isTextProfane(query): # wtf is this syntax
-            return None, None, False, "profanity"
+        if self.isTextProfane(query):
+            return response(
+                isSuccessful = False,
+                reasonForFailure = "profanity"
+            )
         
         # get the remembered query
         knownQuery = self.__getMatch(query)
 
         # doesn't exist, so return
         if knownQuery is None:
-            return None, None, False, "unknown_query"
+            return response(
+                isSuccessful = False,
+                reasonForFailure = "no_query"
+            )
         
         # get the answer for the query
         answer = self.__getAnswer(knownQuery)
         
         # can't find one, so return
         if answer is None:
-            return None, None, False, "no_answer"
+            return response(
+                isSuccessful = False,
+                reasonForFailure = "no_answer"
+            )
         
         # return the answer
-        return answer["text"], answer["source"], knownQuery, True, None
+        return response(
+            answer["text"],
+            answer["source"],
+            knownQuery
+        )

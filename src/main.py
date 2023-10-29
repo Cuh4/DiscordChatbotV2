@@ -98,34 +98,34 @@ async def on_message(message: discord.Message):
 
     # Get chatbot response
     helpers.prettyprint.info(f"💻| Retrieving response.")
-    response, source, query, success, reason = chatbot.respond(content)
+    response = chatbot.respond(content)
 
     # Reply with response
-    if success:
+    if response.success:
         # response length check check
-        if len(response) > config.maxResponseLength:
-            response = "Whoops! My original response was too long."
+        if len(response.text) > config.maxResponseLength:
+            response.text = "Whoops! My original response was too long."
             
         # profanity check
-        if chatbot.isTextProfane(response):
-            response = "Oops! My original response was inappropriate."
+        if chatbot.isTextProfane(response.text):
+            response.text = "Oops! My original response was inappropriate."
             
         # get rid of markdown
-        response = discordHelpers.utils.fullyFilter(response)
+        response.text = discordHelpers.utils.fullyFilter(response)
 
         # successful
-        helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response}")
+        helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response.text}")
 
         # reply with chatbot response
         return await sentMessage.edit( # using return statement to prevent running timeout code below
             embed = discord.Embed(
-                description = f"> :robot: :white_check_mark: | **{response}**",
+                description = f"> :robot: :white_check_mark: | **{response.text}**",
                 color = discord.Colour.from_rgb(125, 255, 125)
-            ).set_footer(text = f"Query: \"{query}\" - From {source}", icon_url = message.author.display_avatar.url)
+            ).set_footer(text = f"Query: \"{response.query}\" - From {response.source}", icon_url = message.author.display_avatar.url)
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
-        helpers.prettyprint.error(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {reason}")
+        helpers.prettyprint.error(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {response.failureReason}")
         
         # notify cuh4 to add more training data
         logChannel = client.get_channel(1167331643363696640) #testing @ https://discord.gg/CymKaDE2pj
@@ -137,7 +137,7 @@ async def on_message(message: discord.Message):
         # reply with error message
         errorMsg = {
             "profanity" : "Your message has been deemed NSFW and has therefore been ignored.",
-            "unknown_query" : random.choice([
+            "no_query" : random.choice([
                 "Sorry, I don't understand.",
                 "Can you rephrase? I don't understand what you said.",
                 "Sorry! I do not understand.",
@@ -145,7 +145,7 @@ async def on_message(message: discord.Message):
                 "I don't understand. Could you say something else?"
             ]) + f" You can teach me a response with </{teachCMD.name}:1168118613249622016>.",
             "no_answer" : "Sorry, I couldn't think of a response."
-        }[reason]
+        }[response.failureReason]
     
         return await sentMessage.edit(
             embed = discord.Embed(
@@ -155,4 +155,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start the bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
