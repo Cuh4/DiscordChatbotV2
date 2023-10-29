@@ -4,7 +4,6 @@
 
 # // Imports
 import discord
-from discord import app_commands
 from discord.interactions import Interaction
 
 from helpers import discord as discordHelpers
@@ -53,7 +52,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
             )
     
     # slash command
-    @app_commands.command(
+    @tree.command(
         name = "teach",
         description = "Teach the chatbot a response for a query."
     )

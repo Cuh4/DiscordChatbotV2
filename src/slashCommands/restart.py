@@ -4,7 +4,6 @@
 
 # // Imports
 import discord
-from discord import app_commands
 import os
 
 from helpers import discord as discordHelpers
@@ -13,7 +12,7 @@ import config
 # // Main
 def command(client: discord.Client, tree: discord.app_commands.CommandTree):
     # slash command
-    @app_commands.command(
+    @tree.command(
         name = "restart",
         description = "Restart the bot."
     )
