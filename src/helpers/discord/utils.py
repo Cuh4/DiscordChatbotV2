@@ -7,7 +7,7 @@ import discord
 
 # // ---- Functions
 # // Permissions/Roles
-def isBotOwner(client: discord.Client, user: discord.User):
+def isCreator(client: discord.Client, user: discord.User):
     return client.application.owner.id == user.id
 
 def isAdministrator(member: discord.Member):
