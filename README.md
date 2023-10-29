@@ -51,3 +51,5 @@ py main.py
 ![Profanity detection](imgs/profanityDetection2.png)
 
 ![Teach the chatbot from Discord](imgs/teachingForm.png)
+
+![Teach the chatbot responses](imgs/customResponses.png)
