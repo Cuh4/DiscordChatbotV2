@@ -17,7 +17,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
     class teachUI(discord.ui.Modal, title = "Teach Chatbot"):
         queries = discord.ui.TextInput(
             label = "Queries (split by new line, exclude grammar)",
-            style = discord.TextStyle.long,
+            style = discord.TextStyle.paragraph,
             placeholder = "how are you"
         )
         
