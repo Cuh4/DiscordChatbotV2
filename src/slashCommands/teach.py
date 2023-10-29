@@ -19,7 +19,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
         queries = discord.ui.TextInput(
             label = "Queries (split by new line, exclude grammar)",
             style = discord.TextStyle.paragraph,
-            placeholder = "how are you"
+            placeholder = "how are you",
             min_length = 5
         )
         
