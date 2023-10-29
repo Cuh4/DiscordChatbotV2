@@ -111,7 +111,7 @@ async def on_message(message: discord.Message):
             response.text = "Oops! My original response was inappropriate."
             
         # get rid of markdown
-        response.text = discordHelpers.utils.fullyFilter(response)
+        response.text = discordHelpers.utils.fullyFilter(response.text)
 
         # successful
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response.text}")
@@ -155,4 +155,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start the bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
