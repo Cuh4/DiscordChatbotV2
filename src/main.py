@@ -98,7 +98,7 @@ async def on_message(message: discord.Message):
 
     # Get chatbot response
     helpers.prettyprint.info(f"💻| Retrieving response.")
-    response, query, success, reason = chatbot.respond(content)
+    response, source, query, success, reason = chatbot.respond(content)
 
     # Reply with response
     if success:
@@ -121,7 +121,7 @@ async def on_message(message: discord.Message):
             embed = discord.Embed(
                 description = f"> :robot: :white_check_mark: | **{response}**",
                 color = discord.Colour.from_rgb(125, 255, 125)
-            ).set_footer(text = f"\"{query}\"", icon_url = message.author.display_avatar.url)
+            ).set_footer(text = f"\"{query}\" - {source}", icon_url = message.author.display_avatar.url)
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
