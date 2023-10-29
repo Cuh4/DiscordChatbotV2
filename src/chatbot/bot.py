@@ -11,7 +11,7 @@ import spacy
 from profanity_filter import ProfanityFilter
 
 # // ---- Functions
-def isTextProfane(self, string: str):
+def isTextProfane(string: str):
     return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
 
 # // ---- Variables
