@@ -50,7 +50,7 @@ class bot:
         
     def __getMatch(self, query: str):
         matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 1, self.confidence)
-        
+
         if len(matches) > 0:
             return matches[0]
         
@@ -69,7 +69,7 @@ class bot:
         
         # get the remembered query
         knownQuery = self.__getMatch(query)
-        
+
         # doesn't exist, so return
         if knownQuery is None:
             return None, None, False, "unknown_query"
@@ -82,4 +82,4 @@ class bot:
             return None, None, False, "no_answer"
         
         # return the answer
-        return answer["answer"], answer["source"], knownQuery, True, None
+        return answer["text"], answer["source"], knownQuery, True, None
