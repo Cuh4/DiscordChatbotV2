@@ -58,3 +58,5 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
     )
     async def command(interaction: discord.Interaction):
         return await interaction.response.send_modal(teachUI())
+    
+    return tree.get_command("teach")

@@ -30,3 +30,5 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree):
         
         os.system("start py main.py")
         exit(0)
+        
+    return tree.get_command("restart")
