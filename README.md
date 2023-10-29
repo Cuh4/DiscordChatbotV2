@@ -10,6 +10,8 @@ If you say "How are you?", the chatbot will respond with something like "I'm goo
 - Fast responses
 - Extendable code
 - Easy to setup
+- Slash commands
+- Teach the bot from Discord
 
 ### **lnstallation**
 1) `git clone` this repo.
