@@ -18,7 +18,7 @@ from helpers import general as helpers
 # // Chatbot
 chatbot = chatbot.bot(
     name = "Bob",
-    confidence = 0.45
+    confidence = 0.53
 )
 
 chatbot.knowledge.addTag("AUTHOR", "Cuh4")
