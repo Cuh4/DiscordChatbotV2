@@ -7,7 +7,7 @@ import discord
 
 # // ---- Functions
 def __setup(emoji: str, title: str, msg: str):
-    return f"{emoji} | **{title}**\n> {msg}"
+    return f"> {emoji} **{title}** | {msg}"
 
 def success(msg: str):
     embed = discord.Embed(
