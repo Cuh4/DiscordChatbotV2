@@ -7,6 +7,17 @@ import json
 import os
 
 # // ---- Main
+class answer:
+    def __init__(self, text: str, source: str):
+        self.text = text
+        self.source = source
+        
+    def getText(self):
+        return self.text
+    
+    def getSource(self):
+        return self.source
+
 class knowledge:
     def __init__(self, knowledgeFilePath: str):
         # properties
@@ -35,24 +46,24 @@ class knowledge:
     def getAnswersForQuery(self, query: str) -> list[dict[str, str]]:
         return self.data.get(query, [])
         
-    def learn(self, query: str, answers: list[str], source: str = "Default"):
+    def learn(self, query: str, answers: list[answer]):
         # tags system
-        for index, answer in enumerate(answers):
+        for index, __answer in enumerate(answers):
             for tagName, tag in self.tags.items():
-                answer = answer.replace(tagName, tag)
+                __answer.text = __answer.text.replace(tagName, tag)
                 
-            answers[index] = {
-                "source" : source,
-                "answer" : answer
-            }
+            answers[index] = __answer
         
-        # update
+        # retrieve saved knowledge
         data = self.read()
+        
+        # get all answers for the specified query
         answersFromData = data.get(query, answers)
         
-        for answer in answers:
-            if answer not in answersFromData: # prevent adding two of the same answer
-                answersFromData.append(answer)
+        # add the new answers if they aren't already added
+        for __answer in answers:
+            if __answer not in answersFromData: # prevent adding two of the same answer
+                answersFromData.append(vars(__answer))
             
         data[query] = answersFromData # apply changes
         
