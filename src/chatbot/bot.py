@@ -37,6 +37,9 @@ class bot:
         # properties
         self.confidence = confidence
         
+    def isTextProfane(self, string: str):
+        return nlp(string)._.is_profane
+        
     def __simplifyText(self, string: str):
         punctuation = [*",.?;:-'!\""]
         
@@ -62,7 +65,7 @@ class bot:
         query = self.__simplifyText(query)
         
         # profanity check
-        if nlp(query)._.is_profane: # wtf is this syntax
+        if self.isTextProfane(query): # wtf is this syntax
             return None, False, "profanity"
         
         # get the remembered query

@@ -105,6 +105,10 @@ async def on_message(message: discord.Message):
         # response length check check
         if len(response) > config.maxResponseLength:
             response = "Whoops! My original response was too long."
+            
+        # profanity check
+        if chatbot.isTextProfane(response):
+            response = "Oops! My original response was inappropriate."
 
         # successful
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response}")
