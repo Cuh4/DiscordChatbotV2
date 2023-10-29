@@ -1,6 +1,11 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Main
+# // ------- [Discord Chatbot v2] Learn
 # // ---------------------------------------------------------------------
+
+# this part of the code is really silly
+# it was originally supposed to be rushed code to teach the chatbot
+# but then i ended up making it official and now its silly and rushed
+# and all over the place
 
 # // ---- Imports
 import chatbot
@@ -27,10 +32,10 @@ def get():
 def clear():
     data.clear()
 
-def learn(dataToLearn: dict[str, list[str]], bot: chatbot.bot, source: str = None):
+def learn(dataToLearn: dict[str, list[str]], bot: chatbot.bot, source: str = "Built-In"):
     for query, answers in dataToLearn.items():
         bot.knowledge.learn(query, answers, source)
-        helpers.prettyprint.info(f"✨ | Learned responses for: {query}")
+        helpers.prettyprint.info(f"✨ | Learned responses for: {query} (Source: {source})")
         
 # // ---- Main
 # // information relating to the bot
