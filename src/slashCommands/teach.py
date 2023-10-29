@@ -54,7 +54,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
     # slash command
     @tree.command(
         name = "teach",
-        description = "Teach the chatbot a response for a query."
+        description = "Teach the chatbot responses for queries."
     )
     async def command(interaction: discord.Interaction):
         return await interaction.response.send_modal(teachUI())
