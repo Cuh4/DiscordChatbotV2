@@ -27,7 +27,7 @@ def get():
 def learn(data: dict[str, list[str]], bot: chatbot.bot):
     for query, answers in data.items():
         bot.knowledge.learn(query, answers)
-        helpers.prettyprint.info(f"⭐ | Learned responses for: {query}")
+        helpers.prettyprint.info(f"✨ | Learned responses for: {query}")
         
 # // ---- Main
 # // information relating to the bot
