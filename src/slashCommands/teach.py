@@ -6,6 +6,7 @@
 import discord
 from discord.interactions import Interaction
 
+from helpers import general as helpers
 from helpers import discord as discordHelpers
 import chatbot as cbot
 import config
@@ -19,16 +20,18 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
             label = "Queries (split by new line, exclude grammar)",
             style = discord.TextStyle.paragraph,
             placeholder = "how are you"
+            min_length = 5
         )
         
         answers = discord.ui.TextInput(
             label = f"Answers (split by new line, include grammar)",
             style = discord.TextStyle.paragraph,
-            placeholder = f"Each answer has a character limit of {config.maxResponseLength}.\nI'm great!\nI'm alright!"
+            placeholder = f"Each answer has a character limit of {config.maxResponseLength}.\nI'm great!\nI'm alright!",
+            min_length = 5
         )
         
         async def on_submit(self, interaction: Interaction):
-            if self.answers.value == "" or self.queries.value == "":
+            if helpers.misc.isStringEmpty(self.queries.value) or helpers.misc.isStringEmpty(self.answers.value):
                 return await self.on_error(interaction, Exception())
             
             # get needed vars
