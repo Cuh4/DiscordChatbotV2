@@ -68,7 +68,7 @@ class bot:
     def __getAnswer(self, query: str) -> str|None:
         return random.choice(self.knowledge.getAnswersForQuery(query))
         
-    def respond(self, query: str)
+    def respond(self, query: str):
         # simplify
         query = self.__simplifyText(query)
         
