@@ -16,7 +16,11 @@ from helpers import general as helpers
 
 # // ---- Variables
 # // Chatbot
-chatbot = chatbot.bot("Bob")
+chatbot = chatbot.bot(
+    name = "Bob",
+    confidence = 0.35
+)
+
 chatbot.knowledge.addTag("AUTHOR", "Cuh4")
 chatbot.knowledge.addTag("GENDER", "Male")
 

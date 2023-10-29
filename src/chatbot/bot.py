@@ -22,7 +22,7 @@ filter = ProfanityFilter(
 nlp.add_pipe(filter.spacy_component)
 
 class bot:
-    def __init__(self, name: str, knowledgePath: str = ""):
+    def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4):
         # chatbot name
         self.name = name
         
@@ -34,9 +34,12 @@ class bot:
         # default knowledge tags
         self.knowledge.addTag("NAME", name.capitalize())
         
-    def __getMatch(self, query: str, cutoff: float|int = 0.6):
+        # properties
+        self.confidence = confidence
+        
+    def __getMatch(self, query: str):
         knownQueries = [knownQuery for knownQuery in self.knowledge.data]
-        matches = difflib.get_close_matches(query, knownQueries, 1, cutoff)
+        matches = difflib.get_close_matches(query, knownQueries, 1, self.confidence)
         
         if len(matches) > 0:
             return matches[0]
