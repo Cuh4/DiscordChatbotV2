@@ -45,7 +45,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
             learn.learn(
                 dataToLearn = toLearn,
                 bot = chatbot,
-                source = discordHelpers.utils.formattedName(interaction.user)
+                source = "@" + discordHelpers.utils.formattedName(interaction.user)
             )
                 
             return await interaction.response.send_message(
