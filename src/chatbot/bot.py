@@ -38,7 +38,7 @@ class bot:
         self.confidence = confidence
         
     def isTextProfane(self, string: str):
-        return nlp(string)._.is_profane
+        return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
         
     def __simplifyText(self, string: str):
         punctuation = [*",.?;:-'!\""]
