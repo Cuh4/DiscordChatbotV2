@@ -149,7 +149,9 @@ add(
         "how are you doing",
         "hru",
         "hyd",
-        "how are you feeling"        
+        "how are you feeling",
+        "hows it going",
+        "hows going"
     ],
  
     answers = [
