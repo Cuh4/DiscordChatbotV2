@@ -24,9 +24,9 @@ def add(query: list[str]|str, answers: list[str]):
 def get():
     return data
 
-def learn(data: dict[str, list[str]], bot: chatbot.bot):
+def learn(data: dict[str, list[str]], bot: chatbot.bot, source: str = None):
     for query, answers in data.items():
-        bot.knowledge.learn(query, answers)
+        bot.knowledge.learn(query, answers, source)
         helpers.prettyprint.info(f"✨ | Learned responses for: {query}")
         
 # // ---- Main
