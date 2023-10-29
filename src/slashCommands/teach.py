@@ -31,18 +31,22 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
             if self.answers.value == "" or self.queries.value == "":
                 return await self.on_error(interaction, Exception())
             
+            # get needed vars
             queries = self.queries.value.split("\n")
             answers = self.answers.value.split("\n")
             
-            for query in queries:
-                learn.learn(
-                    data = {
-                        query : answers
-                    },
-                    
-                    bot = chatbot,
-                    source = discordHelpers.utils.formattedName(interaction.user)
-                )
+            # pack both vars into a dict
+            toLearn = {}
+            
+            for i in queries:
+                toLearn[i] = answers
+            
+            # teach the chatbot
+            learn.learn(
+                dataToLearn = toLearn,
+                bot = chatbot,
+                source = discordHelpers.utils.formattedName(interaction.user)
+            )
                 
             return await interaction.response.send_message(
                 embed = discordHelpers.embeds.success("Successfully taught the chatbot.")
