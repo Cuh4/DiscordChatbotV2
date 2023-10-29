@@ -6,12 +6,12 @@
 import discord
 
 # // ---- Functions
-def __setup(emoji: str, title: str, msg: str):
-    return f"> {emoji} **{title}** | {msg}"
+def __setup(emoji: str, msg: str):
+    return f"> {emoji} | {msg}"
 
 def success(msg: str):
     embed = discord.Embed(
-        description = __setup(":white_check_mark:", "Success", msg), 
+        description = __setup(":white_check_mark:", msg), 
         color = discord.Colour.from_rgb(0, 255, 0)
     )
 
@@ -19,7 +19,7 @@ def success(msg: str):
 
 def failure(msg: str):
     embed = discord.Embed(
-        description = __setup(":x:", "Failure", msg), 
+        description = __setup(":x:", msg), 
         color = discord.Colour.from_rgb(255, 0, 0)
     )
 
@@ -27,7 +27,7 @@ def failure(msg: str):
 
 def warning(msg: str):
     embed = discord.Embed(
-        description = __setup(":warning:", "Warning", msg), 
+        description = __setup(":warning:", msg), 
         color = discord.Colour.from_rgb(255, 125, 0)
     )
 
