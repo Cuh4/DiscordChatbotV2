@@ -133,7 +133,7 @@ async def on_message(message: discord.Message):
         
         # reply with error message
         errorMsg = {
-            "profanity" : "Your message was deemed NSFW and has therefore been ignored.",
+            "profanity" : "Your message has been deemed NSFW and has therefore been ignored.",
             "unknown_query" : random.choice([
                 "Sorry, I don't understand.",
                 "Can you rephrase? I don't understand what you said.",
