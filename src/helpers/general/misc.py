@@ -3,5 +3,5 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Main
-def isStringEmpty(string: str):
-    return set(string) <= set(" ")
+def doesStringOnlyContainLetter(string: str, letters: str):
+    return set(string) <= set(letters)

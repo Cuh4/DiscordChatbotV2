@@ -31,7 +31,8 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
         )
         
         async def on_submit(self, interaction: Interaction):
-            if helpers.misc.isStringEmpty(self.queries.value) or helpers.misc.isStringEmpty(self.answers.value):
+            
+            if helpers.misc.doesStringOnlyContainLetter(self.queries.value, " ") or helpers.misc.doesStringOnlyContainLetter(self.answers.value, " "):
                 return await self.on_error(interaction, Exception())
             
             # get needed vars
@@ -48,17 +49,17 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
             learn.learn(
                 dataToLearn = toLearn,
                 bot = chatbot,
-                source = "@" + discordHelpers.utils.formattedName(interaction.user)
+                source = f"@{discordHelpers.utils.formattedName(interaction.user)}"
             )
                 
             return await interaction.response.send_message(
                 embed = discordHelpers.embeds.success("Successfully taught the chatbot.")
             )
         
-        async def on_error(self, interaction: Interaction, _: Exception):
-            return await interaction.response.send_message(
-                embed = discordHelpers.embeds.failure("Failed to teach the chatbot.")
-            )
+        # async def on_error(self, interaction: Interaction, _: Exception):
+        #     return await interaction.response.send_message(
+        #         embed = discordHelpers.embeds.failure("Failed to teach the chatbot.")
+        #     )
     
     # slash command
     @tree.command(
