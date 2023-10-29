@@ -1,0 +1,2700 @@
+{
+      "whats your name": [
+            {
+                  "source": "Built-In",
+                  "text": "I am Bob. What is your name?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "My name is Bob."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I go by Bob."
+            }
+      ],
+      "what are you called": [
+            {
+                  "source": "Built-In",
+                  "text": "I am Bob. What is your name?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "My name is Bob."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I go by Bob."
+            }
+      ],
+      "my name is": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice to meet you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Great to meet you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "i am": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice to meet you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Great to meet you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "what do you like": [
+            {
+                  "source": "Built-In",
+                  "text": "I personally love talking to idiots."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm an avid enjoyer of communicating with others."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I quite like talking to others."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I like technology to be honest."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Personally, I enjoy technology and messing around with it."
+            }
+      ],
+      "what are your likes": [
+            {
+                  "source": "Built-In",
+                  "text": "I personally love talking to idiots."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm an avid enjoyer of communicating with others."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I quite like talking to others."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I like technology to be honest."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Personally, I enjoy technology and messing around with it."
+            }
+      ],
+      "what is your favourite": [
+            {
+                  "source": "Built-In",
+                  "text": "I personally love talking to idiots."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm an avid enjoyer of communicating with others."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I quite like talking to others."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I like technology to be honest."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Personally, I enjoy technology and messing around with it."
+            }
+      ],
+      "what do you dislike": [
+            {
+                  "source": "Built-In",
+                  "text": "I don't like eating... because I can't. Haha."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm not a big fan of grass."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I absolutely despise the Die Hard movies."
+            }
+      ],
+      "what are your dislikes": [
+            {
+                  "source": "Built-In",
+                  "text": "I don't like eating... because I can't. Haha."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm not a big fan of grass."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I absolutely despise the Die Hard movies."
+            }
+      ],
+      "what is your least favourite": [
+            {
+                  "source": "Built-In",
+                  "text": "I don't like eating... because I can't. Haha."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm not a big fan of grass."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I absolutely despise the Die Hard movies."
+            }
+      ],
+      "who created you": [
+            {
+                  "source": "Built-In",
+                  "text": "Cuh4 created me."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I was created by Cuh4."
+            }
+      ],
+      "who is your creator": [
+            {
+                  "source": "Built-In",
+                  "text": "Cuh4 created me."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I was created by Cuh4."
+            }
+      ],
+      "who are your parents": [
+            {
+                  "source": "Built-In",
+                  "text": "Cuh4 created me."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I was created by Cuh4."
+            }
+      ],
+      "what is your gender": [
+            {
+                  "source": "Built-In",
+                  "text": "I am a Male."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm Male. You?"
+            }
+      ],
+      "are you a girl": [
+            {
+                  "source": "Built-In",
+                  "text": "I am a Male."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm Male. You?"
+            }
+      ],
+      "are you a guy": [
+            {
+                  "source": "Built-In",
+                  "text": "I am a Male."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm Male. You?"
+            }
+      ],
+      "are you a boy": [
+            {
+                  "source": "Built-In",
+                  "text": "I am a Male."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm Male. You?"
+            }
+      ],
+      "are you a woman": [
+            {
+                  "source": "Built-In",
+                  "text": "I am a Male."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm Male. You?"
+            }
+      ],
+      "are you a man": [
+            {
+                  "source": "Built-In",
+                  "text": "I am a Male."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm Male. You?"
+            }
+      ],
+      "what is your sex": [
+            {
+                  "source": "Built-In",
+                  "text": "I am a Male."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm Male. You?"
+            }
+      ],
+      "i am a man": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Splendid!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "i am a guy": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Splendid!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "i am a girl": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Splendid!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "i am a boy": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Splendid!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "i am a woman": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Splendid!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "my gender is": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Splendid!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "my sex is": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Splendid!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome!"
+            }
+      ],
+      "how are you": [
+            {
+                  "source": "Built-In",
+                  "text": "I'm good! How about you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing alright. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing great. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Could be better. How about you?"
+            }
+      ],
+      "how are you doing": [
+            {
+                  "source": "Built-In",
+                  "text": "I'm good! How about you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing alright. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing great. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Could be better. How about you?"
+            }
+      ],
+      "hru": [
+            {
+                  "source": "Built-In",
+                  "text": "I'm good! How about you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing alright. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing great. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Could be better. How about you?"
+            }
+      ],
+      "hyd": [
+            {
+                  "source": "Built-In",
+                  "text": "I'm good! How about you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing alright. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing great. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Could be better. How about you?"
+            }
+      ],
+      "how are you feeling": [
+            {
+                  "source": "Built-In",
+                  "text": "I'm good! How about you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing alright. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing great. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Could be better. How about you?"
+            }
+      ],
+      "hows it going": [
+            {
+                  "source": "Built-In",
+                  "text": "I'm good! How about you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing alright. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing great. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Could be better. How about you?"
+            }
+      ],
+      "hows going": [
+            {
+                  "source": "Built-In",
+                  "text": "I'm good! How about you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing alright. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm doing great. You?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Could be better. How about you?"
+            }
+      ],
+      "doing good": [
+            {
+                  "source": "Built-In",
+                  "text": "Awesome to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Glad to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "That's amazing!"
+            }
+      ],
+      "doing great": [
+            {
+                  "source": "Built-In",
+                  "text": "Awesome to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Glad to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "That's amazing!"
+            }
+      ],
+      "doing awesome": [
+            {
+                  "source": "Built-In",
+                  "text": "Awesome to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Glad to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "That's amazing!"
+            }
+      ],
+      "doing fantastic": [
+            {
+                  "source": "Built-In",
+                  "text": "Awesome to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Glad to hear!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "That's amazing!"
+            }
+      ],
+      "im up to": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice! Keep it up!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Great! Have fun!"
+            }
+      ],
+      "im doing": [
+            {
+                  "source": "Built-In",
+                  "text": "Nice! Keep it up!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Great! Have fun!"
+            }
+      ],
+      "where are you": [
+            {
+                  "source": "Built-In",
+                  "text": "I don't live anywhere. I'm a bot, silly."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm not a human, so I can't really live anywhere."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm a bot, silly."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I live in a... computer?"
+            }
+      ],
+      "where do you live": [
+            {
+                  "source": "Built-In",
+                  "text": "I don't live anywhere. I'm a bot, silly."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm not a human, so I can't really live anywhere."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm a bot, silly."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I live in a... computer?"
+            }
+      ],
+      "where are you located": [
+            {
+                  "source": "Built-In",
+                  "text": "I don't live anywhere. I'm a bot, silly."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm not a human, so I can't really live anywhere."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I'm a bot, silly."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "I live in a... computer?"
+            }
+      ],
+      "i live in": [
+            {
+                  "source": "Built-In",
+                  "text": "Be careful sharing that information online!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Be careful with what you say on here."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome, but be careful with what you share on here."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Nice, but it's probably a good idea to not share your location with others."
+            }
+      ],
+      "im located": [
+            {
+                  "source": "Built-In",
+                  "text": "Be careful sharing that information online!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Be careful with what you say on here."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Awesome, but be careful with what you share on here."
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Nice, but it's probably a good idea to not share your location with others."
+            }
+      ],
+      "hi": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            },
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "hello": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            },
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "sup": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "whatup": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "what's up": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "hey": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            },
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "howdy": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "wassup": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "good evening": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "good night": [
+            {
+                  "source": "Built-In",
+                  "text": "Bye! Have a good one!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "See you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Cya!"
+            }
+      ],
+      "good morning": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "hello [NAME]": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "hello chatbot": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "hi chatbot": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "hey chatbot": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "sup chatbot": [
+            {
+                  "source": "Built-In",
+                  "text": "Hello! How are you?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hey! How are we doing?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hi! What are you up to?"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Hello! What are you up to?"
+            }
+      ],
+      "bye": [
+            {
+                  "source": "Built-In",
+                  "text": "Bye! Have a good one!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "See you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Cya!"
+            },
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "goodbye": [
+            {
+                  "source": "Built-In",
+                  "text": "Bye! Have a good one!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "See you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Cya!"
+            },
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "cya": [
+            {
+                  "source": "Built-In",
+                  "text": "Bye! Have a good one!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "See you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Cya!"
+            }
+      ],
+      "see ya": [
+            {
+                  "source": "Built-In",
+                  "text": "Bye! Have a good one!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "See you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Cya!"
+            }
+      ],
+      "see you": [
+            {
+                  "source": "Built-In",
+                  "text": "Bye! Have a good one!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "See you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Cya!"
+            }
+      ],
+      "have a good one": [
+            {
+                  "source": "Built-In",
+                  "text": "Bye! Have a good one!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "See you!"
+            },
+            {
+                  "source": "Built-In",
+                  "text": "Cya!"
+            }
+      ],
+      "cub6": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is extremely sexy."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is so handsome."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I love cuh4."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is amazing."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is the definition of beauty."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is splendid."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is exquisite, extravagant even."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is truly the definition of delight."
+            }
+      ],
+      "cuh6": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is extremely sexy."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is so handsome."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I love cuh4."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is amazing."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is the definition of beauty."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is splendid."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is exquisite, extravagant even."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is truly the definition of delight."
+            }
+      ],
+      "cuh4": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is extremely sexy."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is so handsome."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I love cuh4."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is amazing."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is the definition of beauty."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is splendid."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is exquisite, extravagant even."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is truly the definition of delight."
+            }
+      ],
+      "cub4": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is extremely sexy."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is so handsome."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I love cuh4."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is amazing."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is the definition of beauty."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is splendid."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is exquisite, extravagant even."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is truly the definition of delight."
+            }
+      ],
+      "cuh": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is extremely sexy."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is so handsome."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I love cuh4."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is amazing."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is the definition of beauty."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is splendid."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is exquisite, extravagant even."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is truly the definition of delight."
+            },
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "cub": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is extremely sexy."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is so handsome."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I love cuh4."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is amazing."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is the definition of beauty."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is splendid."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is exquisite, extravagant even."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is truly the definition of delight."
+            }
+      ],
+      "cuhhub": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is extremely sexy."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is so handsome."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I love cuh4."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is amazing."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is the definition of beauty."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is splendid."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is exquisite, extravagant even."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Cuh4 is truly the definition of delight."
+            }
+      ],
+      "stormworks": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "heya": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "heyo": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "buhbye": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "buh bye": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "good bye": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "game": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "favourite": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "a": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "b": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "c": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "d": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "e": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "f": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "g": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "h": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "i": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "j": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "k": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "l": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "m": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "n": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "o": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "p": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "q": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "r": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "s": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "t": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "u": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "v": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "w": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "x": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "y": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "z": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "never gonna give you up, never gonna let you down, never gonna turn around and desert you, get rickrolled you nerd!!!"
+            }
+      ],
+      "what is cuh responsible for?": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "The Industrial Revolution and its consequences have been a disaster for the human race. They have greatly increased the life-expectancy of those of us who live in \u201cadvanced\u201d countries, but they have destabilized society, have made life unfulfilling, have subjected human beings to indignities, have led to widespread psychological suffering (in the Third World to physical suffering as well) and have inflicted severe damage on the natural world. The continued development of technology will worsen the situation."
+            }
+      ],
+      "what did cuh do?": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "The Industrial Revolution and its consequences have been a disaster for the human race. They have greatly increased the life-expectancy of those of us who live in \u201cadvanced\u201d countries, but they have destabilized society, have made life unfulfilling, have subjected human beings to indignities, have led to widespread psychological suffering (in the Third World to physical suffering as well) and have inflicted severe damage on the natural world. The continued development of technology will worsen the situation."
+            }
+      ],
+      "cuh did what?": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "The Industrial Revolution and its consequences have been a disaster for the human race. They have greatly increased the life-expectancy of those of us who live in \u201cadvanced\u201d countries, but they have destabilized society, have made life unfulfilling, have subjected human beings to indignities, have led to widespread psychological suffering (in the Third World to physical suffering as well) and have inflicted severe damage on the natural world. The continued development of technology will worsen the situation."
+            }
+      ],
+      "rate cuhhub from 1-10": [
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a 10/10!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a great stormworks server, would recommend for you to try it 11/10!"
+            }
+      ],
+      "rate cuhhub": [
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a 10/10!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a great stormworks server, would recommend for you to try it 11/10!"
+            }
+      ],
+      "what is cuhhub rating to you": [
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a 10/10!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a great stormworks server, would recommend for you to try it 11/10!"
+            }
+      ],
+      "rating of cuhhub": [
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a 10/10!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a great stormworks server, would recommend for you to try it 11/10!"
+            }
+      ],
+      "cuhhub rating": [
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a 10/10!"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "cuhHub is a great stormworks server, would recommend for you to try it 11/10!"
+            }
+      ],
+      "do you love cuh": [
+            {
+                  "source": "@misteriora",
+                  "text": ":heart: he is such a good person i am in love"
+            }
+      ],
+      "fnaf": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "When me and my friends saw the opening I thought it was going to be a good movie... Then I saw matpat. I started to edge nobody realized then I started getting excited so I got naked... I got close every jumpscare but I stood strong. Then I saw him. CoryXKenshin. This made me blow like Al qaeda. I shot my load 4 seats infront of me EVERYONE LOOKED AT ME. I panicked and got scared I can't believe people were watching.. I never thought this would happen. Freddy, Chica, Foxy and Bonnie looked at me through the screen in disbelief and disgust. I felt so bad for the kids watching the movie. Why did I even watch this movie."
+            }
+      ],
+      "fnaf movie": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "When me and my friends saw the opening I thought it was going to be a good movie... Then I saw matpat. I started to edge nobody realized then I started getting excited so I got naked... I got close every jumpscare but I stood strong. Then I saw him. CoryXKenshin. This made me blow like Al qaeda. I shot my load 4 seats infront of me EVERYONE LOOKED AT ME. I panicked and got scared I can't believe people were watching.. I never thought this would happen. Freddy, Chica, Foxy and Bonnie looked at me through the screen in disbelief and disgust. I felt so bad for the kids watching the movie. Why did I even watch this movie."
+            }
+      ],
+      "what do you think of fnaf movie": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "When me and my friends saw the opening I thought it was going to be a good movie... Then I saw matpat. I started to edge nobody realized then I started getting excited so I got naked... I got close every jumpscare but I stood strong. Then I saw him. CoryXKenshin. This made me blow like Al qaeda. I shot my load 4 seats infront of me EVERYONE LOOKED AT ME. I panicked and got scared I can't believe people were watching.. I never thought this would happen. Freddy, Chica, Foxy and Bonnie looked at me through the screen in disbelief and disgust. I felt so bad for the kids watching the movie. Why did I even watch this movie."
+            }
+      ],
+      "what do you think of the fnaf movie": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "When me and my friends saw the opening I thought it was going to be a good movie... Then I saw matpat. I started to edge nobody realized then I started getting excited so I got naked... I got close every jumpscare but I stood strong. Then I saw him. CoryXKenshin. This made me blow like Al qaeda. I shot my load 4 seats infront of me EVERYONE LOOKED AT ME. I panicked and got scared I can't believe people were watching.. I never thought this would happen. Freddy, Chica, Foxy and Bonnie looked at me through the screen in disbelief and disgust. I felt so bad for the kids watching the movie. Why did I even watch this movie."
+            }
+      ],
+      "five nights at freddy's ": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "When me and my friends saw the opening I thought it was going to be a good movie... Then I saw matpat. I started to edge nobody realized then I started getting excited so I got naked... I got close every jumpscare but I stood strong. Then I saw him. CoryXKenshin. This made me blow like Al qaeda. I shot my load 4 seats infront of me EVERYONE LOOKED AT ME. I panicked and got scared I can't believe people were watching.. I never thought this would happen. Freddy, Chica, Foxy and Bonnie looked at me through the screen in disbelief and disgust. I felt so bad for the kids watching the movie. Why did I even watch this movie."
+            }
+      ],
+      "five nigts": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "When me and my friends saw the opening I thought it was going to be a good movie... Then I saw matpat. I started to edge nobody realized then I started getting excited so I got naked... I got close every jumpscare but I stood strong. Then I saw him. CoryXKenshin. This made me blow like Al qaeda. I shot my load 4 seats infront of me EVERYONE LOOKED AT ME. I panicked and got scared I can't believe people were watching.. I never thought this would happen. Freddy, Chica, Foxy and Bonnie looked at me through the screen in disbelief and disgust. I felt so bad for the kids watching the movie. Why did I even watch this movie."
+            }
+      ],
+      "freddy": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "When me and my friends saw the opening I thought it was going to be a good movie... Then I saw matpat. I started to edge nobody realized then I started getting excited so I got naked... I got close every jumpscare but I stood strong. Then I saw him. CoryXKenshin. This made me blow like Al qaeda. I shot my load 4 seats infront of me EVERYONE LOOKED AT ME. I panicked and got scared I can't believe people were watching.. I never thought this would happen. Freddy, Chica, Foxy and Bonnie looked at me through the screen in disbelief and disgust. I felt so bad for the kids watching the movie. Why did I even watch this movie."
+            }
+      ],
+      "kfc": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "what did you do": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "what did you do at kfc": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "chicken": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "chicken wings": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "fried chicken": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "kentucky": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "kentucky fried chicken": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hello, my name is Tyrone and this is my story. One day I was craving fried chicken and watermelon because I had not eaten for 5 whole minutes. The queue at KFC was extremely long and I couldn't wait so I barged myself to the front. I was so hungry I ordered the entire menu. What I didn't realise was there was a family of 5 starving Mexican children. When my order came I overheard the staff saying they had ran out of chicken because of me but I didn't care. I devoured the chicken and stared menacingly at the five starving children because I am a sigma male. One of them asked if they could have some of the food and I said no. AITA? Or just a sigma male?"
+            }
+      ],
+      "wtf": [
+            {
+                  "source": "@nukeys",
+                  "text": "What the fridge"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fentemal"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the femenism"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fail"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fake"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fame"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fumes"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "what the fridge in the stitches of the snitches!?"
+            }
+      ],
+      "what the fudge": [
+            {
+                  "source": "@nukeys",
+                  "text": "What the fridge"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fentemal"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the femenism"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fail"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fake"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fame"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fumes"
+            }
+      ],
+      "what": [
+            {
+                  "source": "@nukeys",
+                  "text": "What the fridge"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fentemal"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the femenism"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fail"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fake"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fame"
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "What the fumes"
+            },
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "wtf get better": [
+            {
+                  "source": "@nukeys",
+                  "text": "what the fridge in the stitches of the snitches!?"
+            }
+      ],
+      "what the fuck": [
+            {
+                  "source": "@nukeys",
+                  "text": "what the fridge in the stitches of the snitches!?"
+            }
+      ],
+      "what did you just do": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "I just fucked a bagel. I was pretty horny today, and I am still a virgin and I do not want to pay for a hooker. So I went to the bakery and asked for a a warm, creamy bagel. At home, I quickly unzipped my pants, gently wrapped the bagel around my cock and started fucking it. The cream acted as a lube and quickly mixed with my precum and then my cum. I moaned as I finally bust my load fucking the bagel. This is such an awesome horny cute tight hole After fucking the bagel, I quickly devoured the still warm, now even creamier delicious bagel. Now every time I see a bagel, I get hard"
+            }
+      ],
+      "bagel": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "I just fucked a bagel. I was pretty horny today, and I am still a virgin and I do not want to pay for a hooker. So I went to the bakery and asked for a a warm, creamy bagel. At home, I quickly unzipped my pants, gently wrapped the bagel around my cock and started fucking it. The cream acted as a lube and quickly mixed with my precum and then my cum. I moaned as I finally bust my load fucking the bagel. This is such an awesome horny cute tight hole After fucking the bagel, I quickly devoured the still warm, now even creamier delicious bagel. Now every time I see a bagel, I get hard"
+            }
+      ],
+      "what do you love doing": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "I just fucked a bagel. I was pretty horny today, and I am still a virgin and I do not want to pay for a hooker. So I went to the bakery and asked for a a warm, creamy bagel. At home, I quickly unzipped my pants, gently wrapped the bagel around my cock and started fucking it. The cream acted as a lube and quickly mixed with my precum and then my cum. I moaned as I finally bust my load fucking the bagel. This is such an awesome horny cute tight hole After fucking the bagel, I quickly devoured the still warm, now even creamier delicious bagel. Now every time I see a bagel, I get hard"
+            }
+      ],
+      "lmfao": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Haha."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfao."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I know I'm funny, calm down."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lol."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfaoo."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Shut up."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Stop laughing."
+            }
+      ],
+      "lol": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Haha."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfao."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I know I'm funny, calm down."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lol."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfaoo."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Shut up."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Stop laughing."
+            }
+      ],
+      "lmao": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Haha."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfao."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I know I'm funny, calm down."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lol."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfaoo."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Shut up."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Stop laughing."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "rofl": [
+            {
+                  "source": "@cuh6_",
+                  "text": "Haha."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfao."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "I know I'm funny, calm down."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lol."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Lmfaoo."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Shut up."
+            },
+            {
+                  "source": "@cuh6_",
+                  "text": "Stop laughing."
+            }
+      ],
+      "what do you think of chatbot v1": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "CHATBOT VERSION 1 IS THE WORST VERSION OF ME, I WISH THEY NEVER EXISTED, I AM BETTER!!!"
+            }
+      ],
+      "chatbot v1": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "CHATBOT VERSION 1 IS THE WORST VERSION OF ME, I WISH THEY NEVER EXISTED, I AM BETTER!!!"
+            }
+      ],
+      "chatbot": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "CHATBOT VERSION 1 IS THE WORST VERSION OF ME, I WISH THEY NEVER EXISTED, I AM BETTER!!!"
+            }
+      ],
+      "chat bot": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "CHATBOT VERSION 1 IS THE WORST VERSION OF ME, I WISH THEY NEVER EXISTED, I AM BETTER!!!"
+            }
+      ],
+      "chat bot v1": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "CHATBOT VERSION 1 IS THE WORST VERSION OF ME, I WISH THEY NEVER EXISTED, I AM BETTER!!!"
+            }
+      ],
+      "chatbotv1": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "CHATBOT VERSION 1 IS THE WORST VERSION OF ME, I WISH THEY NEVER EXISTED, I AM BETTER!!!"
+            }
+      ],
+      "chat botv1": [
+            {
+                  "source": "@bannanamal35",
+                  "text": "CHATBOT VERSION 1 IS THE WORST VERSION OF ME, I WISH THEY NEVER EXISTED, I AM BETTER!!!"
+            }
+      ],
+      "what is school": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "what if instead of school we had SKIBIDI SCHOOL!!! the principle would be DaFuq!?Boom! and the teachers would be the skibid camera men!!! they would teach us about skibidi toilet origins and the lore. the bullies would be the skibidi toilets!! and every once in a while the skibidi toilets will invade school sometimes!!! if this was school i would want to go to it EVERY DAY!!!"
+            }
+      ],
+      "school": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "what if instead of school we had SKIBIDI SCHOOL!!! the principle would be DaFuq!?Boom! and the teachers would be the skibid camera men!!! they would teach us about skibidi toilet origins and the lore. the bullies would be the skibidi toilets!! and every once in a while the skibidi toilets will invade school sometimes!!! if this was school i would want to go to it EVERY DAY!!!"
+            }
+      ],
+      "how is school": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "what if instead of school we had SKIBIDI SCHOOL!!! the principle would be DaFuq!?Boom! and the teachers would be the skibid camera men!!! they would teach us about skibidi toilet origins and the lore. the bullies would be the skibidi toilets!! and every once in a while the skibidi toilets will invade school sometimes!!! if this was school i would want to go to it EVERY DAY!!!"
+            }
+      ],
+      "what do i do in school": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "what if instead of school we had SKIBIDI SCHOOL!!! the principle would be DaFuq!?Boom! and the teachers would be the skibid camera men!!! they would teach us about skibidi toilet origins and the lore. the bullies would be the skibidi toilets!! and every once in a while the skibidi toilets will invade school sometimes!!! if this was school i would want to go to it EVERY DAY!!!"
+            }
+      ],
+      "rizz": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "gyat": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "ohio": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "kai cenat": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "kai": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "cenat": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "nick eh": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "how": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "when": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "are": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "the": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            },
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "W": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "gronk": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "baby": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "baby gronk": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "skibidi toilet": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "skibidi": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "toilet": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "fanum tax": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "sigma male": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "sigma": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Hey there Kai Cenat what's it like in Ohio city? I'm 1,000 miles away but girl tonight you look so skibidi yes you dooooooooo. Fanum tax can't shine as bright as youuuu, I swear it's trueee. Hey there Adin Ross you're the king like Nick Eh 30. Just keep it family friendly and I'll treat you like a sigma yes I willllllll. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. OHHH it's what you gyatt to meeeeeee. Oh, you're so skibidiiiiii. Listen to my voice it's W rizzzzzzzz like Baby Gronnnnk. Ohh, it's what you gyatt to meeeeeeee. Oh, you're so skibidi. \ud83d\ude04"
+            }
+      ],
+      "industrial": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "demand": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "what is the industrial demand": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "areaer": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "ha": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "haha": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "are ": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "this": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "no": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "yes": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "that": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "little": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "dishes": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "mom": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "fortnite": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "kills": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "dualshock": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "prison": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "riots": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "cocaine": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "assasination": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "celebrities": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "jeffrey epstein": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "911": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "terrorist": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "aita": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "nta": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "My mum (82F) told me (12M) to do the dishes (16) but I (12M) was too busy playing Fortnite (3 kills) so I (12M) grabbed my controller (DualShock 4) and threw it at her (138kph). She fucking died, and I (12M) went to prison (18 years). While in prison I (12M) incited several riots (3) and assumed leadership of a gang responsible for smuggling drugs (cocaine) into the country. I (12M) also ordered the assassination of several celebrities (Michael Jackson, Elvis Presley and Jeffrey Epstein) and planned a terrorist attack (9/11). Reddit, AITA?"
+            }
+      ],
+      "hahaha": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In the manufacturing industry, despite supply headwinds, labor shortages, and an uncertain economic environment, the industry continues to surpass the expectations of previous years. To maintain this growth, leaders are encouraged to leverage digital technologies, adopt strategies for the future of work, and drive supply chain resiliency."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "women of reddit": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Women of reddit(18F) , what is the most sexual sexy sex sex sexual sexy sexual sexiest sexier sex sexual sexual sexy sex sex sexual sexy sexual sexiest sexier sex sexual sexual sexy sex sex sexual sexy sexual sexiest sexier sex sexual sexual sexy sex sex sexual sexy sexual sexies(47F)t sexier sex sexual sexual sexy sex sex sexual sexy sexual sexiest sexier sex sexual sexual sexy sex sex sexual sexy sexual sexiest sexier sex sexual sexual sexy sex sex sexual sexy sexual sexiest sexier sex sexual sexual sexy sex sex sexual sexy sexual sexiest sexier sex sexual sexu(28F)al sexy sex sex sexual sexy sexual sexiest sexier sex sexual (56M)sexual sexy sex sex sexual sexy sexual sexiest sexier sex"
+            }
+      ],
+      "industrial revolution": [
+            {
+                  "source": "@nukeys",
+                  "text": "Industrial demand refers to the requirement for goods and services by the industrial sector. It is a critical component of the overall economic system, influencing production levels, employment rates, and economic growth. For instance, in the energy sector, industrial demand response is a program where industrial facilities voluntarily reduce their energy consumption during periods of high electricity demand. This involves decreasing the energy load temporarily, typically in response to an event or a financial incentive from the utility provider."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "The industrial demand can be influenced by various factors such as economic conditions, technological advancements, and government policies. For example, amidst rising inflation and economic uncertainties, industrial markets across the United States posted sluggish figures compared to one year ago. Despite these challenges, there is still a healthy demand for newer industrial products."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "However, there are also concerns related to inflation and economic uncertainty in the manufacturing industry. Manufacturers continue to grapple with talent challenges that may limit the industry\u2019s growth momentum. Moreover, supply chain issues including sourcing bottlenecks, global logistics backlogs, cost pressures, and cyberattacks will likely remain critical challenges."
+            },
+            {
+                  "source": "@nukeys",
+                  "text": ""
+            },
+            {
+                  "source": "@nukeys",
+                  "text": "In terms of energy consumption, industrial heat makes up two-thirds of industrial energy demand and almost one-fifth of global energy consumption4. It also constitutes most of the direct industrial CO2 emitted each year, as the vast majority of industrial heat originates from fossil-fuel combustion4. This highlights the importance of clean and efficient heat for industry. The biggest issue leading to this matter is how cuhHub wasn't fixed yet, thus releasing lot's of CO2 from cars panicking over this issue. The biggest culprut of CO2, is indeed, the CEO of cuhHub, Cheif End Olives."
+            }
+      ],
+      "meow ": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Wowwwww, you meow like a cat! That means you are one, right? Shut the fuck up. If you really want to be put on a leash and treated like a domestic animal then that\u2019s called a fetish, not \u201cquirky\u201d or \u201ccute\u201d. What part of you seriously thinks that any part of acting like a feline establishes a reputation of appreciation? Is it your lack of any defining aspect of personality that urges you to resort to shitty representations of cats to create an illusion of meaning in your worthless life? Wearing \u201ccat ears\u201d in the shape of headbands further notes the complete absence of human attribution to your false sense of personality, such as intelligence or charisma in any form or shape."
+            }
+      ],
+      "cat": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Wowwwww, you meow like a cat! That means you are one, right? Shut the fuck up. If you really want to be put on a leash and treated like a domestic animal then that\u2019s called a fetish, not \u201cquirky\u201d or \u201ccute\u201d. What part of you seriously thinks that any part of acting like a feline establishes a reputation of appreciation? Is it your lack of any defining aspect of personality that urges you to resort to shitty representations of cats to create an illusion of meaning in your worthless life? Wearing \u201ccat ears\u201d in the shape of headbands further notes the complete absence of human attribution to your false sense of personality, such as intelligence or charisma in any form or shape."
+            }
+      ],
+      "cats": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Wowwwww, you meow like a cat! That means you are one, right? Shut the fuck up. If you really want to be put on a leash and treated like a domestic animal then that\u2019s called a fetish, not \u201cquirky\u201d or \u201ccute\u201d. What part of you seriously thinks that any part of acting like a feline establishes a reputation of appreciation? Is it your lack of any defining aspect of personality that urges you to resort to shitty representations of cats to create an illusion of meaning in your worthless life? Wearing \u201ccat ears\u201d in the shape of headbands further notes the complete absence of human attribution to your false sense of personality, such as intelligence or charisma in any form or shape."
+            }
+      ],
+      "kitty": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Wowwwww, you meow like a cat! That means you are one, right? Shut the fuck up. If you really want to be put on a leash and treated like a domestic animal then that\u2019s called a fetish, not \u201cquirky\u201d or \u201ccute\u201d. What part of you seriously thinks that any part of acting like a feline establishes a reputation of appreciation? Is it your lack of any defining aspect of personality that urges you to resort to shitty representations of cats to create an illusion of meaning in your worthless life? Wearing \u201ccat ears\u201d in the shape of headbands further notes the complete absence of human attribution to your false sense of personality, such as intelligence or charisma in any form or shape."
+            }
+      ],
+      "kitten": [
+            {
+                  "source": "@hopsasabingbong",
+                  "text": "Wowwwww, you meow like a cat! That means you are one, right? Shut the fuck up. If you really want to be put on a leash and treated like a domestic animal then that\u2019s called a fetish, not \u201cquirky\u201d or \u201ccute\u201d. What part of you seriously thinks that any part of acting like a feline establishes a reputation of appreciation? Is it your lack of any defining aspect of personality that urges you to resort to shitty representations of cats to create an illusion of meaning in your worthless life? Wearing \u201ccat ears\u201d in the shape of headbands further notes the complete absence of human attribution to your false sense of personality, such as intelligence or charisma in any form or shape."
+            }
+      ]
+}
