@@ -10,7 +10,11 @@ import random
 import spacy
 from profanity_filter import ProfanityFilter
 
-# // ---- Main
+# // ---- Functions
+def isTextProfane(self, string: str):
+    return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
+
+# // ---- Variables
 nlp = spacy.load("en_core_web_sm")
 
 filter = ProfanityFilter(
@@ -21,6 +25,7 @@ filter = ProfanityFilter(
 
 nlp.add_pipe(filter.spacy_component)
 
+# // ---- Main
 class response:
     def __init__(self, text: str = None, source: str = None, query: str = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.text = text
@@ -46,9 +51,6 @@ class bot:
         # properties
         self.confidence = confidence
         
-    def isTextProfane(self, string: str):
-        return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
-        
     def __simplifyText(self, string: str):
         punctuation = [*",.?;:-'!\""]
         
@@ -71,13 +73,6 @@ class bot:
     def respond(self, query: str):
         # simplify
         query = self.__simplifyText(query)
-        
-        # profanity check
-        if self.isTextProfane(query):
-            return response(
-                isSuccessful = False,
-                reasonForFailure = "profanity"
-            )
         
         # get the remembered query
         knownQuery = self.__getMatch(query)
