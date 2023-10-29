@@ -60,7 +60,7 @@ class bot:
         return string.lower()
         
     def __getMatch(self, query: str):
-        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 1, self.confidence)
+        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, self.confidence)
 
         if len(matches) > 0:
             return matches[0]
