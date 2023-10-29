@@ -8,6 +8,7 @@ from discord.interactions import Interaction
 
 from helpers import discord as discordHelpers
 import chatbot as cbot
+import config
 import learn
 
 # // Main
@@ -21,7 +22,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
         )
         
         answers = discord.ui.TextInput(
-            label = "Answers (split by new line, include grammar)",
+            label = f"Answers (split by new line, include grammar, each answer has a character limit of {config.maxResponseLength})",
             style = discord.TextStyle.paragraph,
             placeholder = "I'm great!\nI'm decent.\nI'm alright!"
         )
