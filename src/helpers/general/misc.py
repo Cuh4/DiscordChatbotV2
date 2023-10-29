@@ -1,7 +1,7 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] General Helpers Init
+# // ------- [Discord Chatbot v2] Misc
 # // ---------------------------------------------------------------------
 
-# // ---- Imports
-from . import prettyprint
-from . import misc
+# // ---- Main
+def isStringEmpty(string: str):
+    return set(string) <= set(" ")
