@@ -40,7 +40,8 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
                         query : answers
                     },
                     
-                    bot = chatbot
+                    bot = chatbot,
+                    source = discordHelpers.utils.formattedName(interaction.user)
                 )
                 
             return await interaction.response.send_message(
