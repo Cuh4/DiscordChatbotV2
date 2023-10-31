@@ -143,11 +143,16 @@ async def on_message(message: discord.Message):
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response.text}")
 
         # reply with chatbot response
+        responseEmbed = discord.Embed(
+            description = f"> :robot: :white_check_mark: | **{response.text}**",
+            color = discord.Colour.from_rgb(125, 255, 125)
+        )
+        
+        if response.source != "Built-In":
+            responseEmbed.set_footer(text = f"Answer produced by {response.source}", icon_url = message.author.display_avatar.url)
+
         return await botMessage.edit(
-            embed = discord.Embed(
-                description = f"> :robot: :white_check_mark: | **{response.text}**",
-                color = discord.Colour.from_rgb(125, 255, 125)
-            ).set_footer(text = f"Answer produced by {response.source}", icon_url = message.author.display_avatar.url)
+            embed = responseEmbed
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
