@@ -27,8 +27,8 @@ def truncateIfTooLong(inp: str, max: int, endPartIfLong: str = ""):
     return inp
 
 def stripMarkdown(msg: str):
-    return msg.replace("`", "\\`").replace("*", "\\*").replace("~", "\\~").replace("_", "\\_")
-
+    return msg.replace("`", "\\`").replace("*", "\\*").replace("~", "\\~").replace("_", "\\_").replace("#", "\\#")
+ 
 def formattedName(user: discord.User):
     return user.name if user.discriminator == "0" else f"{user.name}#{user.discriminator}" # supports discord's new username system
 
