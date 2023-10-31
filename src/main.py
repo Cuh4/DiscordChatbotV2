@@ -136,6 +136,7 @@ async def on_message(message: discord.Message):
             response.text = "Oops! My original response was inappropriate."
             
         # get rid of markdown
+        response.query = discordHelpers.utils.fullyFilter(response.query)
         response.text = discordHelpers.utils.fullyFilter(response.text)
 
         # successful
@@ -146,7 +147,7 @@ async def on_message(message: discord.Message):
             embed = discord.Embed(
                 description = f"> :robot: :white_check_mark: | **{response.text}**",
                 color = discord.Colour.from_rgb(125, 255, 125)
-            ).set_footer(text = f"Query: \"{response.query}\" - From {response.source}", icon_url = message.author.display_avatar.url)
+            ).set_footer(text = f"Query: \"{helpers.misc.truncateIfTooLong(response.query, 20)}\" - From {response.source}", icon_url = message.author.display_avatar.url)
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
