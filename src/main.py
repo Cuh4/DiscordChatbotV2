@@ -136,8 +136,8 @@ async def on_message(message: discord.Message):
             response.text = "Oops! My original response was inappropriate."
             
         # get rid of markdown
-        response.query = discordHelpers.utils.fullyFilter(response.query)
-        response.text = discordHelpers.utils.fullyFilter(response.text)
+        response.query = discordHelpers.utils.stripMarkdown(response.query)
+        response.text = discordHelpers.utils.stripMarkdown(response.text)
 
         # successful
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response.text}")

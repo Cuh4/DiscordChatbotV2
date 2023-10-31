@@ -26,7 +26,7 @@ def truncateIfTooLong(inp: str, max: int, endPartIfLong: str = ""):
 
     return inp
 
-def fullyFilter(msg: str):
+def stripMarkdown(msg: str):
     return msg.replace("`", "\\`").replace("*", "\\*").replace("~", "\\~").replace("_", "\\_")
 
 def formattedName(user: discord.User):

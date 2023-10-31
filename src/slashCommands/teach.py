@@ -53,8 +53,8 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
             )
 
             # response
-            filteredAnswers = discordHelpers.utils.fullyFilter("- " + "\n- ".join(answers))
-            filteredQueries = discordHelpers.utils.fullyFilter("- " + "\n- ".join(queries))
+            filteredAnswers = discordHelpers.utils.stripMarkdown("- " + "\n- ".join(answers))
+            filteredQueries = discordHelpers.utils.stripMarkdown("- " + "\n- ".join(queries))
             
             return await interaction.response.send_message(
                 embed = discordHelpers.embeds.success(f"**The bot will now reply with:**\n```{helpers.misc.truncateIfTooLong(filteredAnswers, 200)}```\n**to:**\n```{helpers.misc.truncateIfTooLong(filteredQueries, 200)}```")
