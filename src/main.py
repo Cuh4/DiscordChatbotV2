@@ -61,7 +61,7 @@ async def on_ready():
 async def on_message(message: discord.Message):
     global processingResponse
     
-    # Ignore messages sent by bots
+    # ignore messages sent by bots
     if message.author.bot:
         return
 
@@ -69,11 +69,11 @@ async def on_message(message: discord.Message):
     if message.author == client.user:
         return
     
-    # Ignore message if not mentioned
+    # ignore message if not mentioned
     if not discordHelpers.utils.isMentioned(message.mentions, client.user):
         return
     
-    # Ignore message if user is on cooldown
+    # ignore message if user is on cooldown
     if discordHelpers.cooldown.cooldown(message.author, config.chatCooldown, "chat"):
         return await message.add_reaction("🕰")
     
@@ -159,7 +159,7 @@ async def on_message(message: discord.Message):
         helpers.prettyprint.warn(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {response.failureReason}")
         
         # notify cuh4 to add more training data
-        logChannel = client.get_channel(1167331643363696640) #testing @ https://discord.gg/CymKaDE2pj
+        logChannel = client.get_channel(1167331643363696640) # testing @ https://discord.gg/CymKaDE2pj
 
         await logChannel.send( # only so i can train the chatbot
             embed = discordHelpers.embeds.warning(f"Failed to respond to:\n```{content.replace('`', '')}```")
