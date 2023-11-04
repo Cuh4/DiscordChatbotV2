@@ -26,15 +26,6 @@ filter = ProfanityFilter(
 nlp.add_pipe(filter.spacy_component)
 
 # // ---- Main
-class response:
-    def __init__(self, text: str = None, source: str = None, query: str = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
-        self.text = text
-        self.source = source
-        self.query = query
-        
-        self.success = isSuccessful
-        self.failureReason = reasonForFailure
-
 class bot:
     def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4):
         # chatbot name
@@ -100,3 +91,12 @@ class bot:
             answer["source"],
             knownQuery
         )
+        
+class response:
+    def __init__(self, text: str = None, source: str = None, query: str = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+        self.text = text
+        self.source = source
+        self.query = query
+        
+        self.success = isSuccessful
+        self.failureReason = reasonForFailure
