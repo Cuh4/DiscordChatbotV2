@@ -25,7 +25,7 @@ class view(discord.ui.View):
 
         # callback
         async def feedbackButtonCallback(self, interaction: discord.Interaction, button: discord.ui.Button):
-            return await interaction.response.send_modal(ui.modals.teachModal(bot))
+            return await interaction.response.send_modal(ui.modals.teach(bot))
         
         self.feedbackButton.callback = feedbackButtonCallback
         

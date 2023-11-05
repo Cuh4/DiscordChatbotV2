@@ -3,4 +3,4 @@
 # // ---------------------------------------------------------------------
 
 # // Imports
-from .feedbackView import view as feedbackView
+from .feedbackView import view as feedback

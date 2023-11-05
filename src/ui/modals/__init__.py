@@ -3,4 +3,4 @@
 # // ---------------------------------------------------------------------
 
 # // Imports
-from .teachModal import modal as teachModal
+from .teachModal import modal as teach

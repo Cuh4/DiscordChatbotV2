@@ -17,6 +17,6 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, chat
         description = "Teach the chatbot responses for queries."
     )
     async def command(interaction: discord.Interaction):
-        return await interaction.response.send_modal(ui.modals.teachModal(chatbot))
+        return await interaction.response.send_modal(ui.modals.teach(chatbot))
     
     return tree.get_command("teach")
