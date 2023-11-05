@@ -3,5 +3,5 @@
 # // ---------------------------------------------------------------------
 
 # // Imports
-from .teach import command as cmdTeach
-from .restart import command as cmdRestart
+from . import teach
+from . import restart
