@@ -61,6 +61,7 @@ async def on_ready():
 async def on_message(message: discord.Message):
     global processingResponse
     
+    # // basic checks
     # ignore messages sent by bots
     if message.author.bot:
         return
@@ -77,12 +78,14 @@ async def on_message(message: discord.Message):
     if discordHelpers.cooldown.cooldown(message.author, config.chatCooldown, "chat"):
         return await message.add_reaction("🕰")
     
+    # // filtering
     # remove mentions from message content
     content = message.content
 
     for user in message.mentions:
         content = content.replace(f"<@{user.id}>", "")
     
+    # // waiting
     # send loading message
     botMessage = await message.channel.send(
         embed = discord.Embed(
@@ -96,16 +99,19 @@ async def on_message(message: discord.Message):
 
     helpers.prettyprint.info(f"🧑| Received a message from {discordHelpers.utils.formattedName(message.author)}: {content}")
     
-    # message checks
+    # // more checks
     messageBlocked = False
     messageBlockReason = ""
     
+    # check for profanity
     if chatbot.isTextProfane(content) and not config.allowProfanity:
         messageBlocked, messageBlockReason = True, "contains_profanity"
     
+    # check message length
     if len(content) > config.maxQueryLength:
         messageBlocked, messageBlockReason = True, "character_limit"
         
+    # // failure message if checks failed
     if messageBlocked:
         failureMessage = {
             "contains_profanity" : "Your message contains profanity and was therefore ignored.",
@@ -121,6 +127,7 @@ async def on_message(message: discord.Message):
             )
         ) 
 
+    # // chatbot response
     # get chatbot response
     helpers.prettyprint.info(f"💻| Retrieving response.")
     response = bot.respond(content)
@@ -153,21 +160,14 @@ async def on_message(message: discord.Message):
 
         # reply with response
         class responseView(discord.ui.View):
-            def __init__(self):
-                # feedback button
-                self.feedbackButton = discord.ui.Button(
-                    label = random.choice(["Funky response?", "Invalid response?", "Was this response not what you're looking for?", "Bad response?", "Inconvenient response?"]),
-                    style = discord.ButtonStyle.danger,
-                    emoji = "⚠"
-                )
-
-                async def feedbackButtonCallback(self, button: discord.ui.Button, interaction: discord.Interaction):
-                    return await interaction.response.send_modal(slashCommands.teach.teachModal(bot))
-                
-                self.feedbackButton.callback = feedbackButtonCallback
-                
-                # init
-                super().__init__()
+            # feedback button
+            @discord.ui.button(
+                label = random.choice(["Funky response?", "Invalid response?", "Was this response not what you're looking for?", "Bad response?", "Inconvenient response?"]),
+                style = discord.ButtonStyle.danger,
+                emoji = "⚠"
+            )
+            async def feedbackButtonCallback(self, button: discord.ui.Button, interaction: discord.Interaction):
+                return await interaction.response.send_modal(slashCommands.teach.teachModal(bot))
         
         return await botMessage.edit(
             embed = responseEmbed,
