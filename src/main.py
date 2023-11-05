@@ -166,7 +166,7 @@ async def on_message(message: discord.Message):
                 style = discord.ButtonStyle.danger,
                 emoji = "⚠"
             )
-            async def feedbackButtonCallback(self, button: discord.ui.Button, interaction: discord.Interaction):
+            async def feedbackButtonCallback(self, interaction: discord.Interaction, button: discord.ui.Button):
                 return await interaction.response.send_modal(slashCommands.teach.teachModal(bot))
         
         return await botMessage.edit(
