@@ -153,13 +153,21 @@ async def on_message(message: discord.Message):
 
         # reply with response
         class responseView(discord.ui.View):
-            @discord.ui.button(
-                label = random.choice(["Funky response?", "Invalid response?", "Was this response not what you're looking for?", "Bad response?", "Inconvenient response?"]),
-                style = discord.ButtonStyle.danger,
-                emoji = "⚠"
-            )
-            async def feedbackButtonCallback(self, button: discord.ui.Button, interaction: discord.Interaction):
-                return await interaction.response.send_modal(slashCommands.teach.teachModal(bot))
+            def __init__(self):
+                # feedback button
+                self.feedbackButton = discord.ui.Button(
+                    label = random.choice(["Funky response?", "Invalid response?", "Was this response not what you're looking for?", "Bad response?", "Inconvenient response?"]),
+                    style = discord.ButtonStyle.danger,
+                    emoji = "⚠"
+                )
+
+                async def feedbackButtonCallback(self, button: discord.ui.Button, interaction: discord.Interaction):
+                    return await interaction.response.send_modal(slashCommands.teach.teachModal(bot))
+                
+                self.feedbackButton.callback = feedbackButtonCallback
+                
+                # init
+                super().__init__()
         
         return await botMessage.edit(
             embed = responseEmbed,
