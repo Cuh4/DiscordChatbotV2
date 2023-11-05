@@ -10,6 +10,7 @@ import config
 import chatbot
 import learn
 import slashCommands
+import ui
 
 from helpers import discord as discordHelpers
 from helpers import general as helpers
@@ -159,19 +160,9 @@ async def on_message(message: discord.Message):
             responseEmbed.set_footer(text = f"Answer produced by {response.source}", icon_url = message.author.display_avatar.url)
 
         # reply with response
-        class responseView(discord.ui.View):
-            # feedback button
-            @discord.ui.button(
-                label = random.choice(["Funky response?", "Invalid response?", "Incorrect response?", "Bad response?", "Inconvenient response?"]),
-                style = discord.ButtonStyle.danger,
-                emoji = "⚠"
-            )
-            async def feedbackButtonCallback(self, interaction: discord.Interaction, button: discord.ui.Button):
-                return await interaction.response.send_modal(slashCommands.teach.teachModal(bot))
-        
         return await botMessage.edit(
             embed = responseEmbed,
-            view = responseView()
+            view = ui.views.feedbackView(bot)
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)

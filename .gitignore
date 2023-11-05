@@ -4,6 +4,9 @@
 /src/helpers/general/__pycache__
 /src/helpers/__pycache__
 /src/slashCommands/__pycache__
+/src/ui/__pycache__
+/src/ui/modals/__pycache__
+/src/ui/views/__pycache__
 
 /src/config.py
 /src/bob_knowledge.json

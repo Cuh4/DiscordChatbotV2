@@ -2,14 +2,14 @@
 # // ------- [Discord Chatbot v2] Restart Slash Command
 # // ---------------------------------------------------------------------
 
-# // Imports
+# // ---- Imports
 import discord
 import os
 
 from helpers import discord as discordHelpers
-import config
 
-# // Main
+# // ---- Main
+# // Command
 def command(client: discord.Client, tree: discord.app_commands.CommandTree):
     # slash command
     @tree.command(
