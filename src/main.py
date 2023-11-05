@@ -162,7 +162,7 @@ async def on_message(message: discord.Message):
         class responseView(discord.ui.View):
             # feedback button
             @discord.ui.button(
-                label = random.choice(["Funky response?", "Invalid response?", "Was this response not what you're looking for?", "Bad response?", "Inconvenient response?"]),
+                label = random.choice(["Funky response?", "Invalid response?", "Incorrect response?", "Bad response?", "Inconvenient response?"]),
                 style = discord.ButtonStyle.danger,
                 emoji = "⚠"
             )
