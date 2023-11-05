@@ -12,14 +12,17 @@ import chatbot as _chatbot
 import learn
 
 # // ---- Main
+# // UI
 class modal(discord.ui.Modal):
+    # // Main UI
     def __init__(self, chatbot: _chatbot.bot):
-        # init base class
+        # // init
         super().__init__(title = "Teach Chatbot")
         
-        # class properties
+        # // class properties
         self.chatbot = chatbot
 
+        # // ui
         # queries input
         self.queries = discord.ui.TextInput(
             label = "Queries (split by new line, exclude grammar)",
@@ -38,6 +41,7 @@ class modal(discord.ui.Modal):
         )
         self.add_item(self.answers)
 
+    # // Callbacks
     async def on_submit(self, interaction: discord.Interaction):
         if helpers.misc.doesStringOnlyContainLetter(self.queries.value, " ") or helpers.misc.doesStringOnlyContainLetter(self.answers.value, " "):
             return await self.on_error(interaction, Exception())

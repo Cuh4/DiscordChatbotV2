@@ -162,7 +162,7 @@ async def on_message(message: discord.Message):
         # reply with response
         return await botMessage.edit(
             embed = responseEmbed,
-            view = ui.views.feedbackView(bot)
+            view = ui.views.feedback(bot)
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
@@ -195,4 +195,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start the bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
