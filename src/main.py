@@ -44,8 +44,8 @@ tree = discord.app_commands.CommandTree(client)
 
 # // ---- Main
 # // Register commands
-teachCMD = slashCommands.cmdTeach(client, tree, bot)
-slashCommands.cmdRestart(client, tree)
+teachCMD = slashCommands.teach.command(client, tree, bot)
+slashCommands.restart.command(client, tree)
 
 # // Bot start
 @client.event
@@ -142,7 +142,7 @@ async def on_message(message: discord.Message):
         # successful
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response.text}")
 
-        # reply with chatbot response
+        # setup response embed
         responseEmbed = discord.Embed(
             description = f"> :robot: :white_check_mark: | **{response.text}**",
             color = discord.Colour.from_rgb(125, 255, 125)
@@ -151,8 +151,19 @@ async def on_message(message: discord.Message):
         if response.source != "Built-In":
             responseEmbed.set_footer(text = f"Answer produced by {response.source}", icon_url = message.author.display_avatar.url)
 
+        # reply with response
+        class responseView(discord.ui.View):
+            @discord.ui.button(
+                label = random.choice(["Funky response?", "Invalid response?", "Was this response not what you're looking for?", "Bad response?", "Inconvenient response?"]),
+                style = discord.ButtonStyle.danger,
+                emoji = "⚠"
+            )
+            async def feedbackButtonCallback(self, button: discord.ui.Button, interaction: discord.Interaction):
+                return await interaction.response.send_modal(slashCommands.teach.teachModal(bot))
+        
         return await botMessage.edit(
-            embed = responseEmbed
+            embed = responseEmbed,
+            view = responseView()
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
