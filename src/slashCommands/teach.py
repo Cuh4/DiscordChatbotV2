@@ -8,14 +8,14 @@ from discord.interactions import Interaction
 
 from helpers import general as helpers
 from helpers import discord as discordHelpers
-import chatbot as __chatbot
+import chatbot as _chatbot # do not add two "_" !! it fucks things up because of how python treats private methods or something i dont know
 import config
 import learn
 
 # // ---- Main
 # // UI
 class teachModal(discord.ui.Modal):
-    def __init__(self, chatbot: __chatbot.bot):
+    def __init__(self, chatbot: _chatbot.bot):
         self.chatbot = chatbot
 
         self.queries = discord.ui.TextInput(
@@ -69,7 +69,7 @@ class teachModal(discord.ui.Modal):
         )
 
 # // Command
-def command(client: discord.Client, tree: discord.app_commands.CommandTree, chatbot: __chatbot.bot):
+def command(client: discord.Client, tree: discord.app_commands.CommandTree, chatbot: _chatbot.bot):
     # slash command
     @tree.command(
         name = "teach",
