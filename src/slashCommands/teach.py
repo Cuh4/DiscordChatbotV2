@@ -16,23 +16,29 @@ import learn
 # // UI
 class teachModal(discord.ui.Modal):
     def __init__(self, chatbot: _chatbot.bot):
+        # init base class
+        super().__init__(title = "Teach Chatbot")
+        
+        # class properties
         self.chatbot = chatbot
 
+        # queries input
         self.queries = discord.ui.TextInput(
             label = "Queries (split by new line, exclude grammar)",
             style = discord.TextStyle.paragraph,
             placeholder = "how are you",
             min_length = 5
         )
+        self.add_item(self.queries)
 
+        # answers input
         self.answers = discord.ui.TextInput(
             label = f"Answers (split by new line, include grammar)",
             style = discord.TextStyle.paragraph,
             placeholder = f"Each answer has a character limit of {config.maxResponseLength}.\nI'm great!\nI'm alright!",
             min_length = 5
         )
-        
-        super().__init__(title = "Teach Chatbot")
+        self.add_item(self.answers)
 
     async def on_submit(self, interaction: Interaction):
         if helpers.misc.doesStringOnlyContainLetter(self.queries.value, " ") or helpers.misc.doesStringOnlyContainLetter(self.answers.value, " "):
