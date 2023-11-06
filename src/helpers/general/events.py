@@ -6,11 +6,14 @@
 import inspect
 
 # // ---- Variables
-events = {}
+events: dict[str, "event"] = {}
 
 # // ---- Functions
 def isCoroutine(func):
     return inspect.iscoroutinefunction(func)
+
+def getSavedEvent(name: str):
+    return events.get(name, None)
 
 # // ---- Main
 # // Event
@@ -20,6 +23,13 @@ class event:
         self.name = name
         self.callbacks: list["callback"] = []
         self.callbackID = 0
+        
+    def save(self):
+        global events
+        events[self.name] = self
+        
+    def unsave(self):
+        events.pop(self.name)
         
     def fire(self, *args, **kwargs):
         returnValue = None
