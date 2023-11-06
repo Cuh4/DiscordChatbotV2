@@ -15,16 +15,16 @@ from helpers import general as helpers
 data = {}
 
 # // ---- Functions
-def add(query: list[str]|str, answers: list[str]):
+def add(queries: list[str]|str, answers: list[str]):
     global data
     
-    if isinstance(query, list):
+    if isinstance(queries, list):
         # add multiple
-        for i in query:
+        for i in queries:
             data[i] = answers
     else:
         # add once
-        data[query] = answers
+        data[queries] = answers
         
 def get():
     return data
@@ -41,7 +41,7 @@ def learn(dataToLearn: dict[str, list[str]], bot: chatbot.bot, source: str = "Bu
 # // information relating to the bot
 # name
 add(
-    query = [
+    queries = [
         "whats your name",
         "what are you called"
     ],
@@ -54,7 +54,7 @@ add(
 )
 
 add(
-    query = [
+    queries = [
         "my name is",
         "i am"
     ],
@@ -68,7 +68,7 @@ add(
 
 # likes
 add(
-    query = [
+    queries = [
         "what do you like",
         "what are your likes",
         "what is your favourite"
@@ -85,7 +85,7 @@ add(
 
 # dislikes
 add(
-    query = [
+    queries = [
         "what do you dislike",
         "what are your dislikes",
         "what is your least favourite"
@@ -100,7 +100,7 @@ add(
 
 # owner
 add(
-    query = [
+    queries = [
         "who created you",
         "who is your creator",
         "who are your parents"
@@ -114,7 +114,7 @@ add(
 
 # gender
 add(
-    query = [
+    queries = [
         "what is your gender",
         "are you a girl",
         "are you a guy",
@@ -131,7 +131,7 @@ add(
 )
 
 add(
-    query = [
+    queries = [
         "i am a man",
         "i am a guy",
         "i am a girl",
@@ -151,7 +151,7 @@ add(
 # // general conversation (greetings, goodbyes, small talk)
 # "how are you"
 add(
-    query = [
+    queries = [
         "how are you",
         "how are you doing",
         "hru",
@@ -170,7 +170,7 @@ add(
 )
 
 add(
-    query = [
+    queries = [
         "doing good",
         "doing great",
         "doing awesome",
@@ -186,7 +186,7 @@ add(
 
 # "what are you up to"
 add(
-    query = [
+    queries = [
         "im up to",
         "im doing"
     ],
@@ -199,7 +199,7 @@ add(
 
 # "where are you"
 add(
-    query = [
+    queries = [
         "where are you",
         "where do you live",
         "where are you located"
@@ -214,7 +214,7 @@ add(
 )
 
 add(
-    query = [
+    queries = [
         "i live in",
         "im located"
     ],
@@ -229,7 +229,7 @@ add(
 
 # greetings
 add(
-    query = [
+    queries = [
         "hi",
         "hello",
         "sup",
@@ -258,7 +258,7 @@ add(
 
 # goodbyes
 add(
-    query = [
+    queries = [
         "bye",
         "goodbye",
         "cya",
