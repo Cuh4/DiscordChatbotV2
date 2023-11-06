@@ -27,9 +27,12 @@ class event:
     def save(self):
         global events
         events[self.name] = self
+
+        return self
         
     def unsave(self):
-        events.pop(self.name)
+        events.pop(self.name, None)
+        return self
         
     def fire(self, *args, **kwargs):
         returnValue = None
