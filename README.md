@@ -42,14 +42,13 @@ py main.py
 ### **Images**
 ![Conversation](imgs/conversation.png)
 
-![Conversation](imgs/conversation2.png)
-
 ![Status updates in terminal](imgs/terminalMessages.png)
 
 ![Profanity detection](imgs/profanityDetection.png)
-
 ![Profanity detection](imgs/profanityDetection2.png)
 
 ![Teach the chatbot from Discord](imgs/teachingForm.png)
-
 ![Teach the chatbot responses](imgs/customResponses.png)
+
+![Report responses](imgs/report.png)
+![Report responses](imgs/reportResponse.png)
