@@ -23,7 +23,7 @@ class view(discord.ui.View):
         # // feedback button
         # create button
         self.feedbackButton = discord.ui.Button(
-            label = random.choice(["Teach Me"]),
+            label = random.choice(["Teach me a response"]),
             style = discord.ButtonStyle.green,
             emoji = "👩‍🏫"
         )
@@ -35,5 +35,5 @@ class view(discord.ui.View):
         self.add_item(self.feedbackButton)
         
     # // Callbacks
-    async def feedbackButtonCallback(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def feedbackButtonCallback(self, interaction: discord.Interaction):
         return await interaction.response.send_modal(ui.modals.teach(self.bot))
