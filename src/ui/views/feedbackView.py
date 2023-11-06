@@ -56,7 +56,7 @@ class view(discord.ui.View):
     
     async def reportButtonCallback(self, interaction: discord.Interaction):
         await interaction.response.send_message(
-            embed = discordHelpers.embeds.success("Successfully reported this bot response."),
+            embed = discordHelpers.embeds.success("**Successfully reported this bot response.**"),
             ephemeral = True
         )
         
