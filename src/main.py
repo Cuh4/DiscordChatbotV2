@@ -49,13 +49,16 @@ tree = discord.app_commands.CommandTree(client)
 report_response = helpers.events.event("report_response").save()
 
 @report_response.attach
-async def callback(user: discord.User, query: str, response: str):
+async def callback(user: discord.User, response: chatbot.response):
+    if not response.success:
+        return
+    
     channel = client.get_channel(config.responseReportsChannelID)
-    query = query.replace("`", "'")
-    response = response.replace("`", "'")
+    query = response.query.replace("`", "'")
+    responseText = response.text.replace("`", "'")
 
     await channel.send(
-        embed = discordHelpers.embeds.warning(f"A response was reported by @{discordHelpers.utils.formattedName(user)}.\nQuery: ```{query}```\nResponse: ```{response}```")
+        embed = discordHelpers.embeds.warning(f"A response was reported by @{discordHelpers.utils.formattedName(user)}.\nQuery: ```{query}```\nResponse: ```{responseText}```")
     )
 
 # // Register commands
@@ -176,7 +179,7 @@ async def on_message(message: discord.Message):
         # reply with response
         return await botMessage.edit(
             embed = responseEmbed,
-            view = ui.views.feedback(bot)
+            view = ui.views.feedback(bot, response)
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
