@@ -17,12 +17,15 @@ class view(discord.ui.View):
         # // init
         super().__init__()
         
+        # // class properties
+        self.bot = bot
+        
         # // feedback button
         # create button
         self.feedbackButton = discord.ui.Button(
-            label = random.choice(["Funky response?", "Invalid response?", "Incorrect response?", "Bad response?", "Inconvenient response?"]),
-            style = discord.ButtonStyle.danger,
-            emoji = "⚠"
+            label = random.choice(["Teach Me"]),
+            style = discord.ButtonStyle.green,
+            emoji = "👩‍🏫"
         )
 
         # callback
@@ -33,4 +36,4 @@ class view(discord.ui.View):
         
     # // Callbacks
     async def feedbackButtonCallback(self, interaction: discord.Interaction, button: discord.ui.Button):
-        return await interaction.response.send_modal(ui.modals.teach(bot))
+        return await interaction.response.send_modal(ui.modals.teach(self.bot))
