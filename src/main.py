@@ -175,7 +175,7 @@ async def on_message(message: discord.Message):
         )
         
         if response.source != "Built-In":
-            responseEmbed.set_footer(text = f"Answer produced by {response.source}", icon_url = message.author.display_avatar.url)
+            responseEmbed.set_footer(text = f"Response produced by {response.source} | Response may be inaccurate.", icon_url = message.author.display_avatar.url)
 
         # reply with response
         return await botMessage.edit(
