@@ -50,14 +50,19 @@ report_response = helpers.events.event("report_response").save()
 
 @report_response.attach
 async def callback(user: discord.User, response: chatbot.response):
+    # quick check
     if not response.success:
         return
     
+    # get channel
     channel = client.get_channel(config.responseReportsChannelID)
+    
+    # strip text of " ` " to prevent messing up the code block format
     query = response.query.replace("`", "'")
     responseText = response.text.replace("`", "'")
     source = response.source.replace("`", "'")
 
+    # send message
     await channel.send(
         embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user)}.**\n`Query:` ```{query}```\n`Response:` ```{responseText}```\n`Source:` ```{source}```")
     )
