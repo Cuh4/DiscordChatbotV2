@@ -56,9 +56,10 @@ async def callback(user: discord.User, response: chatbot.response):
     channel = client.get_channel(config.responseReportsChannelID)
     query = response.query.replace("`", "'")
     responseText = response.text.replace("`", "'")
+    source = response.source.replace("`", "'")
 
     await channel.send(
-        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user)}.**\nQuery: ```{query}```\nResponse: ```{responseText}```")
+        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user)}.**\n`Query:````{query}```\n`Response:````{responseText}```\n`Source:`\n{source}")
     )
 
 # // Register commands
