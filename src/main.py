@@ -61,10 +61,22 @@ async def callback(message: discord.Message, response: chatbot.response):
     responseText = response.text.replace("`", "'")
     source = response.source.replace("`", "'")
     messageContent = message.content.replace("`", "'")
+    
+    # msg stuffs
+    content = "\n".join([
+        "`Message:`",
+        f"```{messageContent}```",
+        "`Query:`",
+        f"```{query}```",
+        "`Response:`",
+        f"```{responseText}```",
+        "`Source:`",
+        f"```{source}```"
+    ])
 
     # send message
     await channel.send(
-        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(message.author)}.**\n`Message:` ```\n{messageContent}```\n`Query:` ```\n{query}```\n`Response:` ```\n{responseText}```\n`Source:` ```\n{source}```")
+        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(message.author)}.**\n{content}")
     )
 
 # // ---- Main
