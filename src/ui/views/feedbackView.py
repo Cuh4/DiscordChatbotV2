@@ -57,9 +57,7 @@ class view(discord.ui.View):
             style = discord.ButtonStyle.link,
             label = "Support Server",
             url = "https://discord.gg/2HR2awsdSt",
-            emoji = "😎",
-            
-            row = 1
+            emoji = "😎"
         )
         
         # add
