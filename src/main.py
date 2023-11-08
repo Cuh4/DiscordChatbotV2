@@ -64,7 +64,7 @@ async def callback(message: discord.Message, response: chatbot.response):
 
     # send message
     await channel.send(
-        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(message.author)}.**\n`Message:` ```{messageContent}\n`Query:` ```{query}```\n`Response:` ```{responseText}```\n`Source:` ```{source}```")
+        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(message.author)}.**\n`Message:` ```\n{messageContent}```\n`Query:` ```\n{query}```\n`Response:` ```\n{responseText}```\n`Source:` ```\n{source}```")
     )
 
 # // ---- Main
@@ -194,16 +194,9 @@ async def on_message(message: discord.Message):
             view = feedbackView
         )
     else:
-        # unsuccessful (timed out or couldn't find appropriate respond)
+        # unsuccessful (timed out or couldn't find appropriate response)
         helpers.prettyprint.warn(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {response.failureReason}")
-        
-        # notify cuh4 to add more training data
-        logChannel = client.get_channel(1167331643363696640) # testing @ https://discord.gg/CymKaDE2pj
 
-        await logChannel.send( # only so i can train the chatbot
-            embed = discordHelpers.embeds.warning(f"Failed to respond to:\n```{content.replace('`', '')}```")
-        )
-        
         # reply with error message
         errorMsg = {
             "no_query" : random.choice([
