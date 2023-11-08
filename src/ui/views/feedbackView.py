@@ -38,6 +38,7 @@ class view(discord.ui.View):
         self.add_item(self.feedbackButton)
         
         # // report response button
+        # create button
         self.reportButton = discord.ui.Button(
             label = "Report response",
             style = discord.ButtonStyle.red,
@@ -50,6 +51,20 @@ class view(discord.ui.View):
         # add
         self.add_item(self.reportButton)
         
+        # // discord invite button
+        # create button
+        self.inviteButton = discord.ui.Button(
+            style = discord.ButtonStyle.link,
+            label = "Support Server",
+            url = "https://discord.gg/2HR2awsdSt",
+            emoji = "😎",
+            
+            row = 1
+        )
+        
+        # add
+        self.add_item(self.inviteButton)
+        
     # // Helpers
     def setMessage(self, message: discord.Message):
         self.message = message
@@ -60,8 +75,13 @@ class view(discord.ui.View):
         for item in self.children:
             # disable all buttons
             if isinstance(item, discord.ui.Button):
-                item.disabled = True
+                # ignore url buttons
+                if item.url != "":
+                    continue
                 
+                # disable button
+                item.disabled = True
+    
         # save changes
         return await self.message.edit(
             view = self
