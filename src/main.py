@@ -48,7 +48,7 @@ tree = discord.app_commands.CommandTree(client)
 report_response = helpers.events.event("report_response").save()
 
 @report_response.attach
-async def callback(user: discord.User, response: chatbot.response):
+async def callback(message: discord.Message, response: chatbot.response):
     # quick check
     if not response.success:
         return
@@ -60,10 +60,11 @@ async def callback(user: discord.User, response: chatbot.response):
     query = response.query.replace("`", "'")
     responseText = response.text.replace("`", "'")
     source = response.source.replace("`", "'")
+    messageContent = message.content.replace("`", "'")
 
     # send message
     await channel.send(
-        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user)}.**\n`Query:` ```{query}```\n`Response:` ```{responseText}```\n`Source:` ```{source}```")
+        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(message.author)}.**\n`Message:` ```{messageContent}\n`Query:` ```{query}```\n`Response:` ```{responseText}```\n`Source:` ```{source}```")
     )
 
 # // ---- Main

@@ -22,6 +22,7 @@ class view(discord.ui.View):
         # // class properties
         self.bot = bot
         self.botResponse = response
+        self.message: discord.Message = None # purely for intellisense
         
         # // feedback button
         # create button
@@ -91,4 +92,4 @@ class view(discord.ui.View):
             ephemeral = True
         )
         
-        await helpers.events.getSavedEvent("report_response").asyncFire(interaction.user, self.botResponse)
+        await helpers.events.getSavedEvent("report_response").asyncFire(self.message, self.botResponse)
