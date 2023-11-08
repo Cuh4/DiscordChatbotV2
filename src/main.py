@@ -184,7 +184,7 @@ async def on_message(message: discord.Message):
 
         # reply with response
         feedbackView = ui.views.wrap(
-            message,
+            botMessage, # to allow for future edits
             ui.views.feedback(bot, response)
         )
 
@@ -223,4 +223,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start the bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
