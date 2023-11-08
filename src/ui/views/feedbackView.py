@@ -17,7 +17,7 @@ class view(discord.ui.View):
     # // Main UI
     def __init__(self, bot: chatbot.bot, response: chatbot.response):
         # // init
-        super().__init__()
+        super().__init__(timeout = 15)
         
         # // class properties
         self.bot = bot
