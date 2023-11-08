@@ -183,8 +183,10 @@ async def on_message(message: discord.Message):
             responseEmbed.set_footer(text = f"Response produced by {response.source} | Response may be inaccurate.", icon_url = message.author.display_avatar.url)
 
         # reply with response
-        feedbackView = ui.views.feedback(bot, response)
-        feedbackView.setMessage(botMessage) # for future edits
+        feedbackView = ui.views.wrap(
+            message,
+            ui.views.feedback(bot, response)
+        )
 
         await botMessage.edit(
             embed = responseEmbed,

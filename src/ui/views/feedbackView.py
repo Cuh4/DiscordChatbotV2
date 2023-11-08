@@ -63,10 +63,6 @@ class view(discord.ui.View):
         # add
         self.add_item(self.inviteButton)
         
-    # // Helpers
-    def setMessage(self, message: discord.Message):
-        self.message = message
-        
     # // Discord Callbacks
     async def on_timeout(self):
         # disable items
