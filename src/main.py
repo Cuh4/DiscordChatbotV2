@@ -222,5 +222,5 @@ async def on_message(message: discord.Message):
             )
         )
     
-# // Start the bot
-client.run(config.botToken)
+# // Start bot
+client.run(config.botToken, log_handler = None)
