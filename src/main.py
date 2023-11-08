@@ -183,9 +183,12 @@ async def on_message(message: discord.Message):
             responseEmbed.set_footer(text = f"Response produced by {response.source} | Response may be inaccurate.", icon_url = message.author.display_avatar.url)
 
         # reply with response
-        return await botMessage.edit(
+        feedbackView = ui.views.feedback(bot, response)
+        feedbackView.setMessage(botMessage) # for future edits
+
+        await botMessage.edit(
             embed = responseEmbed,
-            view = ui.views.feedback(bot, response)
+            view = feedbackView
         )
     else:
         # unsuccessful (timed out or couldn't find appropriate respond)
@@ -210,7 +213,7 @@ async def on_message(message: discord.Message):
             "no_answer" : "Sorry, I couldn't think of a response."
         }[response.failureReason]
     
-        return await botMessage.edit(
+        await botMessage.edit(
             embed = discord.Embed(
                 description = f"> :robot: :x: | **{errorMsg}**",
                 color = discord.Colour.from_rgb(255, 125, 125)

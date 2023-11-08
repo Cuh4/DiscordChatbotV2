@@ -50,7 +50,24 @@ class view(discord.ui.View):
         # add
         self.add_item(self.reportButton)
         
-    # // Callbacks
+    # // Helpers
+    def setMessage(self, message: discord.Message):
+        self.message = message
+        
+    # // Discord Callbacks
+    async def on_timeout(self):
+        # disable items
+        for item in self.children:
+            # disable all buttons
+            if isinstance(item, discord.ui.Button):
+                item.disabled = True
+                
+        # save changes
+        return await self.message.edit(
+            view = self
+        )
+        
+    # // Custom Callbacks
     async def feedbackButtonCallback(self, interaction: discord.Interaction):
         return await interaction.response.send_modal(ui.modals.teach(self.bot))
     
