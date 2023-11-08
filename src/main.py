@@ -198,7 +198,7 @@ async def on_message(message: discord.Message):
         # reply with response
         feedbackView = ui.views.wrap(
             botMessage, # to allow for future edits
-            ui.views.feedback(bot, response)
+            ui.views.feedback(bot, response, message)
         )
 
         await botMessage.edit(

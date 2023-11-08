@@ -15,7 +15,7 @@ from helpers import discord as discordHelpers
 # // UI
 class view(discord.ui.View):
     # // Main UI
-    def __init__(self, bot: chatbot.bot, response: chatbot.response):
+    def __init__(self, bot: chatbot.bot, response: chatbot.response, message: discord.Message):
         # // init
         super().__init__(timeout = 15)
         
@@ -23,6 +23,7 @@ class view(discord.ui.View):
         self.bot = bot
         self.botResponse = response
         self.message: discord.Message = None # purely for intellisense
+        self.userMessage = message
         
         # // feedback button
         # create button
@@ -92,4 +93,4 @@ class view(discord.ui.View):
             ephemeral = True
         )
         
-        await helpers.events.getSavedEvent("report_response").asyncFire(self.message, self.botResponse)
+        await helpers.events.getSavedEvent("report_response").asyncFire(self.userMessage, self.botResponse)
