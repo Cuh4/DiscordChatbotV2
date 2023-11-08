@@ -70,7 +70,7 @@ class view(discord.ui.View):
             # disable all buttons
             if isinstance(item, discord.ui.Button):
                 # ignore url buttons
-                if item.url != "":
+                if item.style == discord.ButtonStyle.url:
                     continue
                 
                 # disable button
