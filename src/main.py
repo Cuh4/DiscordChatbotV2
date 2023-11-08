@@ -43,8 +43,7 @@ client = discord.Client(
 
 tree = discord.app_commands.CommandTree(client)
 
-# // ---- Main
-# // Events
+# // ---- Events
 # report response event - called when a user clicks "report response" button
 report_response = helpers.events.event("report_response").save()
 
@@ -67,6 +66,7 @@ async def callback(user: discord.User, response: chatbot.response):
         embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user)}.**\n`Query:` ```{query}```\n`Response:` ```{responseText}```\n`Source:` ```{source}```")
     )
 
+# // ---- Main
 # // Register commands
 teachCMD = slashCommands.teach.command(client, tree, bot)
 slashCommands.restart.command(client, tree)
