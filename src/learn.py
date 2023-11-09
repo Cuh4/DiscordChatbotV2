@@ -33,8 +33,8 @@ def clear():
     data.clear()
 
 def learn(dataToLearn: dict[str, list[str]], bot: chatbot.bot, source: str = "Built-In"):
-    for query, answers in dataToLearn.items():
-        bot.knowledge.learn(query, answers, source)
+    for query, responses in dataToLearn.items():
+        bot.knowledge.learn(query, responses, source)
         helpers.prettyprint.info(f"✨ | Learned responses for: {query} (Source: {source})")
         
 # // ---- Main

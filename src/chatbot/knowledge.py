@@ -32,34 +32,34 @@ class knowledge:
     def getAllQueries(self):
         return list(self.data.keys())
     
-    def getAnswersForQuery(self, query: str) -> list[dict[str, str]]:
+    def getResponsesForQuery(self, query: str) -> list[dict[str, str]]:
         return self.data.get(query, [])
         
-    def learn(self, query: str, answers: list[str], source: str):
+    def learn(self, query: str, responses: list[str], source: str):
         # tags system
-        answers = answers.copy() # prevent modifying original
+        responses = responses.copy() # prevent modifying original
     
-        for index, __answer in enumerate(answers):
+        for index, __response in enumerate(responses):
             for tagName, tag in self.tags.items():
-                __answer = __answer.replace(tagName, tag)
+                __response = __response.replace(tagName, tag)
                 
-            answers[index] = {
+            responses[index] = {
                 "source" : source,
-                "text" : __answer
+                "text" : __response
             }
         
         # retrieve saved knowledge
         data = self.read()
         
-        # get all answers for the specified query
-        answersFromData = data.get(query, answers)
+        # get all responses for the specified query
+        responsesFromData = data.get(query, responses)
         
-        # add the new answers if they aren't already added
-        for __answer in answers:
-            if __answer not in answersFromData: # prevent adding two of the same answer
-                answersFromData.append(__answer)
+        # add the new responses if they aren't already added
+        for __response in responses:
+            if __response not in responsesFromData: # prevent adding two of the same response
+                responsesFromData.append(__response)
             
-        data[query] = answersFromData # apply changes
+        data[query] = responsesFromData # apply changes
         
         # save changes
         self.save(data)
