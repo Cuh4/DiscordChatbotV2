@@ -64,8 +64,8 @@ class modal(discord.ui.Modal):
         )
 
         # response
-        filteredAnswers = discordHelpers.utils.stripMarkdown("- " + "\n- ".join(answers))
-        filteredQueries = discordHelpers.utils.stripMarkdown("- " + "\n- ".join(queries))
+        filteredAnswers = "- " + "\n- ".join(answers).replace("`", "'")
+        filteredQueries = "- " + "\n- ".join(queries).replace("`", "'")
         
         return await interaction.response.send_message(
             embed = discordHelpers.embeds.success(f"**The bot will now reply with:**\n```{helpers.misc.truncateIfTooLong(filteredAnswers, 200)}```\n**to:**\n```{helpers.misc.truncateIfTooLong(filteredQueries, 200)}```")
