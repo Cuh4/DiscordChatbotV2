@@ -10,10 +10,6 @@ import random
 import spacy
 from profanity_filter import ProfanityFilter
 
-# // ---- Functions
-def isTextProfane(string: str):
-    return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
-
 # // ---- Variables
 nlp = spacy.load("en_core_web_sm")
 
@@ -24,6 +20,10 @@ filter = ProfanityFilter(
 )
 
 nlp.add_pipe(filter.spacy_component)
+
+# // ---- Functions
+def isTextProfane(string: str):
+    return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
 
 # // ---- Main
 class bot:
@@ -50,15 +50,21 @@ class bot:
             
         return string.lower()
         
-    def __getMatch(self, query: str):
-        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, self.confidence)
+    def __getQuery(self, query: str, *, overrideConfidence: int|float = None) -> str|None:
+        # find a response for this query
+        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, overrideConfidence or self.confidence)
 
         if len(matches) > 0:
             return matches[0]
         
-        return None
+        # since we found nothing, let's try again with a lower confidence
+        if overrideConfidence and overrideConfidence < self.confidence / 6: # took too many tries, so lets just give up
+            return
+        
+        newConfidence = (overrideConfidence if overrideConfidence else self.confidence) / 1.25
+        return self.__getQuery(query = query, overrideConfidence = newConfidence)
     
-    def __getAnswer(self, query: str) -> str|None:
+    def __getResponse(self, query: str) -> str|None:
         return random.choice(self.knowledge.getAnswersForQuery(query))
         
     def respond(self, query: str):
@@ -66,7 +72,7 @@ class bot:
         query = self.__simplifyText(query)
         
         # get the remembered query
-        knownQuery = self.__getMatch(query)
+        knownQuery = self.__getQuery(query)
 
         # doesn't exist, so return
         if knownQuery is None:
@@ -75,8 +81,8 @@ class bot:
                 reasonForFailure = "no_query"
             )
         
-        # get the answer for the query
-        answer = self.__getAnswer(knownQuery)
+        # get a response for the query
+        answer = self.__getResponse(knownQuery)
         
         # can't find one, so return
         if answer is None:
