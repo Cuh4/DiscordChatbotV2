@@ -25,6 +25,15 @@ nlp.add_pipe(filter.spacy_component)
 def isTextProfane(string: str):
     return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
 
+def clamp(num: float|int, min: float|int, max: float|int):
+    if num < min:
+        return min
+    
+    if num > max:
+        return max
+    
+    return num
+
 # // ---- Main
 class bot:
     def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4):
@@ -40,7 +49,7 @@ class bot:
         self.knowledge.addTag("NAME", name.capitalize())
         
         # properties
-        self.confidence = confidence
+        self.confidence = clamp(confidence, 0, 1)
         
     def __simplifyText(self, string: str):
         punctuation = [*",.?;:-'!\""]
@@ -61,11 +70,13 @@ class bot:
         if overrideConfidence and overrideConfidence < self.confidence / 6: # took too many tries, so lets just give up
             return
         
-        newConfidence = (overrideConfidence if overrideConfidence else self.confidence) / 1.25
-        return self.__getQuery(query = query, overrideConfidence = newConfidence)
+        newConfidence = (overrideConfidence if overrideConfidence else self.confidence) / 1.25 # lower confidence slightly
+
+        query = self.__getQuery(query = query, overrideConfidence = newConfidence) # 
+        return query
     
     def __getResponse(self, query: str) -> str|None:
-        return random.choice(self.knowledge.getAnswersForQuery(query))
+        return random.choice(self.knowledge.getResponsesForQuery(query))
         
     def respond(self, query: str):
         # simplify
