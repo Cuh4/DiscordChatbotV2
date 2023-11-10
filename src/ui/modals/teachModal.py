@@ -48,6 +48,9 @@ class modal(discord.ui.Modal):
         if helpers.misc.doesStringOnlyContainLetter(self.queries.value, " ") or helpers.misc.doesStringOnlyContainLetter(self.answers.value, " "):
             return await self.on_error(interaction, Exception())
         
+        if interaction.is_expired():
+            return
+        
         # get needed vars
         queries = self.queries.value.split("\n")
         answers = self.answers.value.split("\n")
