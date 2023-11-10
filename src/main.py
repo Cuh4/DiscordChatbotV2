@@ -196,8 +196,7 @@ async def on_message(message: discord.Message):
             color = discord.Colour.from_rgb(125, 255, 125)
         )
         
-        if source != "Built-In":
-            responseEmbed.set_footer(text = f"Response produced by {source} | Response may be inaccurate.", icon_url = message.author.display_avatar.url)
+        responseEmbed.set_footer(text = f"Response produced by {source} | Response may be inaccurate. | Response Confidence: {response.getResponseConfidence() * 100}%", icon_url = message.author.display_avatar.url)
 
         # reply with response
         feedbackView = ui.views.wrap(
