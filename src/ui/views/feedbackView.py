@@ -88,9 +88,18 @@ class view(discord.ui.View):
         return await interaction.response.send_modal(ui.modals.teach(self.bot))
     
     async def reportButtonCallback(self, interaction: discord.Interaction):
+        # to prevent more reports coming in
+        self.reportButton.disabled = True
+
+        await self.message.edit(
+            view = self
+        )
+
+        # notify user that the report has been sent        
         await interaction.response.send_message(
             embed = discordHelpers.embeds.success("Successfully reported this bot response."),
             ephemeral = True
         )
         
+        # send report
         await helpers.events.getSavedEvent("report_response").asyncFire(self.userMessage, self.botResponse)
