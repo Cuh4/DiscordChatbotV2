@@ -61,19 +61,20 @@ class bot:
         
     def __getQuery(self, query: str, *, overrideConfidence: int|float = None) -> str|None:
         # find a response for this query
-        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, overrideConfidence or self.confidence)
+        confidence = overrideConfidence or self.confidence
+        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, confidence)
 
         if len(matches) > 0:
-            return matches[0]
+            return matches[0], confidence
         
         # since we found nothing, let's try again with a lower confidence
-        if overrideConfidence and overrideConfidence < self.confidence / 6: # took too many tries, so lets just give up
-            return
+        if overrideConfidence and overrideConfidence <= self.confidence / 6: # took too many tries (or confidence is 0), so lets just give up
+            return None, None
         
-        newConfidence = (overrideConfidence if overrideConfidence else self.confidence) / 1.25 # lower confidence slightly
-
-        query = self.__getQuery(query = query, overrideConfidence = newConfidence) # 
-        return query
+        newConfidence = confidence / 1.25 # lower confidence slightly
+        query, responseConfidence = self.__getQuery(query = query, overrideConfidence = newConfidence)
+    
+        return query, responseConfidence
     
     def __getResponse(self, query: str) -> str|None:
         return random.choice(self.knowledge.getResponsesForQuery(query))
@@ -83,7 +84,7 @@ class bot:
         query = self.__simplifyText(query)
         
         # get the remembered query
-        knownQuery = self.__getQuery(query)
+        knownQuery, confidence = self.__getQuery(query)
 
         # doesn't exist, so return
         if knownQuery is None:
@@ -106,14 +107,31 @@ class bot:
         return response(
             answer["text"],
             answer["source"],
-            knownQuery
+            knownQuery,
+            confidence
         )
         
 class response:
-    def __init__(self, text: str = None, source: str = None, query: str = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, text: str = None, source: str = None, query: str = None, responseConfidence: float|int = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.text = text
         self.source = source
         self.query = query
+        self.responseConfidence = responseConfidence
         
         self.success = isSuccessful
         self.failureReason = reasonForFailure
+        
+    def getText(self):
+        return self.text
+    
+    def getSource(self):
+        return self.source
+        
+    def getQuery(self):
+        return self.query
+    
+    def getResponseConfident(self):
+        return self.responseConfidence
+    
+    def isSuccessful(self):
+        return self.success, self.failureReason
