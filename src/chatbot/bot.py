@@ -65,7 +65,7 @@ class bot:
         matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, confidence)
 
         if len(matches) > 0:
-            return matches[0], confidence
+            return matches[0], confidence / self.confidence
         
         # since we found nothing, let's try again with a lower confidence
         if overrideConfidence and overrideConfidence <= self.confidence / 6: # took too many tries (or confidence is 0), so lets just give up
