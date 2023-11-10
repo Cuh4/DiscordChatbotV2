@@ -130,7 +130,7 @@ class response:
     def getQuery(self):
         return self.__query
     
-    def getResponseConfident(self):
+    def getResponseConfidence(self):
         return self.__responseConfidence
     
     def isSuccessful(self):
