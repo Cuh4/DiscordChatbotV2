@@ -28,7 +28,8 @@ class modal(discord.ui.Modal):
             label = "Queries (split by new line, exclude grammar)",
             style = discord.TextStyle.paragraph,
             placeholder = "how are you",
-            min_length = 5
+            min_length = 5,
+            max_length = 1000
         )
         self.add_item(self.queries)
 
@@ -37,7 +38,8 @@ class modal(discord.ui.Modal):
             label = f"Answers (split by new line, include grammar)",
             style = discord.TextStyle.paragraph,
             placeholder = f"Each answer has a character limit of {config.maxResponseLength}.\nI'm great!\nI'm alright!",
-            min_length = 5
+            min_length = 5,
+            max_length = 1000
         )
         self.add_item(self.answers)
 
