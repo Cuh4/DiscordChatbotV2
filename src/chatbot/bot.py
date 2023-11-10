@@ -51,6 +51,7 @@ class bot:
         # properties
         self.confidence = clamp(confidence, 0, 1)
         
+    # // helpers
     def __simplifyText(self, string: str):
         punctuation = [*",.?;:-'!\""]
         
@@ -79,6 +80,7 @@ class bot:
     def __getResponse(self, query: str) -> str|None:
         return random.choice(self.knowledge.getResponsesForQuery(query))
         
+    # // methods
     def respond(self, query: str):
         # simplify
         query = self.__simplifyText(query)
