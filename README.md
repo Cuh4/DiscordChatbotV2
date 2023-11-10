@@ -17,6 +17,7 @@ If you say "How are you?", the chatbot will respond with something like "I'm goo
 1) `git clone` this repo.
 ```
 git clone https://github.com/Cuh4/DiscordChatbotV2
+cd DiscordChatbotV2
 ```
 
 2) Run the following commands:
