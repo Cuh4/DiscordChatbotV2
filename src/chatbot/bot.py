@@ -113,25 +113,28 @@ class bot:
         
 class response:
     def __init__(self, text: str = None, source: str = None, query: str = None, responseConfidence: float|int = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
-        self.text = text
-        self.source = source
-        self.query = query
-        self.responseConfidence = responseConfidence
+        self.__text = text
+        self.__source = source
+        self.__query = query
+        self.__responseConfidence = responseConfidence
         
-        self.success = isSuccessful
-        self.failureReason = reasonForFailure
+        self.__success = isSuccessful
+        self.__failureReason = reasonForFailure
         
     def getText(self):
-        return self.text
+        return self.__text
     
     def getSource(self):
-        return self.source
+        return self.__source
         
     def getQuery(self):
-        return self.query
+        return self.__query
     
     def getResponseConfident(self):
-        return self.responseConfidence
+        return self.__responseConfidence
     
     def isSuccessful(self):
-        return self.success, self.failureReason
+        return self.__success
+    
+    def getFailureReason(self):
+        return self.__failureReason
