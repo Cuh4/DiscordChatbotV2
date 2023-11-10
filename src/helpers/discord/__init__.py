@@ -6,3 +6,4 @@
 from . import embeds
 from . import utils
 from . import cooldown
+from . import permissions
