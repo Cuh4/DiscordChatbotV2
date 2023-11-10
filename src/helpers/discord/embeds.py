@@ -8,8 +8,8 @@ import config
 
 # // ---- Functions
 def __setup(emoji: str, msg: str):
-    if msg.find("\n") != -1:
-        msg = f"**{msg}**" # bolden msg if its only one line
+    if msg.find("\n") == -1: # no newlines, so this msg is just on one line
+        msg = f"**{msg}**" # bolden msg as a result
 
     return f">>> {emoji} | {msg}"
 
