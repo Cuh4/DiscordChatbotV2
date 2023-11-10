@@ -50,16 +50,16 @@ report_response = helpers.events.event("report_response").save()
 @report_response.attach
 async def callback(message: discord.Message, response: chatbot.response):
     # quick check
-    if not response.success:
+    if not response.isSuccessful():
         return
     
     # get channel
     channel = client.get_channel(config.responseReportsChannelID)
     
     # strip text of " ` " to prevent messing up the code block format
-    query = response.query.replace("`", "'")
-    responseText = response.text.replace("`", "'")
-    source = response.source.replace("`", "'")
+    query = response.getQuery().replace("`", "'")
+    responseText = response.getText().replace("`", "'")
+    source = response.getSource().replace("`", "'")
     messageContent = message.content.replace("`", "'")
     
     # msg stuffs
@@ -170,30 +170,34 @@ async def on_message(message: discord.Message):
     response = bot.respond(content)
 
     # reply with response
-    if response.success:
+    if response.isSuccessful():
+        text = response.getText()
+        query = response.getQuery()
+        source = response.getSource()
+        
         # response length check check
-        if len(response.text) > config.maxResponseLength:
-            response.text = "Whoops! My original response was too long."
+        if len(text) > config.maxResponseLength:
+            text = "Whoops! My original response was too long."
             
         # profanity check
-        if chatbot.isTextProfane(response.text) and not config.allowProfanity:
-            response.text = "Oops! My original response was inappropriate."
+        if chatbot.isTextProfane(text) and not config.allowProfanity:
+            text = "Oops! My original response was inappropriate."
             
         # get rid of markdown
-        response.query = discordHelpers.utils.stripMarkdown(response.query)
-        response.text = discordHelpers.utils.stripMarkdown(response.text)
+        text = discordHelpers.utils.stripMarkdown(text)
+        query = discordHelpers.utils.stripMarkdown(query)
 
         # successful
-        helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {response.text}")
+        helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {text}")
 
         # setup response embed
         responseEmbed = discord.Embed(
-            description = f"> :robot: :white_check_mark: | **{response.text}**",
+            description = f"> :robot: :white_check_mark: | **{text}**",
             color = discord.Colour.from_rgb(125, 255, 125)
         )
         
-        if response.source != "Built-In":
-            responseEmbed.set_footer(text = f"Response produced by {response.source} | Response may be inaccurate.", icon_url = message.author.display_avatar.url)
+        if source != "Built-In":
+            responseEmbed.set_footer(text = f"Response produced by {source} | Response may be inaccurate.", icon_url = message.author.display_avatar.url)
 
         # reply with response
         feedbackView = ui.views.wrap(
@@ -206,8 +210,10 @@ async def on_message(message: discord.Message):
             view = feedbackView
         )
     else:
+        failureReason = response.getFailureReason()
+        
         # unsuccessful (timed out or couldn't find appropriate response)
-        helpers.prettyprint.warn(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {response.failureReason}")
+        helpers.prettyprint.warn(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {failureReason}")
 
         # reply with error message
         errorMsg = {
@@ -219,7 +225,7 @@ async def on_message(message: discord.Message):
                 "I don't understand. Could you say something else?"
             ]) + f" You can teach me a response with </{teachCMD.name}:1168118613249622016>.",
             "no_answer" : "Sorry, I couldn't think of a response."
-        }[response.failureReason]
+        }[failureReason]
     
         await botMessage.edit(
             embed = discord.Embed(
