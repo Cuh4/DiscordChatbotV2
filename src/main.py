@@ -60,17 +60,14 @@ slashCommands.start()
 # on ready
 @client.event
 async def on_ready():
-    await events.on_ready.asyncFire({
-        "tree" : tree
-    })
+    await events.on_ready.asyncFire({})
 
 # on message
 @client.event
 async def on_message(message: discord.Message):
     # fire event
     await events.on_message.asyncFire({
-        "message" : message,
-        "bot" : bot,
+        "message" : message
     })
     
 # // Start Bot
