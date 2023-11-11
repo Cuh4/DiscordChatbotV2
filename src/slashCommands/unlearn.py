@@ -6,6 +6,7 @@
 import discord
 
 import chatbot as _chatbot
+import difflib
 from helpers import general as helpers
 from helpers import discord as discordHelpers
 
@@ -37,9 +38,11 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
                 break
             
             # if this query matches the desired query, remove it
-            if knownQuery.lower().find(query.lower()) != -1:
+            match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
+    
+            if match >= 0.5:
                 bot.knowledge.unlearn(knownQuery)
-                removedQueries.append(knownQuery)
+                removedQueries.append(knownQuery + f" [{round(match * 100, 1)}% match]")
         
         # reply
         formattedRemovedQueries = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(removedQueries)) if len(removedQueries) >= 1 else "N/A"
