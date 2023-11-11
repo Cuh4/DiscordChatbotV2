@@ -9,7 +9,7 @@ import inspect
 events: dict[str, "event"] = {}
 
 # // ---- Functions
-def isCoroutine(func):
+def isCoroutine(func: "function"):
     return inspect.iscoroutinefunction(func)
 
 def getSavedEvent(name: str):
@@ -56,7 +56,7 @@ class event:
             
         return returnValue
     
-    def attach(self, func):
+    def attach(self, func: "function"):
         self.callbackID += 1
 
         currentCallback = callback(
@@ -74,7 +74,7 @@ class event:
         
 # function with extra steps
 class callback:
-    def __init__(self, func, id: int):
+    def __init__(self, func: "function", id: int):
         self.func = func
         self.id = id
         self.parent: "event" = None
