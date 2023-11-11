@@ -51,7 +51,7 @@ def command():
         removal_limit = "The amount of queries to remove that match your desired query."
     )
     @discord.app_commands.choices(match_quality = matchQualityChoices)
-    async def command(interaction: discord.Interaction, query: str, match_quality: discord.app_commands.Choice[float] = matchQualityChoices[0], removal_limit: int = 1):
+    async def command(interaction: discord.Interaction, query: str, match_quality: discord.app_commands.Choice[float] = matchQualityChoices[0].value, removal_limit: int = 1):
         # check if the user running this command is the person who created the bot
         if not discordHelpers.utils.isCreator(client, interaction.user):
             return await interaction.response.send_message(
