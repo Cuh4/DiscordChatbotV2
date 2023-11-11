@@ -3,23 +3,18 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-import spacy
-from profanity_filter import ProfanityFilter
+from better_profanity import Profanity
 
 # // ---- Variables
-nlp = spacy.load("en_core_web_sm")
-
-filter = ProfanityFilter(
-    nlps = {
-        "en" : spacy.load("en_core_web_sm")
-    }
-)
-
-nlp.add_pipe(filter.spacy_component)
+filter = Profanity()
+filter.load_censor_words()
 
 # // ---- Functions
-def isTextProfane(string: str):
-    return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
+def isTextProfane(string: str) -> bool:
+    return filter.contains_profanity(string) or string.find("https://") != -1 or string.find("http://") != -1
+
+def censorProfaneText(string: str) -> str:
+    return filter.censor(string)
 
 def clamp(num: float|int, min: float|int, max: float|int):
     if num < min:
