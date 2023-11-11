@@ -21,7 +21,7 @@ class view(discord.ui.View):
         
         # // class properties
         self.bot = bot
-        self.botResponse = response
+        self.chatbotResponse = response
         self.message: discord.Message = None # purely for intellisense
         self.userMessage = message
         
@@ -96,10 +96,7 @@ class view(discord.ui.View):
         )
 
         # notify user that the report has been sent        
-        await interaction.response.send_message(
-            embed = discordHelpers.embeds.success("Successfully reported this bot response."),
-            ephemeral = True
-        )
-        
-        # send report
-        await helpers.events.getSavedEvent("report_response").asyncFire(self.userMessage, self.botResponse)
+        await interaction.response.send_modal(ui.modals.report(
+            self.message,
+            self.chatbotResponse
+        ))
