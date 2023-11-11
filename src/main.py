@@ -43,14 +43,13 @@ client = discord.Client(
 tree = discord.app_commands.CommandTree(client)
 
 # // ---- Main
-# // Register globals
+# // Register Globals
 helpers.globals.save("client", client)
 helpers.globals.save("chatbot", bot)
+helpers.globals.save("commandTree", tree)
 
 # // Register Commands
-teachCMD = slashCommands.teach.command(client, tree, bot)
-slashCommands.restart.command(client, tree)
-slashCommands.unlearn.command(client, tree, bot)
+slashCommands.start()
 
 # // Discord Events
 # on ready
