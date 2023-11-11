@@ -8,8 +8,6 @@ import random
 
 import chatbot
 import ui
-from helpers import general as helpers
-from helpers import discord as discordHelpers
 
 # // ---- Main
 # // UI
@@ -20,7 +18,6 @@ class view(discord.ui.View):
         super().__init__(timeout = 15)
         
         # // class properties
-        self.bot = helpers.globals.get("chatbot")
         self.chatbotResponse = response
         self.message: discord.Message = None # purely for intellisense
         self.userMessage = message
