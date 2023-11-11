@@ -41,15 +41,15 @@ py main.py
 7) Talk to the bot by mentioning it and saying whatever.
 
 ### **Images**
-![Conversation](imgs/conversation.png)
+![Conversation](imgs/conversation1.png)
+![Conversation](imgs/conversation2.png)
 
 ![Status updates in terminal](imgs/terminalMessages.png)
 
-![Profanity detection](imgs/profanityDetection.png)
+![Profanity detection](imgs/profanityDetection1.png)
 ![Profanity detection](imgs/profanityDetection2.png)
 
 ![Teach the chatbot from Discord](imgs/teachingForm.png)
-![Teach the chatbot responses](imgs/customResponses.png)
 
-![Report responses](imgs/report.png)
-![Report responses](imgs/reportResponse.png)
+![Report responses](imgs/report1.png)
+![Report responses](imgs/report2.png)
