@@ -2,7 +2,9 @@
 # // ------- [Discord Chatbot v2] Slash Commands Init
 # // ---------------------------------------------------------------------
 
-# // Imports
-from .teach import command as teach
-from .restart import command as restart
-from .unlearn import command as unlearn
+def start():
+    # importing the commands will automatically start them
+    # is this a good way to do things? probably not
+    from .teach import command as _
+    from .restart import command as _
+    from .unlearn import command as _
