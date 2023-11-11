@@ -34,6 +34,9 @@ def stripMarkdown(msg: str):
     msg = msg.replace("#", "\\#") # escape title
     msg = msg.replace("[", "\\[").replace("]", "\\]").replace("(", "\\(").replace(")", "\\)") # escape hyperlinks
     return msg
+
+def stripHighlightMarkdown(msg: str):
+    return msg.replace("`", "'")
  
 def formattedName(user: discord.User):
     return user.name if user.discriminator == "0" else f"{user.name}#{user.discriminator}" # supports discord's new username system

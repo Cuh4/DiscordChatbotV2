@@ -58,10 +58,10 @@ async def callback(message: discord.Message, response: chatbot.response):
     channel = client.get_channel(config.responseReportsChannelID)
     
     # strip text of " ` " to prevent messing up the code block format
-    query = response.getQuery().replace("`", "'")
-    responseText = response.getText().replace("`", "'")
-    source = response.getSource().replace("`", "'")
-    messageContent = message.content.replace("`", "'")
+    query = discordHelpers.utils.stripHighlightMarkdown(response.getQuery())
+    responseText = discordHelpers.utils.stripHighlightMarkdown(response.getText())
+    source = discordHelpers.utils.stripHighlightMarkdown(response.getSource())
+    messageContent = discordHelpers.utils.stripHighlightMarkdown(message.content)
     
     # msg stuffs
     content = "\n".join([

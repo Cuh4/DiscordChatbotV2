@@ -69,8 +69,8 @@ class modal(discord.ui.Modal):
         )
 
         # set up text
-        filteredAnswers = "- " + "\n- ".join(answers).replace("`", "'")
-        filteredQueries = "- " + "\n- ".join(queries).replace("`", "'")
+        filteredAnswers = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(answers))
+        filteredQueries = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(queries))
         
         # censor text if needed
         filteredAnswers = _chatbot.helpers.censorProfaneText(filteredAnswers)
