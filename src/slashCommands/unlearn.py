@@ -4,7 +4,7 @@
 
 # // ---- Imports
 import discord
-import os
+import discord.app_commands
 
 import chatbot as _chatbot
 from helpers import general as helpers
@@ -28,7 +28,12 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
         # unlearn stuffs
         removedQueries = []
 
-        for knownQuery, responses in bot.knowledge.data.items():
+        for knownQuery in bot.knowledge.data.keys():
+            # check if removed enough queries
+            if len(removedQueries) >= removalLimit:
+                break
+            
+            # if this query matches the desired query, remove it
             if knownQuery.lower().find(query.lower()) != -1:
                 bot.knowledge.unlearn(knownQuery)
                 removedQueries.append(knownQuery)
