@@ -36,7 +36,7 @@ class knowledge:
         return self.data.get(query, [])
     
     def unlearn(self, query: str):
-        print(self.data.pop(query, None))
+        self.data.pop(query, None)
         self.save(self.data)
         
     def learn(self, query: str, responses: list[str], source: str):
@@ -66,8 +66,8 @@ class knowledge:
         data[query] = responsesFromData # apply changes
         
         # save changes
-        self.save(data)
         self.data = data
+        self.save(data)
         
     def save(self, data: dict):
         with open(self.path, "w") as file:
