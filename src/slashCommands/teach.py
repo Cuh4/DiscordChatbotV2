@@ -9,7 +9,10 @@ import chatbot as _chatbot # do not add two "_" !! it fucks things up because of
 import ui
 from helpers import general as helpers
 
+from . import register
+
 # // ---- Main
+@register
 def command():
     # // get vars
     # discord-related

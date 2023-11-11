@@ -5,21 +5,20 @@
 # // Imports
 import inspect
 
-from .teach import command
-from .restart import command
-from .unlearn import command
+from .teach import command as teach
+from .restart import command as restart
+from .unlearn import command as unlearn
+
+# // Variables
+commands: list["function"] = []
 
 # // Main
+# register slash command
+def register(func: "function"):
+    global commands
+    commands.append(func)
+
 # starts all slash commands
 def start():
-    for func in dir():
-        # not a function, so ignore
-        if not inspect.isfunction(func):
-            continue
-        
-        # not a slash command handler function, so ignore
-        if func.__name__ != "command":
-            continue
-        
-        # call function
-        func()
+    for command in commands:
+        command()

@@ -9,7 +9,10 @@ import os
 from helpers import general as helpers
 from helpers import discord as discordHelpers
 
+from . import register
+
 # // ---- Main
+@register
 def command():
     # // get vars
     # discord-related
