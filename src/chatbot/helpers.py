@@ -11,6 +11,14 @@ filter = Profanity()
 filter.load_censor_words()
 
 # // ---- Functions
+def simplifyText(string: str):
+    punctuation = [*",.?;:-'!\""]
+    
+    for i in punctuation:
+        string = string.replace(i, "")
+        
+    return string.lower()
+
 def isTextProfane(string: str) -> bool:
     return filter.contains_profanity(string) or string.find("https://") != -1 or string.find("http://") != -1
 

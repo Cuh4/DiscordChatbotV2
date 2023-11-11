@@ -28,14 +28,6 @@ class bot:
         self.profanityAllowed = allowProfanity
         
     # // helpers
-    def __simplifyText(self, string: str):
-        punctuation = [*",.?;:-'!\""]
-        
-        for i in punctuation:
-            string = string.replace(i, "")
-            
-        return string.lower()
-        
     def __getQuery(self, query: str, *, overrideConfidence: int|float = None) -> str|None:
         # find a response for this query
         confidence = overrideConfidence or self.confidence
@@ -60,7 +52,7 @@ class bot:
     # // methods
     def respond(self, query: str):
         # simplify
-        query = self.__simplifyText(query)
+        query = helpers.simplifyText(query)
         
         # get the remembered query
         knownQuery, responseConfidence = self.__getQuery(query)
