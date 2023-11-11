@@ -20,7 +20,7 @@ from helpers import general as helpers
 bot = chatbot.bot(
     name = "Bob",
     confidence = 0.53,
-    allowProfanity = False # we'll just censor the profanity instead
+    allowProfanity = True # we'll just censor the profanity instead
 )
 
 bot.knowledge.addTag("AUTHOR", "Cuh4")
