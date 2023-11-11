@@ -4,3 +4,4 @@
 
 # // Imports
 from .teachModal import modal as teach
+from .reportModal import modal as report
