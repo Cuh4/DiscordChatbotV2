@@ -49,7 +49,7 @@ def command():
             # if this query matches the desired query, remove it
             match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
     
-            if match >= 0.5:
+            if match >= 0.9:
                 chatbot.knowledge.unlearn(knownQuery)
                 removedQueries.append(knownQuery + f" [{round(match * 100, 1)}% match]")
         
