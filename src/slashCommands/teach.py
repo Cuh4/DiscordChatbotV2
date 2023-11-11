@@ -5,14 +5,11 @@
 # // ---- Imports
 import discord
 
-import chatbot as _chatbot # do not add two "_" !! it fucks things up because of how python treats private methods or something i dont know
 import ui
 from helpers import general as helpers
 
-from . import register
-
 # // ---- Main
-@register
+# // create command
 def command():
     # // get vars
     # discord-related
@@ -28,3 +25,6 @@ def command():
         return await interaction.response.send_modal(ui.modals.teach())
     
     return tree.get_command("teach")
+
+# // start command
+command()
