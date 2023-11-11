@@ -19,7 +19,8 @@ from helpers import general as helpers
 # // Chatbot
 bot = chatbot.bot(
     name = "Bob",
-    confidence = 0.53
+    confidence = 0.53,
+    allowProfanity = config.allowProfanity
 )
 
 bot.knowledge.addTag("AUTHOR", "Cuh4")
@@ -102,10 +103,6 @@ async def on_message(message: discord.Message):
     # ignore messages sent by bots
     if message.author.bot:
         return
-
-    # ignore self
-    if message.author == client.user:
-        return
     
     # ignore message if not mentioned
     if not discordHelpers.utils.isMentioned(message.mentions, client.user):
@@ -141,7 +138,7 @@ async def on_message(message: discord.Message):
     messageBlockReason = ""
     
     # check for profanity
-    if chatbot.isTextProfane(content) and not config.allowProfanity:
+    if chatbot.helpers.isTextProfane(content) and not config.allowProfanity:
         messageBlocked, messageBlockReason = True, "contains_profanity"
     
     # check message length
@@ -179,15 +176,11 @@ async def on_message(message: discord.Message):
         if len(text) > config.maxResponseLength:
             text = "Whoops! My original response was too long."
             
-        # profanity check
-        if chatbot.isTextProfane(text) and not config.allowProfanity:
-            text = "Oops! My original response was inappropriate."
-            
         # get rid of markdown
         text = discordHelpers.utils.stripMarkdown(text)
         query = discordHelpers.utils.stripMarkdown(query)
 
-        # successful
+        # print success message to terminal
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {text}")
 
         # setup response embed
@@ -223,7 +216,8 @@ async def on_message(message: discord.Message):
                 "I don't understand. Sorry.",
                 "I don't understand. Could you say something else?"
             ]) + f" You can teach me a response with </{teachCMD.name}:1168118613249622016>.",
-            "no_answer" : "Sorry, I couldn't think of a response."
+            "no_answer" : "Sorry, I couldn't think of a response.",
+            "contains_profanity" : "Sorry, my response contained profanity and was therefore not sent."
         }[failureReason]
     
         await botMessage.edit(
