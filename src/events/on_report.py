@@ -57,8 +57,6 @@ async def callback(data: dict[str, any]):
         "`Report:`",
         f"``` {report}```"
     ])
-    
-    print(content)
 
     # send report message
     await channel.send(
