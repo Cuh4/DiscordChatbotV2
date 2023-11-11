@@ -102,10 +102,6 @@ async def on_message(message: discord.Message):
     # ignore messages sent by bots
     if message.author.bot:
         return
-
-    # ignore self
-    if message.author == client.user:
-        return
     
     # ignore message if not mentioned
     if not discordHelpers.utils.isMentioned(message.mentions, client.user):
