@@ -42,7 +42,8 @@ class bot:
         matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, confidence)
 
         if len(matches) > 0:
-            return matches[0], confidence / self.confidence
+            match = matches[0]
+            return match, difflib.SequenceMatcher(None, query, match).ratio() # note: might want to use "quick_ratio" since "ratio" is apparently computationally expensive
         
         # since we found nothing, let's try again with a lower confidence
         if overrideConfidence and overrideConfidence <= self.confidence / 6: # took too many tries (or confidence is 0), so lets just give up
@@ -62,7 +63,7 @@ class bot:
         query = self.__simplifyText(query)
         
         # get the remembered query
-        knownQuery, confidence = self.__getQuery(query)
+        knownQuery, responseConfidence = self.__getQuery(query)
 
         # doesn't exist, so return
         if knownQuery is None:
@@ -93,7 +94,7 @@ class bot:
             savedResponse["text"],
             savedResponse["source"],
             knownQuery,
-            confidence
+            responseConfidence
         )
         
 class response:
