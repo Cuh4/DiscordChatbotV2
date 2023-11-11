@@ -42,7 +42,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
                 removedQueries.append(knownQuery)
         
         # reply
-        formattedRemovedQueries = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(removedQueries))
+        formattedRemovedQueries = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(removedQueries)) if len(removedQueries) >= 1 else "N/A"
         
         return await interaction.response.send_message(
             embed = discordHelpers.embeds.success(f"**Successfully unlearned responses to the following queries:**\n```{formattedRemovedQueries}```")
