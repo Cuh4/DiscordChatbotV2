@@ -15,12 +15,12 @@ from helpers import discord as discordHelpers
 # // UI
 class view(discord.ui.View):
     # // Main UI
-    def __init__(self, bot: chatbot.bot, response: chatbot.response, message: discord.Message):
+    def __init__(self, response: chatbot.response, message: discord.Message):
         # // init
         super().__init__(timeout = 15)
         
         # // class properties
-        self.bot = bot
+        self.bot = helpers.globals.get("chatbot")
         self.chatbotResponse = response
         self.message: discord.Message = None # purely for intellisense
         self.userMessage = message
@@ -85,7 +85,7 @@ class view(discord.ui.View):
         
     # // Custom Callbacks
     async def feedbackButtonCallback(self, interaction: discord.Interaction):
-        return await interaction.response.send_modal(ui.modals.teach(self.bot))
+        return await interaction.response.send_modal(ui.modals.teach())
     
     async def reportButtonCallback(self, interaction: discord.Interaction):
         # to prevent more reports coming in
