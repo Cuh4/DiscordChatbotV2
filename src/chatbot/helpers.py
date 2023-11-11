@@ -16,7 +16,7 @@ def isTextProfane(string: str) -> bool:
 
 def censorProfaneText(string: str, linkCensorText: str = "[Censored Link]", generalCensorCharacter: str = "*") -> str:
     string = re.sub(
-        pattern = "(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)", # remove links (source: https://stackoverflow.com/questions/21932615/regular-expression-for-remove-link)
+        pattern = re.compile("https?://\S+|www\.\S+|\S+\.\S+/\S+|\S+\?(\S+=\S+&?)*\S+"), # remove links (source: chatgpt)
         repl = linkCensorText, 
         string = string, 
         flags = re.MULTILINE
