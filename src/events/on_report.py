@@ -54,7 +54,7 @@ async def callback(data: dict[str, any]):
         f"```{responseText}```",
         "`Source:`",
         f"```{source}```",
-        "`Report",
+        "`Report:`",
         f"```{report}```"
     ])
 
