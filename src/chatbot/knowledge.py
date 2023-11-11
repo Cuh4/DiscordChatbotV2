@@ -37,6 +37,7 @@ class knowledge:
     
     def unlearn(self, query: str):
         self.data.pop(query, None)
+        self.save(self.data)
         
     def learn(self, query: str, responses: list[str], source: str):
         # tags system
