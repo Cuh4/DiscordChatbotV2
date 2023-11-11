@@ -4,7 +4,6 @@
 
 # // ---- Imports
 import discord
-import discord.app_commands
 
 import chatbot as _chatbot
 from helpers import general as helpers
@@ -17,6 +16,10 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
     @tree.command(
         name = "unlearn",
         description = "Removes the bot's knowledge on a query."
+    )
+    @discord.app_commands.describe(
+        query = "The query to remove from the bot's knowledge.",
+        removal_limit = "The amount of queries to remove that match your desired query."
     )
     async def command(interaction: discord.Interaction, query: str, removal_limit: int = 1):
         # check if the user running this command is the person who created the bot
