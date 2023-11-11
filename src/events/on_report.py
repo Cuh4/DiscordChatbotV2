@@ -47,16 +47,18 @@ async def callback(data: dict[str, any]):
     # msg stuffs
     content = "\n".join([
         "`Message:`",
-        f"```{messageContent}```",
+        f"``` {messageContent}```",
         "`Query:`",
-        f"```{query}```",
+        f"``` {query}```",
         "`Response:`",
-        f"```{responseText}```",
+        f"``` {responseText}```",
         "`Source:`",
-        f"```{source}```",
+        f"``` {source}```",
         "`Report:`",
-        f"```{report}```"
+        f"``` {report}```"
     ])
+    
+    print(content)
 
     # send report message
     await channel.send(

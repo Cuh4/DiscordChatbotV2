@@ -13,14 +13,14 @@ import ui
 # // UI
 class view(discord.ui.View):
     # // Main UI
-    def __init__(self, response: chatbot.response, message: discord.Message):
+    def __init__(self, response: chatbot.response, userMessage: discord.Message):
         # // init
         super().__init__(timeout = 15)
         
         # // class properties
         self.chatbotResponse = response
         self.message: discord.Message = None # purely for intellisense
-        self.userMessage = message
+        self.userMessage = userMessage
         
         # // feedback button
         # create button
@@ -94,6 +94,6 @@ class view(discord.ui.View):
 
         # notify user that the report has been sent        
         await interaction.response.send_modal(ui.modals.report(
-            self.message,
+            self.userMessage,
             self.chatbotResponse
         ))
