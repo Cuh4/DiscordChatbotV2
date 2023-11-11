@@ -1,12 +1,4 @@
-/src/__pycache__
-/src/chatbot/__pycache__
-/src/helpers/discord/__pycache__
-/src/helpers/general/__pycache__
-/src/helpers/__pycache__
-/src/slashCommands/__pycache__
-/src/ui/__pycache__
-/src/ui/modals/__pycache__
-/src/ui/views/__pycache__
+__pycache__/
 
 /src/config.py
 /src/bob_knowledge.json
