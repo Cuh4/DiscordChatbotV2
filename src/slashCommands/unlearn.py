@@ -12,7 +12,16 @@ from helpers import discord as discordHelpers
 
 # // ---- Main
 # // Command
-def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot: _chatbot.bot):
+def command():
+    # // get vars
+    # discord-related
+    client: discord.Client = helpers.globals.get("client")
+    tree: discord.app_commands.CommandTree = helpers.globals.get("commandTree")
+
+    # other
+    chatbot: _chatbot.bot = helpers.globals.get("chatbot")
+
+    # // main command
     # slash command
     @tree.command(
         name = "unlearn",
@@ -32,7 +41,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
         # unlearn stuffs
         removedQueries = []
 
-        for knownQuery in bot.knowledge.data.copy().keys(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
+        for knownQuery in chatbot.knowledge.data.copy().keys(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
             # check if removed enough queries
             if len(removedQueries) >= removal_limit:
                 break
@@ -41,7 +50,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
             match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
     
             if match >= 0.5:
-                bot.knowledge.unlearn(knownQuery)
+                chatbot.knowledge.unlearn(knownQuery)
                 removedQueries.append(knownQuery + f" [{round(match * 100, 1)}% match]")
         
         # reply

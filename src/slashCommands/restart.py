@@ -6,11 +6,17 @@
 import discord
 import os
 
+from helpers import general as helpers
 from helpers import discord as discordHelpers
 
 # // ---- Main
-# // Command
-def command(client: discord.Client, tree: discord.app_commands.CommandTree):
+def command():
+    # // get vars
+    # discord-related
+    client: discord.Client = helpers.globals.get("client")
+    tree: discord.app_commands.CommandTree = helpers.globals.get("commandTree")
+    
+    # // main command
     # slash command
     @tree.command(
         name = "restart",
