@@ -22,17 +22,8 @@ def command():
     chatbot: _chatbot.bot = helpers.globals.get("chatbot")
 
     # // main command
-    # slash command
-    @tree.command(
-        name = "unlearn",
-        description = "Removes the bot's knowledge on a query."
-    )
-    @discord.app_commands.describe(
-        query = "The query to remove from the bot's knowledge.",
-        match_quality = "Decides how close a query must match to your desired query when unlearning.",
-        removal_limit = "The amount of queries to remove that match your desired query."
-    )
-    @discord.app_commands.choices(match_quality = [
+    # match quality choices
+    matchQualityChoices = [
         discord.app_commands.Choice(
             name = "High",
             value = 0.9
@@ -47,8 +38,20 @@ def command():
             name = "Low",
             value = 0.5
         )
-    ])
-    async def command(interaction: discord.Interaction, query: str, match_quality: discord.app_commands.Choice[float] = 0.9, removal_limit: int = 1):
+    ]
+
+    # slash command
+    @tree.command(
+        name = "unlearn",
+        description = "Removes the bot's knowledge on a query."
+    )
+    @discord.app_commands.describe(
+        query = "The query to remove from the bot's knowledge.",
+        match_quality = "Decides how close a query must match to your desired query when unlearning.",
+        removal_limit = "The amount of queries to remove that match your desired query."
+    )
+    @discord.app_commands.choices(match_quality = matchQualityChoices)
+    async def command(interaction: discord.Interaction, query: str, match_quality: discord.app_commands.Choice[float] = matchQualityChoices[0], removal_limit: int = 1):
         # check if the user running this command is the person who created the bot
         if not discordHelpers.utils.isCreator(client, interaction.user):
             return await interaction.response.send_message(
@@ -66,7 +69,7 @@ def command():
             # if this query matches the desired query, remove it
             match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
     
-            if match >= match_quality:
+            if match >= match_quality.value:
                 chatbot.knowledge.unlearn(knownQuery)
                 removedQueries.append(knownQuery + f" [{round(match * 100, 1)}% match]")
         
