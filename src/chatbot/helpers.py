@@ -3,11 +3,10 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-from better_profanity import Profanity
+from better_profanity import profanity as filter
 import re
 
 # // ---- Variables
-filter = Profanity()
 filter.load_censor_words()
 
 # // ---- Functions
