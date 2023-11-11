@@ -68,10 +68,15 @@ class modal(discord.ui.Modal):
             source = f"@{discordHelpers.utils.formattedName(interaction.user)}"
         )
 
-        # response
+        # set up text
         filteredAnswers = "- " + "\n- ".join(answers).replace("`", "'")
         filteredQueries = "- " + "\n- ".join(queries).replace("`", "'")
         
+        # censor text if needed
+        filteredAnswers = _chatbot.helpers.censorProfaneText(filteredAnswers)
+        filteredQueries = _chatbot.helpers.censorProfaneText(filteredQueries)
+        
+        # send success message
         return await interaction.response.send_message(
             embed = discordHelpers.embeds.success(f"**The bot will now reply with:**\n```{helpers.misc.truncateIfTooLong(filteredAnswers, 200)}```\n**to:**\n```{helpers.misc.truncateIfTooLong(filteredQueries, 200)}```")
         )
