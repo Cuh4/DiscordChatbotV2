@@ -20,7 +20,7 @@ from helpers import general as helpers
 bot = chatbot.bot(
     name = "Bob",
     confidence = 0.53,
-    allowProfanity = config.allowProfanity
+    allowProfanity = False # we'll just censor the profanity instead
 )
 
 bot.knowledge.addTag("AUTHOR", "Cuh4")
@@ -179,6 +179,9 @@ async def on_message(message: discord.Message):
         # get rid of markdown
         text = discordHelpers.utils.stripMarkdown(text)
         query = discordHelpers.utils.stripMarkdown(query)
+        
+        # remove profanity
+        text = chatbot.helpers.censorProfaneText(text)
 
         # print success message to terminal
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {text}")
