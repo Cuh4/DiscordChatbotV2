@@ -29,9 +29,26 @@ def command():
     )
     @discord.app_commands.describe(
         query = "The query to remove from the bot's knowledge.",
+        match_quality = "Decides how close a query must match to your desired query when unlearning.",
         removal_limit = "The amount of queries to remove that match your desired query."
     )
-    async def command(interaction: discord.Interaction, query: str, removal_limit: int = 1):
+    @discord.app_commands.choices(matchMin = [
+        discord.app_commands.Choice(
+            name = "High",
+            value = 0.9
+        ),
+        
+        discord.app_commands.Choice(
+            name = "Medium",
+            value = 0.7
+        ),
+        
+        discord.app_commands.Choice(
+            name = "Low",
+            value = 0.5
+        )
+    ])
+    async def command(interaction: discord.Interaction, query: str, match_quality: discord.app_commands.Choice[float] = 0.9, removal_limit: int = 1):
         # check if the user running this command is the person who created the bot
         if not discordHelpers.utils.isCreator(client, interaction.user):
             return await interaction.response.send_message(
@@ -49,7 +66,7 @@ def command():
             # if this query matches the desired query, remove it
             match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
     
-            if match >= 0.9:
+            if match >= match_quality:
                 chatbot.knowledge.unlearn(knownQuery)
                 removedQueries.append(knownQuery + f" [{round(match * 100, 1)}% match]")
         
