@@ -16,38 +16,23 @@ class modal(discord.ui.Modal):
     # // Main UI
     def __init__(self, message: discord.Message, chatbotResponse: _chatbot.response):
         # // init
-        super().__init__(title = "Report Response")
+        super().__init__(title = "Report Chatbot Response")
         
         # // properties
         self.message = message
         self.chatbotResponse = chatbotResponse
 
         # // ui
-        # report type
-        self.reportType = discord.ui.Select(
-            options = [
-                discord.SelectOption(
-                    label = "Response is inappropriate",
-                    emoji = "😢"
-                ),
-                
-                discord.SelectOption(
-                    label = "Response is hurtful",
-                    emoji = "😡"
-                ),
-                
-                discord.SelectOption(
-                    label = "Response doesn't match",
-                    emoji = "🤔",
-                    default = True
-                )
-            ],
-
-            max_values = 3,
-            placeholder = "not_matching"
+        # report message
+        self.reportMessage = discord.ui.TextInput(
+            label = "Report Message",
+            placeholder = "Enter your report message here, e.g: 'The chatbot disrespected me!'",
+            min_length = 10,
+            max_length = 300,
+            style = discord.TextStyle.paragraph
         )
 
-        self.add_item(self.reportType)
+        self.add_item(self.reportMessage)
 
     # // Callbacks
     async def on_submit(self, interaction: discord.Interaction):
@@ -59,7 +44,7 @@ class modal(discord.ui.Modal):
         await events.on_report.asyncFire({
             "message" : self.message,
             "response" : self.chatbotResponse,
-            "reasons" : self.reportType.values
+            "report" : self.reportMessage.value
         })
         
         # send message
