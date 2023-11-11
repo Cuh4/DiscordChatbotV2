@@ -84,6 +84,7 @@ async def callback(message: discord.Message, response: chatbot.response):
 # // Register commands
 teachCMD = slashCommands.teach.command(client, tree, bot)
 slashCommands.restart.command(client, tree)
+slashCommands.unlearn.command(client, tree, bot)
 
 # // Bot start
 @client.event
