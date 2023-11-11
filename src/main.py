@@ -176,12 +176,12 @@ async def on_message(message: discord.Message):
         if len(text) > config.maxResponseLength:
             text = "Whoops! My original response was too long."
             
+        # remove profanity
+        text = chatbot.helpers.censorProfaneText(text)
+            
         # get rid of markdown
         text = discordHelpers.utils.stripMarkdown(text)
         query = discordHelpers.utils.stripMarkdown(query)
-        
-        # remove profanity
-        text = chatbot.helpers.censorProfaneText(text)
 
         # print success message to terminal
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {text}")
