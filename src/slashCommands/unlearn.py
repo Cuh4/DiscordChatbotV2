@@ -31,7 +31,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
         # unlearn stuffs
         removedQueries = []
 
-        for knownQuery in bot.knowledge.data.copy().keys():
+        for knownQuery in bot.knowledge.data.copy().keys(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
             # check if removed enough queries
             if len(removedQueries) >= removal_limit:
                 break
