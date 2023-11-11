@@ -43,6 +43,10 @@ client = discord.Client(
 tree = discord.app_commands.CommandTree(client)
 
 # // ---- Main
+# // Register globals
+helpers.globals.save("client", client)
+helpers.globals.save("chatbot", bot)
+
 # // Register Commands
 teachCMD = slashCommands.teach.command(client, tree, bot)
 slashCommands.restart.command(client, tree)
@@ -53,7 +57,6 @@ slashCommands.unlearn.command(client, tree, bot)
 @client.event
 async def on_ready():
     events.on_ready.asyncFire({
-        "client" : client,
         "tree" : tree
     })
 
@@ -62,7 +65,6 @@ async def on_ready():
 async def on_message(message: discord.Message):
     # fire event
     events.on_message.asyncFire({
-        "client" : client,
         "message" : message,
         "bot" : bot,
     })
