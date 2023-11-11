@@ -4,39 +4,14 @@
 
 # // ---- Imports
 from . import knowledge
+from . import helpers
 
 import difflib
 import random
-import spacy
-from profanity_filter import ProfanityFilter
-
-# // ---- Variables
-nlp = spacy.load("en_core_web_sm")
-
-filter = ProfanityFilter(
-    nlps = {
-        "en" : spacy.load("en_core_web_sm")
-    }
-)
-
-nlp.add_pipe(filter.spacy_component)
-
-# // ---- Functions
-def isTextProfane(string: str):
-    return nlp(string)._.is_profane or string.find("https://") != -1 or string.find("http://") != -1
-
-def clamp(num: float|int, min: float|int, max: float|int):
-    if num < min:
-        return min
-    
-    if num > max:
-        return max
-    
-    return num
 
 # // ---- Main
 class bot:
-    def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4):
+    def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4, allowProfanity: bool = True):
         # chatbot name
         self.name = name
         
@@ -49,7 +24,8 @@ class bot:
         self.knowledge.addTag("NAME", name.capitalize())
         
         # properties
-        self.confidence = clamp(confidence, 0, 1)
+        self.confidence = helpers.clamp(confidence, 0, 1)
+        self.profanityAllowed = allowProfanity
         
     # // helpers
     def __simplifyText(self, string: str):
@@ -96,19 +72,26 @@ class bot:
             )
         
         # get a response for the query
-        answer = self.__getResponse(knownQuery)
+        savedResponse = self.__getResponse(knownQuery)
         
         # can't find one, so return
-        if answer is None:
+        if savedResponse is None:
             return response(
                 isSuccessful = False,
                 reasonForFailure = "no_answer"
             )
+            
+        # check for profanity
+        if helpers.isTextProfane(savedResponse["text"]) and not self.profanityAllowed:
+            return response(
+                isSuccessful = False,
+                reasonForFailure = "profanity"
+            )
         
         # return the answer
         return response(
-            answer["text"],
-            answer["source"],
+            savedResponse["text"],
+            savedResponse["source"],
             knownQuery,
             confidence
         )
