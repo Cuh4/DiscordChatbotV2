@@ -15,21 +15,26 @@ from helpers import general as helpers
 
 # // ---- Variables
 # // Chatbot
+# bot
 bot = chatbot.bot(
     name = "Bob",
     confidence = 0.53,
     allowProfanity = True # we'll just censor the profanity instead
 )
 
+# tags
 bot.knowledge.addTag("AUTHOR", "Cuh4")
 bot.knowledge.addTag("GENDER", "Male")
 
+# knowledge
 learn.learn(learn.get(), bot) # teach everything necessary i guess
 
-# // Discord Bot
+# // Discord
+# intents
 intents = discord.Intents.default()
 intents.message_content = True
 
+# client
 client = discord.Client(
     intents = intents,
     
