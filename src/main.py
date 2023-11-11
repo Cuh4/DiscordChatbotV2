@@ -98,8 +98,6 @@ async def on_ready():
 # // Message send
 @client.event
 async def on_message(message: discord.Message):
-    global processingResponse
-    
     # // basic checks
     # ignore messages sent by bots
     if message.author.bot:
