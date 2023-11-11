@@ -232,4 +232,4 @@ async def on_message(message: discord.Message):
         )
     
 # // Start bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
