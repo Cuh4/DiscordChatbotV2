@@ -32,7 +32,7 @@ def command():
         match_quality = "Decides how close a query must match to your desired query when unlearning.",
         removal_limit = "The amount of queries to remove that match your desired query."
     )
-    @discord.app_commands.choices(matchMin = [
+    @discord.app_commands.choices(match_quality = [
         discord.app_commands.Choice(
             name = "High",
             value = 0.9
