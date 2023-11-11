@@ -16,7 +16,7 @@ from . import events
 async def callback(data: dict[str, any]):
     # // get needed vars
     # get discord stuffs
-    client: discord.Client = data.get("client")
+    client: discord.Client = helpers.globals.get("client")
     tree: discord.app_commands.CommandTree = data.get("tree")
     
     # // main

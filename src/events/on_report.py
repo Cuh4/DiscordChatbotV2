@@ -8,6 +8,7 @@ import discord
 
 import chatbot
 import config
+from helpers import general as helpers
 from helpers import discord as discordHelpers
 
 from . import events
@@ -17,14 +18,14 @@ from . import events
 async def callback(data: dict[str, any]):
     # // get needed vars
     # get discord stuffs
-    client: discord.Client = data.get("client")
+    client: discord.Client = helpers.globals.get("client")
     message: discord.Message = data.get("message")
     
     # get chatbot response
     response: chatbot.response = data.get("response")
     
-    # get user report message
-    report: str = data.get("userReportMessage")
+    # get report stuffs
+    reasons: list[str] = data.get("reasons")
     
     # // checks
     # quick check
@@ -40,7 +41,9 @@ async def callback(data: dict[str, any]):
     responseText = discordHelpers.utils.stripHighlightMarkdown(response.getText())
     source = discordHelpers.utils.stripHighlightMarkdown(response.getSource())
     messageContent = discordHelpers.utils.stripHighlightMarkdown(message.content)
-    report = discordHelpers.utils.stripHighlightMarkdown(report)
+    
+    # format reasons
+    reasons = "-" + "\n- ".join(reasons) if len(reasons) >= 1 else "N/A"
     
     # // send report
     # msg stuffs
@@ -53,8 +56,8 @@ async def callback(data: dict[str, any]):
         f"```{responseText}```",
         "`Source:`",
         f"```{source}```",
-        "`Report",
-        f"```{report}```"
+        "`Report Reason",
+        f"```{reasons}```"
     ])
 
     # send report message

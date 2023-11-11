@@ -20,11 +20,11 @@ from . import events
 async def callback(data: dict[str, any]):
     # // get needed vars
     # get discord stuffs
-    client: discord.Client = data.get("client")
+    client: discord.Client = helpers.globals.get("client")
     message: discord.Message = data.get("message")
     
     # get bot
-    bot: chatbot.bot = data.get("bot")
+    bot: chatbot.bot = helpers.globals.get("chatbot")
     
     # // basic checks
     # ignore messages sent by bots

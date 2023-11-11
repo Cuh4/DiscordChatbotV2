@@ -15,12 +15,9 @@ import learn
 # // UI
 class modal(discord.ui.Modal):
     # // Main UI
-    def __init__(self, chatbot: _chatbot.bot):
+    def __init__(self):
         # // init
         super().__init__(title = "Teach Chatbot")
-        
-        # // class properties
-        self.chatbot = chatbot
 
         # // ui
         # queries input
@@ -64,7 +61,7 @@ class modal(discord.ui.Modal):
         # teach the chatbot
         learn.learn(
             dataToLearn = toLearn,
-            bot = self.chatbot,
+            bot = helpers.globals.get("chatbot"),
             source = f"@{discordHelpers.utils.formattedName(interaction.user)}"
         )
 
@@ -83,5 +80,6 @@ class modal(discord.ui.Modal):
 
     async def on_error(self, interaction: discord.Interaction, _: Exception):
         return await interaction.response.send_message(
-            embed = discordHelpers.embeds.failure("Failed to teach the chatbot.")
+            embed = discordHelpers.embeds.failure("Failed to teach the chatbot."),
+            ephemeral = True
         )
