@@ -1,6 +1,6 @@
 
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Report Response
+# // ------- [Discord Chatbot v2] On Report
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
@@ -13,7 +13,7 @@ from helpers import discord as discordHelpers
 from . import events
 
 # // ---- Main
-@events.report_response.attach
+@events.on_report.attach
 async def callback(data: dict[str, any]):
     # // get needed vars
     # get discord stuffs
@@ -22,6 +22,9 @@ async def callback(data: dict[str, any]):
     
     # get chatbot response
     response: chatbot.response = data.get("response")
+    
+    # get user report message
+    report: str = data.get("userReportMessage")
     
     # // checks
     # quick check
@@ -37,6 +40,7 @@ async def callback(data: dict[str, any]):
     responseText = discordHelpers.utils.stripHighlightMarkdown(response.getText())
     source = discordHelpers.utils.stripHighlightMarkdown(response.getSource())
     messageContent = discordHelpers.utils.stripHighlightMarkdown(message.content)
+    report = discordHelpers.utils.stripHighlightMarkdown(report)
     
     # // send report
     # msg stuffs
@@ -48,7 +52,9 @@ async def callback(data: dict[str, any]):
         "`Response:`",
         f"```{responseText}```",
         "`Source:`",
-        f"```{source}```"
+        f"```{source}```",
+        "`Report",
+        f"```{report}```"
     ])
 
     # send report message
