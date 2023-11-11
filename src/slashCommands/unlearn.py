@@ -57,6 +57,9 @@ def command():
             return await interaction.response.send_message(
                 embed = discordHelpers.embeds.failure("Invalid permissions.")
             )
+            
+        # clamp removal limit
+        removal_limit = helpers.misc.clamp(removal_limit, 1, 100)
         
         # unlearn stuffs
         removedQueries = []
@@ -77,7 +80,9 @@ def command():
         formattedRemovedQueries = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(removedQueries)) if len(removedQueries) >= 1 else "N/A"
         
         return await interaction.response.send_message(
-            embed = discordHelpers.embeds.success(f"**Successfully unlearned responses to the following queries:**\n```{formattedRemovedQueries}```")
+            embed = discordHelpers.embeds.success(f"**Successfully unlearned responses to the following queries:**\n```{formattedRemovedQueries}```").set_footer(
+                text = f"{len(removedQueries)}/{removal_limit} | Match Quality: {match_quality.name} ({round(match_quality.value * 100, 1)}%)"
+            )
         )
         
     return tree.get_command("unlearn")
