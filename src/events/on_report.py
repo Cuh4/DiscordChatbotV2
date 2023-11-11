@@ -25,7 +25,7 @@ async def callback(data: dict[str, any]):
     response: chatbot.response = data.get("response")
     
     # get report stuffs
-    reasons: list[str] = data.get("reasons")
+    report: str = data.get("report")
     
     # // checks
     # quick check
@@ -37,13 +37,11 @@ async def callback(data: dict[str, any]):
     channel = client.get_channel(config.responseReportsChannelID)
     
     # strip text of " ` " to prevent messing up the code block format
-    query = discordHelpers.utils.stripHighlightMarkdown(response.getQuery())
-    responseText = discordHelpers.utils.stripHighlightMarkdown(response.getText())
+    query = helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getQuery()), 200)
+    responseText =helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getText()), 200)
     source = discordHelpers.utils.stripHighlightMarkdown(response.getSource())
-    messageContent = discordHelpers.utils.stripHighlightMarkdown(message.content)
-    
-    # format reasons
-    reasons = "-" + "\n- ".join(reasons) if len(reasons) >= 1 else "N/A"
+    messageContent = helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(message.content), 200)
+    report = discordHelpers.utils.stripHighlightMarkdown(report)
     
     # // send report
     # msg stuffs
@@ -56,8 +54,8 @@ async def callback(data: dict[str, any]):
         f"```{responseText}```",
         "`Source:`",
         f"```{source}```",
-        "`Report Reason",
-        f"```{reasons}```"
+        "`Report",
+        f"```{report}```"
     ])
 
     # send report message
