@@ -115,7 +115,7 @@ async def callback(data: dict[str, any]):
 
         # setup response embed
         responseEmbed = discord.Embed(
-            description = f"> :robot: :white_check_mark: | **{text}**",
+            description = f"> :robot: :speech_balloon: `{bot.name}` | **{text}**",
             color = discord.Colour.from_rgb(125, 255, 125)
         )
         
