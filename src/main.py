@@ -217,7 +217,7 @@ async def on_message(message: discord.Message):
                 "I don't understand. Could you say something else?"
             ]) + f" You can teach me a response with </{teachCMD.name}:1168118613249622016>.",
             "no_answer" : "Sorry, I couldn't think of a response.",
-            "contains_profanity" : "Sorry, my response contained profanity and was therefore not sent."
+            "profanity" : "Sorry, my response contained profanity and was therefore not sent."
         }[failureReason]
     
         await botMessage.edit(
