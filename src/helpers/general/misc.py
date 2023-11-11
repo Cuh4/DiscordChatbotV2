@@ -12,3 +12,13 @@ def truncateIfTooLong(string: str, maxLength: int, ending: str = "..."):
         return string[: maxLength - len(ending)] + ending
     
     return string
+
+# // Number
+def clamp(number: float|int, min: float|int, max: float|int):
+    if number < min:
+        return min
+    
+    if number > max:
+        return max
+    
+    return number
