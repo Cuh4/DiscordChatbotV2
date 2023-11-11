@@ -28,24 +28,22 @@ class modal(discord.ui.Modal):
             options = [
                 discord.SelectOption(
                     label = "Response is inappropriate",
-                    value = "inappropriate",
                     emoji = "😢"
                 ),
                 
                 discord.SelectOption(
                     label = "Response is hurtful",
-                    value = "hurtful",
                     emoji = "😡"
                 ),
                 
                 discord.SelectOption(
                     label = "Response doesn't match",
-                    value = "not_matching",
-                    emoji = "🤔"
+                    emoji = "🤔",
+                    default = True
                 )
             ],
 
-            max_values = 10,
+            max_values = 3,
             placeholder = "not_matching"
         )
 
