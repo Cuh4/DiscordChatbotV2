@@ -18,7 +18,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
         name = "unlearn",
         description = "Removes the bot's knowledge on a query."
     )
-    async def command(interaction: discord.Interaction, query: str, removalLimit: int = 1):
+    async def command(interaction: discord.Interaction, query: str, removal_limit: int = 1):
         # check if the user running this command is the person who created the bot
         if not discordHelpers.utils.isCreator(client, interaction.user):
             return await interaction.response.send_message(
@@ -30,7 +30,7 @@ def command(client: discord.Client, tree: discord.app_commands.CommandTree, bot:
 
         for knownQuery in bot.knowledge.data.keys():
             # check if removed enough queries
-            if len(removedQueries) >= removalLimit:
+            if len(removedQueries) >= removal_limit:
                 break
             
             # if this query matches the desired query, remove it
