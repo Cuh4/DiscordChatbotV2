@@ -68,6 +68,7 @@ class bot:
         # doesn't exist, so return
         if knownQuery is None:
             return response(
+                bot,
                 isSuccessful = False,
                 reasonForFailure = "no_query"
             )
@@ -78,6 +79,7 @@ class bot:
         # can't find one, so return
         if savedResponse is None:
             return response(
+                bot,
                 isSuccessful = False,
                 reasonForFailure = "no_answer"
             )
@@ -85,12 +87,14 @@ class bot:
         # check for profanity
         if helpers.isTextProfane(savedResponse["text"]) and not self.profanityAllowed:
             return response(
+                bot,
                 isSuccessful = False,
                 reasonForFailure = "profanity"
             )
         
         # return the answer
         return response(
+            bot,
             savedResponse["text"],
             savedResponse["source"],
             knownQuery,
@@ -98,7 +102,9 @@ class bot:
         )
         
 class response:
-    def __init__(self, text: str = None, source: str = None, query: str = None, responseConfidence: float|int = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, parent: "bot", text: str = None, source: str = None, query: str = None, responseConfidence: float|int = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+        self.__bot = parent
+        
         self.__text = text
         self.__source = source
         self.__query = query
@@ -106,6 +112,9 @@ class response:
         
         self.__success = isSuccessful
         self.__failureReason = reasonForFailure
+        
+    def getBot(self):
+        return self.__bot
         
     def getText(self):
         return self.__text
