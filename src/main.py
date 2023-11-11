@@ -56,7 +56,7 @@ slashCommands.unlearn.command(client, tree, bot)
 # on ready
 @client.event
 async def on_ready():
-    events.on_ready.asyncFire({
+    await events.on_ready.asyncFire({
         "tree" : tree
     })
 
@@ -64,7 +64,7 @@ async def on_ready():
 @client.event
 async def on_message(message: discord.Message):
     # fire event
-    events.on_message.asyncFire({
+    await events.on_message.asyncFire({
         "message" : message,
         "bot" : bot,
     })

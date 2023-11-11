@@ -58,7 +58,7 @@ class modal(discord.ui.Modal):
             return
         
         # submit report
-        events.on_report.asyncFire({
+        await events.on_report.asyncFire({
             "message" : self.message,
             "response" : self.chatbotResponse,
             "reasons" : self.reportType.values
