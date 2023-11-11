@@ -34,6 +34,9 @@ class knowledge:
     
     def getResponsesForQuery(self, query: str) -> list[dict[str, str]]:
         return self.data.get(query, [])
+    
+    def unlearn(self, query: str):
+        self.data.pop(query, None)
         
     def learn(self, query: str, responses: list[str], source: str):
         # tags system
