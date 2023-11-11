@@ -1,4 +1,3 @@
 colorama
 discord
-profanity_filter
-spacy
+better_profanity
