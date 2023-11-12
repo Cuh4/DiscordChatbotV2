@@ -8,39 +8,38 @@
 # and all over the place
 
 # // ----  
-import chatbot
+import pychatbot
 from helpers import general as helpers
 
 # // ---- Variables
-data = {}
+defaults = {}
 
 # // ---- Functions
-def add(queries: list[str]|str, answers: list[str]):
-    global data
-    
-    if isinstance(queries, list):
-        # add multiple
-        for i in queries:
-            data[i] = answers
-    else:
-        # add once
-        data[queries] = answers
+def addToDefaults(queries: list[str], answers: list[str]):
+    for query in queries:
+        defaults[query] = answers
         
-def get():
-    return data
+def getDefaults():
+    return defaults
 
-def clear():
-    data.clear()
+def clearDefaults():
+    defaults.clear()
 
-def learn(dataToLearn: dict[str, list[str]], bot: chatbot.bot, source: str = "Built-In"):
-    for query, responses in dataToLearn.items():
-        bot.knowledge.learn(query, responses, source)
+def learn(responsesToLearn: dict[str, list[str]], chatbot: pychatbot.chatbot, source: str = "Built-In", data: dict[str, any] = {}):
+    for query, responses in responsesToLearn.items():
+        chatbot.knowledge.learn(
+            query = query,
+            responses = responses,
+            source = source,
+            data = data
+        )
+
         helpers.prettyprint.info(f"✨ | Learned responses for: {query} (Source: {source})")
         
 # // ---- Main
 # // information relating to the bot
 # name
-add(
+addToDefaults(
     queries = [
         "whats your name",
         "what are you called"
@@ -53,7 +52,7 @@ add(
     ]
 )
 
-add(
+addToDefaults(
     queries = [
         "my name is",
         "i am"
@@ -67,7 +66,7 @@ add(
 )
 
 # likes
-add(
+addToDefaults(
     queries = [
         "what do you like",
         "what are your likes",
@@ -84,7 +83,7 @@ add(
 )
 
 # dislikes
-add(
+addToDefaults(
     queries = [
         "what do you dislike",
         "what are your dislikes",
@@ -99,7 +98,7 @@ add(
 )
 
 # owner
-add(
+addToDefaults(
     queries = [
         "who created you",
         "who is your creator",
@@ -113,7 +112,7 @@ add(
 )
 
 # gender
-add(
+addToDefaults(
     queries = [
         "what is your gender",
         "are you a girl",
@@ -130,7 +129,7 @@ add(
     ]
 )
 
-add(
+addToDefaults(
     queries = [
         "i am a man",
         "i am a guy",
@@ -150,7 +149,7 @@ add(
 
 # // general conversation (greetings, goodbyes, small talk)
 # "how are you"
-add(
+addToDefaults(
     queries = [
         "how are you",
         "how are you doing",
@@ -169,7 +168,7 @@ add(
     ]
 )
 
-add(
+addToDefaults(
     queries = [
         "doing good",
         "doing great",
@@ -185,7 +184,7 @@ add(
 )
 
 # "what are you up to"
-add(
+addToDefaults(
     queries = [
         "im up to",
         "im doing"
@@ -198,7 +197,7 @@ add(
 )
 
 # "where are you"
-add(
+addToDefaults(
     queries = [
         "where are you",
         "where do you live",
@@ -213,7 +212,7 @@ add(
     ]
 )
 
-add(
+addToDefaults(
     queries = [
         "i live in",
         "im located"
@@ -228,7 +227,7 @@ add(
 )
 
 # greetings
-add(
+addToDefaults(
     queries = [
         "hi",
         "hello",
@@ -257,7 +256,7 @@ add(
 )
 
 # goodbyes
-add(
+addToDefaults(
     queries = [
         "bye",
         "goodbye",
