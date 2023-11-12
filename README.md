@@ -5,6 +5,8 @@ A Discord "chatbot" that replies with pre-generated responses that appropriately
 
 If you say "How are you?", the chatbot will respond with something like "I'm good! And you?".
 
+---
+
 ### **Features**
 - Profanity detection
 - Fast responses
@@ -12,6 +14,8 @@ If you say "How are you?", the chatbot will respond with something like "I'm goo
 - Easy to setup
 - Slash commands
 - Teach the bot from Discord
+
+---
 
 ### **lnstallation**
 1) `git clone` this repo.
@@ -25,10 +29,7 @@ cd DiscordChatbotV2
 py -m pip install -r requirements.txt
 ```
 
-3) Create a Discord bot at https://discord.com/developers/applications.
-> [!WARNING]\
-> Be sure to enable message content intents fo your bot, otherwise it will not properly function.
-
+3) Create a Discord bot at https://discord.com/developers/applications. **Be sure to enable message content intents fo your bot, otherwise it will not properly function.**
 
 4) In the `src` folder, edit `example_config.py` then rename to `config.py` when completed. Be sure to plop your bot's token in the config file.
 
@@ -41,6 +42,8 @@ py main.py
 6) Invite your bot to a server.
 
 7) Talk to the bot by mentioning it and saying whatever.
+
+---
 
 ### **Images**
 ![Conversation](imgs/conversation1.png)
