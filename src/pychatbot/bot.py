@@ -17,7 +17,6 @@ class chatbot:
         
         # knowledge
         fileName = ("/" if knowledgePath != "" else "") + f"{name.lower()}_knowledge.json"
-
         self.knowledge = knowledge(knowledgeFilePath = f"{knowledgePath}{fileName}")
 
         # default knowledge tags
