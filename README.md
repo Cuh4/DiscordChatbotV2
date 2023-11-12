@@ -27,6 +27,9 @@ py -m pip install -r requirements.txt
 
 3) Create a Discord bot at https://discord.com/developers/applications.
 
+> [!WARNING]\
+> Be sure to enable message content intents fo your bot, otherwise it will not properly function.
+
 4) In the `src` folder, edit `example_config.py` then rename to `config.py` when completed. Be sure to plop your bot's token in the config file.
 
 5) Start the bot using the following commands:
