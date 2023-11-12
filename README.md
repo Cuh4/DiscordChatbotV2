@@ -23,7 +23,6 @@ cd DiscordChatbotV2
 2) Run the following commands:
 ```
 py -m pip install -r requirements.txt
-py -m spacy download en
 ```
 
 3) Create a Discord bot at https://discord.com/developers/applications.
