@@ -16,6 +16,7 @@ from helpers import general as helpers
 from . import events
 
 # // ---- Main
+# // Chatbot Responses
 @events.on_message.attach
 async def callback(data: dict[str, any]):
     # // get needed vars
@@ -98,6 +99,11 @@ async def callback(data: dict[str, any]):
         text = response.getText()
         query = response.getQuery()
         source = response.getSource()
+        data = response.getSavedData()
+        isBuiltIn = data.get("is_created_by_discord_user", False)
+        
+        # setup source
+        source = source if isBuiltIn else "@" + data.get("cached_username")
         
         # response length check check
         if len(text) > config.maxResponseLength:
