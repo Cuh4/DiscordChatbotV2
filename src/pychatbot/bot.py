@@ -90,11 +90,12 @@ class chatbot:
             savedResponse["text"],
             savedResponse["source"],
             knownQuery,
-            responseConfidence
+            responseConfidence,
+            savedResponse["data"]
         )
         
 class response:
-    def __init__(self, parent: "chatbot", text: str = None, source: str = None, query: str = None, responseConfidence: float|int = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, parent: "chatbot", text: str = "", source: str = "", query: str = "", responseConfidence: float|int = 0, data: dict[str, any] = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
         self.__text = text
@@ -104,6 +105,10 @@ class response:
         
         self.__success = isSuccessful
         self.__failureReason = reasonForFailure
+        self.__savedData = data
+        
+    def getSavedData(self):
+        return self.__savedData
         
     def getChatbot(self):
         return self.__chatbot
