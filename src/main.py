@@ -6,7 +6,7 @@
 import discord
 
 import config
-import chatbot
+import pychatbot
 import learn
 import slashCommands
 from events import events
@@ -15,19 +15,19 @@ from helpers import general as helpers
 
 # // ---- Variables
 # // Chatbot
-# bot
-bot = chatbot.bot(
+# create chatbot
+chatbot = pychatbot.chatbot(
     name = "Bob",
     confidence = 0.53,
     allowProfanity = True # we'll just censor the profanity instead
 )
 
-# tags
-bot.knowledge.addTag("AUTHOR", "Cuh4")
-bot.knowledge.addTag("GENDER", "Male")
+# add tags
+chatbot.knowledge.addTag("AUTHOR", "Cuh4")
+chatbot.knowledge.addTag("GENDER", "Male")
 
 # knowledge
-learn.learn(learn.get(), bot) # teach everything necessary i guess
+learn.learn(learn.getDefaults(), chatbot) # teach everything necessary i guess
 
 # // Discord
 # intents
@@ -50,7 +50,7 @@ tree = discord.app_commands.CommandTree(client)
 # // ---- Main
 # // Register Globals
 helpers.globals.save("client", client)
-helpers.globals.save("chatbot", bot)
+helpers.globals.save("chatbot", chatbot)
 helpers.globals.save("commandTree", tree)
 
 # // Register Commands

@@ -5,7 +5,7 @@
 # // ---- Imports
 import discord
 
-import chatbot as _chatbot
+import pychatbot
 from events import events
 from helpers import discord as discordHelpers
 from helpers import general as helpers
@@ -14,7 +14,7 @@ from helpers import general as helpers
 # // UI
 class modal(discord.ui.Modal):
     # // Main UI
-    def __init__(self, message: discord.Message, chatbotResponse: _chatbot.response):
+    def __init__(self, message: discord.Message, chatbotResponse: pychatbot.response):
         # // init
         super().__init__(title = "Report Chatbot Response")
         

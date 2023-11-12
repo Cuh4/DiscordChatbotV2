@@ -5,7 +5,7 @@
 # // ---- Imports
 import discord
 
-import chatbot as _chatbot
+import pychatbot
 import difflib
 from helpers import general as helpers
 from helpers import discord as discordHelpers
@@ -19,7 +19,7 @@ def command():
     tree: discord.app_commands.CommandTree = helpers.globals.get("commandTree")
 
     # other
-    chatbot: _chatbot.bot = helpers.globals.get("chatbot")
+    chatbot: pychatbot.chatbot = helpers.globals.get("chatbot")
 
     # // main command
     # match quality choices

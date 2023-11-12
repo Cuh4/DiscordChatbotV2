@@ -7,7 +7,7 @@
 import discord
 import random
 
-import chatbot
+import pychatbot
 import config
 import ui
 from helpers import discord as discordHelpers
@@ -23,8 +23,8 @@ async def callback(data: dict[str, any]):
     client: discord.Client = helpers.globals.get("client")
     message: discord.Message = data.get("message")
     
-    # get bot
-    bot: chatbot.bot = helpers.globals.get("chatbot")
+    # get chatbot
+    chatbot: pychatbot.chatbot = helpers.globals.get("chatbot")
     
     # // basic checks
     # ignore messages sent by bots
@@ -91,7 +91,7 @@ async def callback(data: dict[str, any]):
     # // chatbot response
     # get chatbot response
     helpers.prettyprint.info(f"💻| Retrieving response.")
-    response = bot.respond(content)
+    response = chatbot.respond(content)
 
     # reply with response
     if response.isSuccessful():
@@ -104,7 +104,7 @@ async def callback(data: dict[str, any]):
             text = "Whoops! My original response was too long."
             
         # remove profanity
-        text = chatbot.helpers.censorProfaneText(text)
+        text = pychatbot.helpers.censorProfaneText(text)
             
         # get rid of markdown
         text = discordHelpers.utils.stripMarkdown(text)
@@ -115,7 +115,7 @@ async def callback(data: dict[str, any]):
 
         # setup response embed
         responseEmbed = discord.Embed(
-            description = f"> :robot: :speech_balloon: `{bot.name}` | **{text}**",
+            description = f"> :robot: :speech_balloon: `{chatbot.name}` | **{text}**",
             color = discord.Colour.from_rgb(125, 255, 125)
         )
         

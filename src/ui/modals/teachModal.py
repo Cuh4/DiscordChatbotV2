@@ -8,7 +8,7 @@ import discord
 import config
 from helpers import general as helpers
 from helpers import discord as discordHelpers
-import chatbot as _chatbot
+import pychatbot
 import learn
 
 # // ---- Main
@@ -70,8 +70,8 @@ class modal(discord.ui.Modal):
         filteredQueries = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(queries)) if len(queries) >= 1 else "N/A"
         
         # censor text if needed
-        filteredAnswers = _chatbot.helpers.censorProfaneText(filteredAnswers)
-        filteredQueries = _chatbot.helpers.censorProfaneText(filteredQueries)
+        filteredAnswers = pychatbot.helpers.censorProfaneText(filteredAnswers)
+        filteredQueries = pychatbot.helpers.censorProfaneText(filteredQueries)
         
         # send success message
         return await interaction.response.send_message(

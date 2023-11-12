@@ -6,14 +6,14 @@
 import discord
 import random
 
-import chatbot
+import pychatbot
 import ui
 
 # // ---- Main
 # // UI
 class view(discord.ui.View):
     # // Main UI
-    def __init__(self, response: chatbot.response, userMessage: discord.Message):
+    def __init__(self, response: pychatbot.response, userMessage: discord.Message):
         # // init
         super().__init__(timeout = 15)
         

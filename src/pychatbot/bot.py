@@ -1,5 +1,5 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Chatbot Bot
+# // ------- [Discord Chatbot v2] PyChatbot Chatbot
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
@@ -10,7 +10,7 @@ import difflib
 import random
 
 # // ---- Main
-class bot:
+class chatbot:
     def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4, allowProfanity: bool = True):
         # chatbot name
         self.name = name
@@ -60,7 +60,7 @@ class bot:
         # doesn't exist, so return
         if knownQuery is None:
             return response(
-                bot,
+                self,
                 isSuccessful = False,
                 reasonForFailure = "no_query"
             )
@@ -71,7 +71,7 @@ class bot:
         # can't find one, so return
         if savedResponse is None:
             return response(
-                bot,
+                self,
                 isSuccessful = False,
                 reasonForFailure = "no_answer"
             )
@@ -79,14 +79,14 @@ class bot:
         # check for profanity
         if helpers.isTextProfane(savedResponse["text"]) and not self.profanityAllowed:
             return response(
-                bot,
+                self,
                 isSuccessful = False,
                 reasonForFailure = "profanity"
             )
         
         # return the answer
         return response(
-            bot,
+            self,
             savedResponse["text"],
             savedResponse["source"],
             knownQuery,
@@ -94,8 +94,8 @@ class bot:
         )
         
 class response:
-    def __init__(self, parent: "bot", text: str = None, source: str = None, query: str = None, responseConfidence: float|int = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
-        self.__bot = parent
+    def __init__(self, parent: "chatbot", text: str = None, source: str = None, query: str = None, responseConfidence: float|int = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+        self.__chatbot = parent
         
         self.__text = text
         self.__source = source
@@ -105,8 +105,8 @@ class response:
         self.__success = isSuccessful
         self.__failureReason = reasonForFailure
         
-    def getBot(self):
-        return self.__bot
+    def getChatbot(self):
+        return self.__chatbot
         
     def getText(self):
         return self.__text

@@ -25,9 +25,7 @@ class event:
         self.callbackID = 0
         
     def save(self):
-        global events
         events[self.name] = self
-
         return self
         
     def unsave(self):

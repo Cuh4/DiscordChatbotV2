@@ -39,7 +39,7 @@ class knowledge:
         self.data.pop(query, None)
         self.save(self.data)
         
-    def learn(self, query: str, responses: list[str], source: str):
+    def learn(self, query: str, responses: list[str], source: str, *, data: dict[str, any] = {}):
         # tags system
         responses = responses.copy() # prevent modifying original
     
@@ -49,7 +49,8 @@ class knowledge:
                 
             responses[index] = {
                 "source" : source,
-                "text" : __response
+                "text" : __response,
+                "data" : data
             }
         
         # retrieve saved knowledge

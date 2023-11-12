@@ -6,7 +6,7 @@
 # // ---- Imports
 import discord
 
-import chatbot
+import pychatbot
 import config
 from helpers import general as helpers
 from helpers import discord as discordHelpers
@@ -22,7 +22,7 @@ async def callback(data: dict[str, any]):
     message: discord.Message = data.get("message")
     
     # get chatbot response
-    response: chatbot.response = data.get("response")
+    response: pychatbot.response = data.get("response")
     
     # get report stuffs
     report: str = data.get("report")
