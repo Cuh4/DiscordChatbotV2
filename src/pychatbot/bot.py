@@ -11,13 +11,15 @@ import random
 
 # // ---- Main
 class chatbot:
-    def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4, allowProfanity: bool = True):
+    def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4, allowProfanity: bool = True, customKnowledge: "knowledge" = None):
         # chatbot name
         self.name = name
         
         # knowledge
-        fileName = ("/" if knowledgePath != "" else "") + f"{name.lower()}_knowledge.json"
-        self.knowledge = knowledge(knowledgeFilePath = f"{knowledgePath}{fileName}")
+        fileAppropriateName = self.name.lower().replace("/", "").replace("\\", "").replace(" ", "")
+        fileName = ("/" if knowledgePath != "" else "") + f"{fileAppropriateName}_knowledge.json"
+
+        self.knowledge = customKnowledge or knowledge(knowledgeFilePath = f"{knowledgePath}{fileName}")
 
         # default knowledge tags
         self.knowledge.addTag("NAME", name.capitalize())
