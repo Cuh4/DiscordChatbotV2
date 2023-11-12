@@ -16,6 +16,8 @@ class knowledge:
         # create knowledge file if it doesnt exist
         if not self.fileExists():
             self.save({})
+            self.data = {}
+            return # return here to prevent reading the file (below) when we don't need to
             
         # keep data stored
         self.data = self.read()
