@@ -60,8 +60,8 @@ class modal(discord.ui.Modal):
         
         # teach the chatbot
         learn.learn(
-            dataToLearn = toLearn,
-            bot = helpers.globals.get("chatbot"),
+            responsesToLearn= toLearn,
+            chatbot = helpers.globals.get("chatbot"),
             source = interaction.user.id,
             data = {
                 "is_created_by_discord_user" : True,
