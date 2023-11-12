@@ -62,7 +62,12 @@ class modal(discord.ui.Modal):
         learn.learn(
             dataToLearn = toLearn,
             bot = helpers.globals.get("chatbot"),
-            source = f"@{discordHelpers.utils.formattedName(interaction.user)}"
+            source = interaction.user.id,
+            data = {
+                "is_created_by_discord_user" : True,
+                "cached_username" : interaction.user.name,
+                "user_id" : interaction.user.id
+            }
         )
 
         # set up text
