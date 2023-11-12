@@ -66,7 +66,7 @@ async def callback(data: dict[str, any]):
     messageBlockReason = ""
     
     # check for profanity
-    if chatbot.helpers.isTextProfane(content) and not config.allowProfanity:
+    if pychatbot.helpers.isTextProfane(content) and not config.allowProfanity:
         messageBlocked, messageBlockReason = True, "contains_profanity"
     
     # check message length
@@ -100,10 +100,11 @@ async def callback(data: dict[str, any]):
         query = response.getQuery()
         source = response.getSource()
         data = response.getSavedData()
-        isBuiltIn = data.get("is_created_by_discord_user", False)
+        isBuiltIn = not data.get("is_created_by_discord_user", False)
         
         # setup source
-        source = source if isBuiltIn else "@" + data.get("cached_username")
+        if not isBuiltIn:
+            source = "@" + data.get("cached_username")
         
         # response length check check
         if len(text) > config.maxResponseLength:
