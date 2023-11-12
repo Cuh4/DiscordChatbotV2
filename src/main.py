@@ -57,12 +57,12 @@ helpers.globals.save("commandTree", tree)
 slashCommands.start()
 
 # // Discord Events
-# on ready
+# On Ready
 @client.event
 async def on_ready():
     await events.on_ready.asyncFire({})
 
-# on message
+# On Message
 @client.event
 async def on_message(message: discord.Message):
     # fire event
