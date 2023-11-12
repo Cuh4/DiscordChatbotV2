@@ -28,7 +28,7 @@ class chatbot:
         self.profanityAllowed = allowProfanity
         
     # // helpers
-    def __getQuery(self, query: str, *, overrideConfidence: int|float = None) -> str|None:
+    def __getQuery(self, query: str, *, overrideConfidence: int|float = None) -> tuple[str, float|int]|tuple[None, None]:
         # find a response for this query
         confidence = overrideConfidence or self.confidence
         matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, confidence)
