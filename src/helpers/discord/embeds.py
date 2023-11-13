@@ -37,6 +37,14 @@ def warning(msg: str):
 
     return embed
 
+def info(msg: str):
+    embed = discord.Embed(
+        description = __setup(":globe_with_meridians:", msg), 
+        color = discord.Colour.from_rgb(0, 0, 255)
+    )
+
+    return embed
+
 def load(msg: str):
     embed = discord.Embed(
         description = __setup(config.loadingEmoji, msg), 
