@@ -17,9 +17,6 @@ class chatbot:
         
         # knowledge
         self.knowledge = customKnowledge or knowledge(name, knowledgePath)
-
-        # default knowledge tags
-        self.knowledge.addTag("NAME", name.capitalize())
         
         # properties
         self.confidence = helpers.clamp(confidence, 0, 1)
