@@ -3,6 +3,7 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
+import random
 import json
 import os
 import sqlite3
@@ -32,14 +33,6 @@ class knowledge:
     
     def __fetchAllOfColumn(self, columnIndex: int, allData: list):
         return [data[columnIndex] for data in allData]
-    
-    def __convertResponseDataToResponse(self, data: list):
-        # extract data
-        source = data[2]
-        customData = json.loads(data[3])
-    
-        # return a list of the responses
-        return [response(responseText, source, customData) for responseText in json.loads(data[1])]
         
     # // main methods
     def createDatabaseSchema(self):
@@ -61,21 +54,21 @@ class knowledge:
 
         return queries
     
-    def getAllResponsesWithSpecificSource(self, source: str):
+    def getResponsesWithSource(self, source: str):
         # execute sql stuffs
         cursor = self.__getCursor()
         data = cursor.execute("SELECT * FROM Knowledge WHERE source = ?", [source]).fetchall()
         
         # return
-        return [self.__convertResponseDataToResponse(response) for response in data]
-    
+        return [response(__response[1], __response[2], json.loads(__response[3])) for __response in data]
+
     def getResponsesForQuery(self, query: str):
         # execute sql stuffs
         cursor = self.__getCursor()
         data = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
         
         # return
-        return self.__convertResponseDataToResponse(data)
+        return response(data[1], data[2], json.loads(data[3]))
     
     def unlearn(self, query: str):
         self.__getCursor().execute("DELETE FROM Knowledge WHERE query = ?", [query])
@@ -89,16 +82,28 @@ class knowledge:
         self.__commit()
         
 class response:
-    def __init__(self, text: str, source: str, data: dict):
-        self.__text = text
+    def __init__(self, query: str, responses: list[str], source: str, data: dict[str, any]):
+        self.__responses = responses
         self.__source = source
         self.__data = data
+        self.__query = query
         
-    def getText(self):
-        return self.__text
+    def getResponses(self):
+        return self.__responses
+    
+    def getRandomResponse(self):
+        responses = self.getResponses()
+    
+        if len(responses) <= 0:
+            return
+        
+        return random.choice(responses)
     
     def getSource(self):
         return self.__source
     
     def getData(self):
         return self.__data
+    
+    def getQuery(self):
+        return self.__query
