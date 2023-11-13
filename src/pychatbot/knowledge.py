@@ -49,14 +49,16 @@ class knowledge:
     def getAllQueries(self):
         cursor = self.__getCursor()
         allData = cursor.execute("SELECT query FROM Knowledge")
+        queries = self.__fetchAllOfColumn(0, allData)
 
-        return self.__fetchAllOfColumn(0, allData)
+        return queries
     
-    def getResponsesForQuery(self, query: str) -> list[dict[str, str]]:
+    def getResponsesForQuery(self, query: str) -> list[str]:
         cursor = self.__getCursor()
         allData = cursor.execute("SELECT responses FROM Knowledge WHERE query = ?", [query])
+        responses = self.__fetchAllOfColumn(0, allData)
         
-        return json.loads(self.__fetchAllOfColumn(0, allData))
+        return responses
     
     def unlearn(self, query: str):
         self.__getCursor().execute("DELETE FROM Knowledge WHERE query = ?", [query])
