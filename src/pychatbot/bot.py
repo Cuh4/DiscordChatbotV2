@@ -16,10 +16,7 @@ class chatbot:
         self.name = name
         
         # knowledge
-        fileAppropriateName = self.name.lower().replace("/", "").replace("\\", "").replace(" ", "")
-        fileName = ("/" if knowledgePath != "" else "") + f"{fileAppropriateName}_knowledge.json"
-
-        self.knowledge = customKnowledge or knowledge(knowledgeFilePath = f"{knowledgePath}{fileName}")
+        self.knowledge = customKnowledge or knowledge(name, knowledgePath)
 
         # default knowledge tags
         self.knowledge.addTag("NAME", name.capitalize())

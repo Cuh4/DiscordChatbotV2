@@ -22,10 +22,6 @@ chatbot = pychatbot.chatbot(
     allowProfanity = True # we'll just censor the profanity instead
 )
 
-# add tags
-chatbot.knowledge.addTag("AUTHOR", "Cuh4")
-chatbot.knowledge.addTag("GENDER", "Male")
-
 # knowledge
 learn.learn(learn.getDefaults(), chatbot) # teach everything necessary i guess
 

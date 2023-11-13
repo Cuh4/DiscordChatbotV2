@@ -1,90 +1,70 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Chatbot Knowledge
+# // ------- [Discord Chatbot v2] PyChatbot Knowledge
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
 import json
 import os
+import sqlite3
+
+from . import helpers
 
 # // ---- Main
 class knowledge:
-    def __init__(self, knowledgeFilePath: str):
+    def __init__(self, name: str, knowledgePath: str):
         # properties
-        self.path = knowledgeFilePath
-        self.tags = {}
+        self.name = name
+
+        self.databaseName = helpers.pathSafeName(name) + ".db"
+        self.databasePath = knowledgePath
+        self.fullPath = os.path.join(self.databasePath, self.databaseName)
+
+        # connect to db
+        self.database = sqlite3.connect(self.databasePath)
+        self.createDatabaseSchema()
         
-        # create knowledge file if it doesnt exist
-        if not self.fileExists():
-            self.save({})
-            self.data = {}
-            return # return here to prevent reading the file (below) when we don't need to
-            
-        # keep data stored
-        self.data = self.read()
+    # // helpers
+    def __getCursor(self):
+        return self.database.cursor()
+    
+    def __commit(self):
+        return self.database.commit()
+    
+    def __fetchAllOfColumn(self, columnIndex: int, allData: list):
+        return [data[columnIndex] for data in allData]
         
-    def __tagName(self, name: str):
-        return f"[{name}]"
+    # // main methods
+    def createDatabaseSchema(self):
+        cursor = self.__getCursor()
+
+        cursor.execute("""CREATE TABLE IF NOT EXIST Knowledge (
+            query TEXT PRIMARY KEY,
+            responses TEXT,
+            source TEXT
+            data TEXT
+        )""") # responses is a json list, data is a json dict
         
-    def addTag(self, tagName: str, tag: str):
-        self.tags[self.__tagName(tagName)] = tag
-        
-    def removeTag(self, tagName: str):
-        self.tags.pop(self.__tagName(tagName))
-        
+        self.__commit()
+
     def getAllQueries(self):
-        return list(self.data.keys())
+        cursor = self.__getCursor()
+        allData = cursor.execute("SELECT query FROM Knowledge")
+
+        return self.__fetchAllOfColumn(0, allData)
     
     def getResponsesForQuery(self, query: str) -> list[dict[str, str]]:
-        return self.data.get(query, [])
+        cursor = self.__getCursor()
+        allData = cursor.execute("SELECT responses FROM Knowledge WHERE query=?", (query))
+        
+        return self.__fetchAllOfColumn(0, allData)
     
     def unlearn(self, query: str):
-        self.data.pop(query, None)
-        self.save(self.data)
+        self.__getCursor().execute("DELETE FROM Knowledge WHERE query=?", (query))
+        self.__commit()
         
     def learn(self, query: str, responses: list[str], source: str, *, data: dict[str, any] = {}):
-        # tags system
-        responses = responses.copy() # prevent modifying original
-    
-        for index, __response in enumerate(responses):
-            for tagName, tag in self.tags.items():
-                __response = __response.replace(tagName, tag)
-                
-            responses[index] = {
-                "source" : source,
-                "text" : __response,
-                "data" : data
-            }
+        # save query and responses
+        cursor = self.__getCursor()
+        cursor.execute("INSERT INTO Knowledge VALUES (?, ?, ?, ?)", (query, json.dumps(responses), source, json.dumps(data)))
         
-        # retrieve saved knowledge
-        data = self.read()
-        
-        # get all responses for the specified query
-        responsesFromData = data.get(query, responses)
-        
-        # add the new responses if they aren't already added
-        for __response in responses:
-            if __response not in responsesFromData: # prevent adding two of the same response
-                responsesFromData.append(__response)
-            
-        data[query] = responsesFromData # apply changes
-        
-        # save changes
-        self.data = data
-        self.save(data)
-        
-    def save(self, data: dict):
-        with open(self.path, "w") as file:
-            json.dump(
-                obj = data,
-                fp = file,
-                indent = 6
-            )
-            
-    def read(self) -> dict[str, list[str]]:
-        with open(self.path, "r") as file:
-            return json.load(
-                fp = file
-            )
-            
-    def fileExists(self):
-        return os.path.exists(self.path)
+        self.__commit()

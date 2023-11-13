@@ -1,5 +1,5 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Chatbot Helpers
+# // ------- [Discord Chatbot v2] PyChatbot Helpers
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
@@ -10,6 +10,12 @@ import re
 filter.load_censor_words()
 
 # // ---- Functions
+def capitalizeName(name: str):
+    return " ".join([part.capitalize() for part in name.split(" ")])
+
+def pathSafeName(name: str):
+    return name.replace(" ", "").replace("\\", "").replace("/", "").lower()
+
 def simplifyText(string: str):
     punctuation = [*",.?;:-'!\""]
     

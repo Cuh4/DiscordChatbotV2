@@ -37,34 +37,7 @@ def learn(responsesToLearn: dict[str, list[str]], chatbot: pychatbot.chatbot, so
         helpers.prettyprint.info(f"✨ | Learned responses for: {query} (Source: {source})")
         
 # // ---- Main
-# // information relating to the bot
-# name
-addToDefaults(
-    queries = [
-        "whats your name",
-        "what are you called"
-    ],
-    
-    answers = [
-        "I am [NAME]. What is your name?",
-        "My name is [NAME].",
-        "I go by [NAME]."
-    ]
-)
-
-addToDefaults(
-    queries = [
-        "my name is",
-        "i am"
-    ],
-    
-    answers = [
-        "Nice to meet you!",
-        "Great to meet you!",
-        "Awesome!"
-    ]
-)
-
+# // chatbot interests
 # likes
 addToDefaults(
     queries = [
@@ -97,38 +70,7 @@ addToDefaults(
     ]
 )
 
-# owner
-addToDefaults(
-    queries = [
-        "who created you",
-        "who is your creator",
-        "who are your parents"
-    ],
-    
-    answers = [
-        "[AUTHOR] created me.",
-        "I was created by [AUTHOR]."
-    ]
-)
-
 # gender
-addToDefaults(
-    queries = [
-        "what is your gender",
-        "are you a girl",
-        "are you a guy",
-        "are you a boy",
-        "are you a woman",
-        "are you a man",
-        "what is your sex"
-    ],
-    
-    answers = [
-        "I am a [GENDER].",
-        "I'm [GENDER]. You?"
-    ]
-)
-
 addToDefaults(
     queries = [
         "i am a man",
@@ -244,7 +186,9 @@ addToDefaults(
         "hello chatbot",
         "hi chatbot",
         "hey chatbot",
-        "sup chatbot"
+        "sup chatbot",
+        "i am",
+        "my name is"
     ], 
 
     answers = [
