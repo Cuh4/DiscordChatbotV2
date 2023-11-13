@@ -10,11 +10,9 @@ If you say "How are you?", the chatbot will respond with something like "I'm goo
 ### **Features**
 - Profanity detection
 - Fast responses
-- Extendable code
+- Organized code
 - Easy to setup
 - Slash commands
-- Teach the bot from Discord
-
 ---
 
 ### **lnstallation**
