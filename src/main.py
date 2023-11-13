@@ -22,6 +22,9 @@ chatbot = pychatbot.chatbot(
     allowProfanity = True # we'll just censor the profanity instead
 )
 
+# quick print
+helpers.prettyprint.success(f"Created chatbot ({chatbot.name}). Database path: {chatbot.knowledge.fullPath}")
+
 # knowledge
 learn.learn(learn.getDefaults(), chatbot) # teach everything necessary i guess
 
