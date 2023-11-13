@@ -29,4 +29,4 @@ def success(msg: str):
     
 # // Input
 def query(msg: str):
-    return input(__setup("INPUT", msg, tcolor.Style.DIM, tcolor.Fore.LIGHTBLUE_EX))
+    return input(__setup("INPUT", msg, "⌨", tcolor.Style.DIM, tcolor.Fore.LIGHTBLUE_EX))
