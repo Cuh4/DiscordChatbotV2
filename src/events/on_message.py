@@ -99,7 +99,7 @@ async def callback(data: dict[str, any]):
         text = response.getText()
         query = response.getQuery()
         source = response.getSource()
-        data = response.getSavedData()
+        data = response.getData()
         isBuiltIn = not data.get("is_created_by_discord_user", False)
         
         # setup source
