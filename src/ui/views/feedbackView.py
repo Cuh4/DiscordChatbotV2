@@ -13,7 +13,7 @@ import ui
 # // UI
 class view(discord.ui.View):
     # // Main UI
-    def __init__(self, response: pychatbot.response, userMessage: discord.Message):
+    def __init__(self, response: pychatbot.chatbotResponse, userMessage: discord.Message):
         # // init
         super().__init__(timeout = 15)
         

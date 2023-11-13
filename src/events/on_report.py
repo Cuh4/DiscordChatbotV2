@@ -22,7 +22,7 @@ async def callback(data: dict[str, any]):
     message: discord.Message = data.get("message")
     
     # get chatbot response
-    response: pychatbot.response = data.get("response")
+    response: pychatbot.chatbotResponse = data.get("response")
     
     # get report stuffs
     report: str = data.get("report")
