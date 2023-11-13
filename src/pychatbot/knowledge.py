@@ -54,17 +54,17 @@ class knowledge:
     
     def getResponsesForQuery(self, query: str) -> list[dict[str, str]]:
         cursor = self.__getCursor()
-        allData = cursor.execute("SELECT responses FROM Knowledge WHERE query=?", (query))
+        allData = cursor.execute("SELECT responses FROM Knowledge WHERE query = ?", [query])
         
         return json.loads(self.__fetchAllOfColumn(0, allData))
     
     def unlearn(self, query: str):
-        self.__getCursor().execute("DELETE FROM Knowledge WHERE query=?", (query))
+        self.__getCursor().execute("DELETE FROM Knowledge WHERE query = ?", [query])
         self.__commit()
         
     def learn(self, query: str, responses: list[str], source: str, *, data: dict[str, any] = {}):
         # save query and responses
         cursor = self.__getCursor()
-        cursor.execute("INSERT OR IGNORE INTO Knowledge VALUES (?, ?, ?, ?)", (query, json.dumps(responses), source, json.dumps(data)))
+        cursor.execute("INSERT OR IGNORE INTO Knowledge VALUES (?, ?, ?, ?)", [query, json.dumps(responses), source, json.dumps(data)])
         
         self.__commit()
