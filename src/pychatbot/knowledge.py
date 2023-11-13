@@ -37,7 +37,7 @@ class knowledge:
     def createDatabaseSchema(self):
         cursor = self.__getCursor()
 
-        cursor.execute("""CREATE TABLE IF NOT EXIST Knowledge (
+        cursor.execute("""CREATE TABLE IF NOT EXISTS Knowledge (
             query TEXT PRIMARY KEY,
             responses TEXT,
             source TEXT
