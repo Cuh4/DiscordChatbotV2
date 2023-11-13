@@ -32,6 +32,14 @@ class knowledge:
     
     def __fetchAllOfColumn(self, columnIndex: int, allData: list):
         return [data[columnIndex] for data in allData]
+    
+    def __convertResponseDataToResponse(self, data: list):
+        # extract data
+        source = data[2]
+        customData = json.loads(data[3])
+    
+        # return a list of the responses
+        return [response(responseText, source, customData) for responseText in json.loads(data[1])]
         
     # // main methods
     def createDatabaseSchema(self):
@@ -53,17 +61,21 @@ class knowledge:
 
         return queries
     
+    def getAllResponsesWithSpecificSource(self, source: str):
+        # execute sql stuffs
+        cursor = self.__getCursor()
+        data = cursor.execute("SELECT * FROM Knowledge WHERE source = ?", [source]).fetchall()
+        
+        # return
+        return [self.__convertResponseDataToResponse(response) for response in data]
+    
     def getResponsesForQuery(self, query: str):
         # execute sql stuffs
         cursor = self.__getCursor()
-        allData = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
+        data = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
         
-        # extract data
-        source = allData[2]
-        data = json.loads(allData[3])
-    
-        # return a list of the responses
-        return [response(responseText, source, data) for responseText in json.loads(allData[1])]
+        # return
+        return self.__convertResponseDataToResponse(data)
     
     def unlearn(self, query: str):
         self.__getCursor().execute("DELETE FROM Knowledge WHERE query = ?", [query])
