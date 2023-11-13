@@ -63,7 +63,7 @@ class chatbot:
         
         # get a response for the query
         response = self.__getResponse(knownQuery)
-        
+ 
         # can't find one, so return
         if response is None or len(response.getResponses()) <= 0:
             return chatbotResponse(
