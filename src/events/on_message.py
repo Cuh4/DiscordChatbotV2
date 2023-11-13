@@ -96,7 +96,7 @@ async def callback(data: dict[str, any]):
 
     # reply with response
     if response.isSuccessful():
-        text = response.getText()
+        text = response.getResponse()
         query = response.getQuery()
         source = response.getSource()
         data = response.getData()
