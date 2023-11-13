@@ -72,8 +72,11 @@ class chatbot:
                 reasonForFailure = "no_answer"
             )
             
+        # get random response
+        chosenResponse = response.getRandomResponse()
+            
         # check for profanity
-        if helpers.isTextProfane(response.getText()) and not self.profanityAllowed:
+        if helpers.isTextProfane(chosenResponse) and not self.profanityAllowed:
             return chatbotResponse(
                 self,
                 isSuccessful = False,
@@ -83,7 +86,7 @@ class chatbot:
         # return the answer
         return chatbotResponse(
             self,
-            response.getRandomResponse(),
+            chosenResponse,
             response.getSource(),
             response.getData(),
             responseConfidence,
