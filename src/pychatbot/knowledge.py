@@ -17,7 +17,7 @@ class knowledge:
 
         self.databaseName = helpers.pathSafeName(name) + ".db"
         self.databasePath = knowledgePath
-        self.fullPath = os.path.join(self.databasePath, self.databaseName)
+        self.fullPath = os.path.abspath(os.path.join(self.databasePath, self.databaseName))
 
         # connect to db
         self.database = sqlite3.connect(self.databasePath)
@@ -40,7 +40,7 @@ class knowledge:
         cursor.execute("""CREATE TABLE IF NOT EXISTS Knowledge (
             query TEXT PRIMARY KEY,
             responses TEXT,
-            source TEXT
+            source TEXT,
             data TEXT
         )""") # responses is a json list, data is a json dict
         
