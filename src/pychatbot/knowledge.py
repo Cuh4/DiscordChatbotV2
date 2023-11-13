@@ -46,19 +46,24 @@ class knowledge:
         
         self.__commit()
 
-    def getAllQueries(self):
+    def getAllQueries(self) -> list[str]:
         cursor = self.__getCursor()
         allData = cursor.execute("SELECT query FROM Knowledge")
         queries = self.__fetchAllOfColumn(0, allData)
 
         return queries
     
-    def getResponsesForQuery(self, query: str) -> list[str]:
+    def getResponsesForQuery(self, query: str):
+        # execute sql stuffs
         cursor = self.__getCursor()
-        allData = cursor.execute("SELECT responses FROM Knowledge WHERE query = ?", [query])
-        responses = self.__fetchAllOfColumn(0, allData)
+        allData = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
         
-        return responses
+        # extract data
+        source = allData[2]
+        data = json.loads(allData[3])
+    
+        # return a list of the responses
+        return [response(responseText, source, data) for responseText in json.loads(allData[1])]
     
     def unlearn(self, query: str):
         self.__getCursor().execute("DELETE FROM Knowledge WHERE query = ?", [query])
@@ -70,3 +75,18 @@ class knowledge:
         cursor.execute("INSERT OR IGNORE INTO Knowledge VALUES (?, ?, ?, ?)", [query, json.dumps(responses), source, json.dumps(data)])
         
         self.__commit()
+        
+class response:
+    def __init__(self, text: str, source: str, data: dict):
+        self.__text = text
+        self.__source = source
+        self.__data = data
+        
+    def getText(self):
+        return self.__text
+    
+    def getSource(self):
+        return self.__source
+    
+    def getData(self):
+        return self.__data
