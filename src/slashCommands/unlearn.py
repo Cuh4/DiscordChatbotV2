@@ -1,12 +1,12 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Restart Slash Command
+# // ------- [Discord Chatbot v2] Unlearn Slash Command
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
 import discord
+import difflib
 
 import pychatbot
-import difflib
 from helpers import general as helpers
 from helpers import discord as discordHelpers
 
