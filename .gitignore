@@ -1,4 +1,4 @@
 __pycache__/
 
 /src/config.py
-/src/bob_knowledge.json
+/src/bob.db
