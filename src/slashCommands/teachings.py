@@ -31,12 +31,12 @@ def command():
         responses = chatbot.knowledge.getResponsesWithSource(interaction.user.id)
         
         # format them
-        formattedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getQuery()), 50) for response in responses][:25] if len(responses) > 0 else "None."
+        formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getQuery()), 50) for response in responses][:25]) if len(responses) > 0 else "None."
         responsesCreated = len(responses)
         
         # send
-        interaction.response.send_message(
-            embed = discordHelpers.embeds.info(f"You have taught the bot responses to the following {responsesCreated} queries:\n```{formattedQueries}```")
+        await interaction.response.send_message(
+            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following {responsesCreated} queries:**\n```{formattedQueries}```")
         )
 
 # // start command
