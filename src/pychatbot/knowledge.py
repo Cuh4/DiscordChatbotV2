@@ -20,7 +20,7 @@ class knowledge:
         self.fullPath = os.path.abspath(os.path.join(self.databasePath, self.databaseName))
 
         # connect to db
-        self.database = sqlite3.connect(self.databasePath)
+        self.database = sqlite3.connect(self.fullPath)
         self.createDatabaseSchema()
         
     # // helpers
