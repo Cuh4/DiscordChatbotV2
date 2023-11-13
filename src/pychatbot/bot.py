@@ -4,6 +4,7 @@
 
 # // ---- Imports
 from . import knowledge
+from . import response as _response
 from . import helpers
 
 import difflib
@@ -41,8 +42,13 @@ class chatbot:
     
         return query, responseConfidence
     
-    def __getResponse(self, query: str) -> str|None:
-        return random.choice(self.knowledge.getResponsesForQuery(query))
+    def __getResponse(self, query: str) :
+        responsesForQuery = self.knowledge.getResponsesForQuery(query)
+        
+        if len(responsesForQuery) <= 0:
+            return
+        
+        return random.choice(responsesForQuery)
         
     # // methods
     def respond(self, query: str):
@@ -54,68 +60,68 @@ class chatbot:
 
         # doesn't exist, so return
         if knownQuery is None:
-            return response(
+            return chatbotResponse(
                 self,
                 isSuccessful = False,
                 reasonForFailure = "no_query"
             )
         
         # get a response for the query
-        savedResponse = self.__getResponse(knownQuery)
+        response = self.__getResponse(knownQuery)
         
         # can't find one, so return
-        if savedResponse is None:
-            return response(
+        if response is None:
+            return chatbotResponse(
                 self,
                 isSuccessful = False,
                 reasonForFailure = "no_answer"
             )
             
         # check for profanity
-        if helpers.isTextProfane(savedResponse["text"]) and not self.profanityAllowed:
-            return response(
+        if helpers.isTextProfane(response.getText()) and not self.profanityAllowed:
+            return chatbotResponse(
                 self,
                 isSuccessful = False,
                 reasonForFailure = "profanity"
             )
         
         # return the answer
-        return response(
+        return chatbotResponse(
             self,
-            savedResponse["text"],
-            savedResponse["source"],
-            knownQuery,
+            response,
             responseConfidence,
-            savedResponse["data"]
+            knownQuery
         )
         
-class response:
-    def __init__(self, parent: "chatbot", text: str = "", source: str = "", query: str = "", responseConfidence: float|int = 0, data: dict[str, any] = None, *, isSuccessful: bool = True, reasonForFailure: str = ""):
+class chatbotResponse:
+    def __init__(self, parent: "chatbot", response: "_response" = None, responseConfidence: float|int = 0, query: str = "", *, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
-        self.__text = text
-        self.__source = source
-        self.__query = query
+        self.__response = response
         self.__responseConfidence = responseConfidence
+        
+        self.__query = query
         
         self.__success = isSuccessful
         self.__failureReason = reasonForFailure
-        self.__savedData = data
-        
-    def getSavedData(self):
-        return self.__savedData
-        
+
     def getChatbot(self):
         return self.__chatbot
-        
+    
     def getText(self):
-        return self.__text
+        return self.getResponse().getText()
+    
+    def getData(self):
+        return self.getResponse().getData()
     
     def getSource(self):
-        return self.__source
-        
+        return self.getResponse().getSource()
+    
     def getQuery(self):
         return self.__query
+        
+    def getResponse(self):
+        return self.__response
     
     def getResponseConfidence(self):
         return self.__responseConfidence
