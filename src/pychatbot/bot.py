@@ -4,20 +4,18 @@
 
 # // ---- Imports
 from . import knowledge
-from . import response as _response
 from . import helpers
 
 import difflib
-import random
 
 # // ---- Main
 class chatbot:
     def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4, allowProfanity: bool = True, customKnowledge: "knowledge" = None):
         # chatbot name
-        self.name = name
+        self.name = helpers.capitalizeName(name)
         
         # knowledge
-        self.knowledge = customKnowledge or knowledge(name, knowledgePath)
+        self.knowledge = customKnowledge or knowledge(self.name, knowledgePath)
         
         # properties
         self.confidence = helpers.clamp(confidence, 0, 1)
