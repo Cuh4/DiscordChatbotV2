@@ -64,7 +64,7 @@ def command():
         # unlearn stuffs
         removedQueries = []
 
-        for knownQuery in chatbot.knowledge.data.copy().keys(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
+        for knownQuery in chatbot.knowledge.getAllQueries(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
             # check if removed enough queries
             if len(removedQueries) >= removal_limit:
                 break
