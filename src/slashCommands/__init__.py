@@ -8,3 +8,4 @@ def start():
     from .teach import command as _
     from .restart import command as _
     from .unlearn import command as _
+    from .teachings import command as _
