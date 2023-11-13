@@ -43,12 +43,7 @@ class chatbot:
         return query, responseConfidence
     
     def __getResponse(self, query: str) :
-        responsesForQuery = self.knowledge.getResponsesForQuery(query)
-        
-        if len(responsesForQuery) <= 0:
-            return
-        
-        return random.choice(responsesForQuery)
+        return self.knowledge.getResponsesForQuery(query)
         
     # // methods
     def respond(self, query: str):
@@ -70,7 +65,7 @@ class chatbot:
         response = self.__getResponse(knownQuery)
         
         # can't find one, so return
-        if response is None:
+        if response is None or len(response.getResponses()) <= 0:
             return chatbotResponse(
                 self,
                 isSuccessful = False,
@@ -88,18 +83,22 @@ class chatbot:
         # return the answer
         return chatbotResponse(
             self,
-            response,
+            response.getRandomResponse(),
+            response.getSource(),
+            response.getData(),
             responseConfidence,
             knownQuery
         )
         
 class chatbotResponse:
-    def __init__(self, parent: "chatbot", response: "_response" = None, responseConfidence: float|int = 0, query: str = "", *, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, parent: "chatbot", response: str, source: str, data: dict[str, any], responseConfidence: float|int = 0, query: str = "", *, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
         self.__response = response
         self.__responseConfidence = responseConfidence
         
+        self.__source = source
+        self.__data = data
         self.__query = query
         
         self.__success = isSuccessful
@@ -107,15 +106,12 @@ class chatbotResponse:
 
     def getChatbot(self):
         return self.__chatbot
-    
-    def getText(self):
-        return self.getResponse().getText()
-    
+
     def getData(self):
-        return self.getResponse().getData()
+        return self.__data
     
     def getSource(self):
-        return self.getResponse().getSource()
+        return self.__source
     
     def getQuery(self):
         return self.__query
