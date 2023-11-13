@@ -60,7 +60,7 @@ class knowledge:
         data = cursor.execute("SELECT * FROM Knowledge WHERE source = ?", [source]).fetchall()
         
         # return
-        return [response(__response[1], __response[2], json.loads(__response[3])) for __response in data]
+        return [response(__response[0], __response[1], __response[2], json.loads(__response[3])) for __response in data]
 
     def getResponsesForQuery(self, query: str):
         # execute sql stuffs
@@ -68,7 +68,7 @@ class knowledge:
         data = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
         
         # return
-        return response(data[1], data[2], json.loads(data[3]))
+        return response(data[0], data[1], data[2], json.loads(data[3]))
     
     def unlearn(self, query: str):
         self.__getCursor().execute("DELETE FROM Knowledge WHERE query = ?", [query])
