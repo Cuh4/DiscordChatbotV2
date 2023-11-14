@@ -38,7 +38,7 @@ class knowledge:
     def __toResponse(self, data: list):
         return response(data[0], json.loads(data[1]), data[2], json.loads(data[3]), data[4]) # query, responses (list), source, custom data, timestamp
         
-    # // main methods
+    # // methods
     def createDatabaseSchema(self):
         cursor = self.__getCursor()
 
