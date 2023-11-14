@@ -15,7 +15,7 @@ from . import events
 
 # // ---- Main
 @events.on_report.attach
-async def callback(data: dict[str, any]):
+async def callback(**data):
     # // get needed vars
     # get discord stuffs
     client: discord.Client = helpers.globals.get("client")

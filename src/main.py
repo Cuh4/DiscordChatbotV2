@@ -59,15 +59,15 @@ slashCommands.start()
 # On Ready
 @client.event
 async def on_ready():
-    await events.on_ready.asyncFire({})
+    await events.on_ready.asyncFire()
 
 # On Message
 @client.event
 async def on_message(message: discord.Message):
     # fire event
-    await events.on_message.asyncFire({
-        "message" : message
-    })
+    await events.on_message.asyncFire(
+        message = message
+    )
     
 # // Start Bot
 client.run(config.botToken, log_handler = None)

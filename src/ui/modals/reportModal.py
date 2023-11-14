@@ -41,11 +41,11 @@ class modal(discord.ui.Modal):
             return
         
         # submit report
-        await events.on_report.asyncFire({
-            "message" : self.message,
-            "response" : self.chatbotResponse,
-            "report" : self.reportMessage.value
-        })
+        await events.on_report.asyncFire(
+            message = self.message,
+            response = self.chatbotResponse,
+            report = self.reportMessage.value
+        )
         
         # send message
         return await interaction.response.send_message(
