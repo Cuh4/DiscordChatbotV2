@@ -3,6 +3,7 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
+import time
 import random
 import json
 import os
@@ -33,6 +34,9 @@ class knowledge:
     
     def __fetchAllOfColumn(self, columnIndex: int, allData: list):
         return [data[columnIndex] for data in allData]
+    
+    def __toResponse(data: list):
+        return response(data[0], json.loads(data[1]), data[2], json.loads(data[3]), data[4]) # query, responses (list), source, custom data, timestamp
         
     # // main methods
     def createDatabaseSchema(self):
@@ -42,7 +46,8 @@ class knowledge:
             query TEXT PRIMARY KEY,
             responses TEXT,
             source TEXT,
-            data TEXT
+            data TEXT,
+            timestamp REAL
         )""") # responses is a json list, data is a json dict
         
         self.__commit()
@@ -57,18 +62,18 @@ class knowledge:
     def getResponsesWithSource(self, source: str):
         # execute sql stuffs
         cursor = self.__getCursor()
-        data = cursor.execute("SELECT * FROM Knowledge WHERE source = ?", [source]).fetchall()
+        responses = cursor.execute("SELECT * FROM Knowledge WHERE source = ?", [source]).fetchall()
         
         # return
-        return [response(__response[0], json.loads(__response[1]), __response[2], json.loads(__response[3])) for __response in data]
+        return [self.__toResponse(__response) for __response in responses]
 
     def getResponsesForQuery(self, query: str):
         # execute sql stuffs
         cursor = self.__getCursor()
-        data = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
+        __response = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
         
         # return
-        return response(data[0], json.loads(data[1]), data[2], json.loads(data[3]))
+        return self.__toResponse(__response)
     
     def unlearn(self, query: str):
         self.__getCursor().execute("DELETE FROM Knowledge WHERE query = ?", [query])
@@ -77,16 +82,17 @@ class knowledge:
     def learn(self, query: str, responses: list[str], source: str, *, data: dict[str, any] = {}):
         # save query and responses
         cursor = self.__getCursor()
-        cursor.execute("INSERT OR IGNORE INTO Knowledge VALUES (?, ?, ?, ?)", [query, json.dumps(responses), source, json.dumps(data)])
+        cursor.execute("INSERT OR IGNORE INTO Knowledge VALUES (?, ?, ?, ?, ?)", [query, json.dumps(responses), source, json.dumps(data)], time.time())
         
         self.__commit()
         
 class response:
-    def __init__(self, query: str, responses: list[str], source: str, data: dict[str, any]):
+    def __init__(self, query: str, responses: list[str], source: str, data: dict[str, any], timestamp: float):
         self.__responses = responses
         self.__source = source
         self.__data = data
         self.__query = query
+        self.__timestamp = timestamp
         
     def getResponses(self):
         return self.__responses
@@ -107,3 +113,6 @@ class response:
     
     def getQuery(self):
         return self.__query
+    
+    def getTimestamp(self):
+        return self.__timestamp
