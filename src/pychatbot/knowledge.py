@@ -59,7 +59,7 @@ class knowledge:
 
         return queries
     
-    def getResponsesWithSource(self, source: str):
+    def getResponsesWithSource(self, source: str) -> list["response"]:
         # execute sql stuffs
         cursor = self.__getCursor()
         responses = cursor.execute("SELECT * FROM Knowledge WHERE source = ?", [source]).fetchall()
@@ -67,7 +67,7 @@ class knowledge:
         # return
         return [self.__toResponse(__response) for __response in responses]
 
-    def getResponsesForQuery(self, query: str):
+    def getResponsesForQuery(self, query: str)  -> list["response"]:
         # execute sql stuffs
         cursor = self.__getCursor()
         __response = cursor.execute("SELECT * FROM Knowledge WHERE query = ?", [query]).fetchone()
