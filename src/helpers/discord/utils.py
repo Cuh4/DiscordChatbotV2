@@ -20,6 +20,9 @@ def hasRole(member: discord.Member, role_id):
     return False
 
 # // String
+def formatTimestamp(timestamp: int|float, mode: str = "F"):
+    return f"<t:{int(timestamp)}:{mode}>"
+
 def truncateIfTooLong(inp: str, max: int, endPartIfLong: str = ""):
     if len(inp) > max:
         return inp[0:max - len(endPartIfLong)] + endPartIfLong
