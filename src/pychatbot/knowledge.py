@@ -35,7 +35,7 @@ class knowledge:
     def __fetchAllOfColumn(self, columnIndex: int, allData: list):
         return [data[columnIndex] for data in allData]
     
-    def __toResponse(data: list):
+    def __toResponse(self, data: list):
         return response(data[0], json.loads(data[1]), data[2], json.loads(data[3]), data[4]) # query, responses (list), source, custom data, timestamp
         
     # // main methods
