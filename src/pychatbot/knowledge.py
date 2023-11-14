@@ -82,7 +82,7 @@ class knowledge:
     def learn(self, query: str, responses: list[str], source: str, *, data: dict[str, any] = {}):
         # save query and responses
         cursor = self.__getCursor()
-        cursor.execute("INSERT OR IGNORE INTO Knowledge VALUES (?, ?, ?, ?, ?)", [query, json.dumps(responses), source, json.dumps(data)], time.time())
+        cursor.execute("INSERT OR IGNORE INTO Knowledge VALUES (?, ?, ?, ?, ?)", [query, json.dumps(responses), source, json.dumps(data), time.time()])
         
         self.__commit()
         
