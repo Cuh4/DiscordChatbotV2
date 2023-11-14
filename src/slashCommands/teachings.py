@@ -30,6 +30,10 @@ def command():
         # get responses made by this person
         responses = chatbot.knowledge.getResponsesWithSource(interaction.user.id)
         
+        # sort responses by time
+        if len(responses) >= 1:
+            responses.sort(key = lambda response: response.getTimestamp())
+        
         # format them
         formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getQuery()), 50) for response in responses][:25]) if len(responses) > 0 else "N/A"
         responsesCreated = len(responses)
