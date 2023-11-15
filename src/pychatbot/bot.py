@@ -92,7 +92,7 @@ class chatbot:
         )
         
 class chatbotResponse:
-    def __init__(self, parent: "chatbot", response: str, source: str, data: dict[str, any], responseConfidence: float|int = 0, query: str = "", *, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, parent: "chatbot", response: str = "", source: str = "", data: dict[str, any] = {}, responseConfidence: float|int = 0, query: str = "", *, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
         self.__response = response
