@@ -16,9 +16,8 @@ class view(template):
     def __init__(self):
         # // init
         super().__init__(timeout = 30)
-        
+
         # // class properties
-        self.message: discord.Message = None # purely for intellisense
         self.feedbackView = feedback(None, None) # this is only being created to extract the buttons and plop it in this view
         
         # // feedback button

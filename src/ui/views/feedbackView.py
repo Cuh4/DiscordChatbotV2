@@ -20,7 +20,6 @@ class view(template):
         
         # // class properties
         self.chatbotResponse = response
-        self.message: discord.Message = None # purely for intellisense
         self.userMessage = userMessage
         
         # // feedback button
