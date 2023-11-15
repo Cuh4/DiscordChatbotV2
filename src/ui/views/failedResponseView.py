@@ -5,11 +5,13 @@
 # // ---- Imports
 import discord
 
-import ui
+from ui.views import template
+from ui import modals
+from ui.views import feedback
 
 # // ---- Main
 # // UI
-class view(ui.views.view):
+class view(template):
     # // Main UI
     def __init__(self):
         # // init
@@ -17,7 +19,7 @@ class view(ui.views.view):
         
         # // class properties
         self.message: discord.Message = None # purely for intellisense
-        self.feedbackView = ui.views.feedback(None, None) # this is only being created to extract the buttons and plop it in this view
+        self.feedbackView = feedback(None, None) # this is only being created to extract the buttons and plop it in this view
         
         # // feedback button
         # create button

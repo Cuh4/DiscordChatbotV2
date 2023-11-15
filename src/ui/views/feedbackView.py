@@ -7,11 +7,12 @@ import discord
 import random
 
 import pychatbot
-import ui
+from ui.views import template
+from ui import modals
 
 # // ---- Main
 # // UI
-class view(ui.views.view):
+class view(template):
     # // Main UI
     def __init__(self, response: pychatbot.chatbotResponse, userMessage: discord.Message):
         # // init
@@ -64,7 +65,7 @@ class view(ui.views.view):
         
     # // Custom Callbacks
     async def feedbackButtonCallback(self, interaction: discord.Interaction):
-        return await interaction.response.send_modal(ui.modals.teach())
+        return await interaction.response.send_modal(modals.teach())
     
     async def reportButtonCallback(self, interaction: discord.Interaction):
         # to prevent more reports coming in
@@ -75,7 +76,7 @@ class view(ui.views.view):
         )
 
         # notify user that the report has been sent        
-        await interaction.response.send_modal(ui.modals.report(
+        await interaction.response.send_modal(modals.report(
             self.userMessage,
             self.chatbotResponse
         ))
