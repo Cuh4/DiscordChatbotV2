@@ -61,5 +61,5 @@ async def callback(**data):
 
     # send report message
     await channel.send(
-        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user.name)}.**\n{content}")
+        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user)}.**\n{content}")
     )
