@@ -84,8 +84,6 @@ def command():
                 text = f"{len(removedQueries)}/{removal_limit} | Match Quality: {match_quality.name} ({round(match_quality.value * 100, 1)}%)"
             )
         )
-        
-    return tree.get_command("unlearn")
 
 # // start command
 command()

@@ -37,8 +37,6 @@ def command():
         
         os.system("start py main.py")
         exit(0)
-        
-    return tree.get_command("restart")
 
 # // start command
 command()

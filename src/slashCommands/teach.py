@@ -23,8 +23,6 @@ def command():
     )
     async def command(interaction: discord.Interaction):
         return await interaction.response.send_modal(ui.modals.teach())
-    
-    return tree.get_command("teach")
 
 # // start command
 command()
