@@ -33,7 +33,7 @@ async def callback(**data):
         return
     
     # ignore message if not mentioned
-    if not discordHelpers.utils.isMentioned(message.mentions, client.user):
+    if not discordHelpers.utils.isMentioned(message.mentions, client.user) and message.channel.type != discord.ChannelType.private:
         return
     
     # ignore message if user is on cooldown
