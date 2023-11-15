@@ -11,11 +11,11 @@ import ui
 
 # // ---- Main
 # // UI
-class view(discord.ui.View):
+class view(ui.views.view):
     # // Main UI
     def __init__(self, response: pychatbot.chatbotResponse, userMessage: discord.Message):
         # // init
-        super().__init__(timeout = 15)
+        super().__init__(timeout = 30)
         
         # // class properties
         self.chatbotResponse = response
@@ -61,24 +61,6 @@ class view(discord.ui.View):
         
         # add
         self.add_item(self.inviteButton)
-        
-    # // Discord Callbacks
-    async def on_timeout(self):
-        # disable items
-        for item in self.children:
-            # disable all buttons
-            if isinstance(item, discord.ui.Button):
-                # ignore url buttons
-                if item.style == discord.ButtonStyle.url:
-                    continue
-                
-                # disable button
-                item.disabled = True
-    
-        # save changes
-        return await self.message.edit(
-            view = self
-        )
         
     # // Custom Callbacks
     async def feedbackButtonCallback(self, interaction: discord.Interaction):
