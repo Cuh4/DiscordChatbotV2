@@ -156,10 +156,17 @@ async def callback(**data):
             "no_answer" : "Sorry, I couldn't think of a response.",
             "profanity" : "Sorry, my response contained profanity and was therefore not sent."
         }[failureReason]
+        
+        failedResponseView = ui.views.wrap(
+            botMessage,
+            ui.views.failedResponse()
+        )
     
         await botMessage.edit(
             embed = discord.Embed(
                 description = f"> :robot: :x: | **{errorMsg}**",
                 color = discord.Colour.from_rgb(255, 125, 125)
-            )
+            ),
+
+            view = failedResponseView
         )
