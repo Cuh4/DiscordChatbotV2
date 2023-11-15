@@ -26,6 +26,7 @@ async def callback(**data):
     
     # get report stuffs
     report: str = data.get("report")
+    user: discord.User = data.get("user") # dont worry about stripping username of highlight markdown. discord doesnt allow the highlight character in usernames
     
     # // checks
     # quick check
@@ -47,7 +48,7 @@ async def callback(**data):
     # msg stuffs
     content = "\n".join([
         "`Message:`",
-        f"``` {messageContent}```",
+        f"```@{discordHelpers.utils.formattedName(message.author)}: {messageContent}```",
         "`Query:`",
         f"``` {query}```",
         "`Response:`",
@@ -60,5 +61,5 @@ async def callback(**data):
 
     # send report message
     await channel.send(
-        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(message.author)}.**\n{content}")
+        embed = discordHelpers.embeds.warning(f"**A response was reported by @{discordHelpers.utils.formattedName(user.name)}.**\n{content}")
     )

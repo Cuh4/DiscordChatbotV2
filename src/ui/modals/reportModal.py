@@ -44,7 +44,8 @@ class modal(discord.ui.Modal):
         await events.on_report.asyncFire(
             message = self.message,
             response = self.chatbotResponse,
-            report = self.reportMessage.value
+            report = self.reportMessage.value,
+            user = interaction.user
         )
         
         # send message
