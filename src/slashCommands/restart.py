@@ -21,7 +21,7 @@ def command():
     # slash command
     @tree.command(
         name = "restart",
-        description = "Restart the bot."
+        description = "Restarts the bot."
     )
     async def command(interaction: discord.Interaction):
         # check if the user running this command is the person who created the bot

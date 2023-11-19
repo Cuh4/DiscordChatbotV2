@@ -19,7 +19,7 @@ def command():
     # slash command
     @tree.command(
         name = "teach",
-        description = "Teach the chatbot responses for queries."
+        description = "Teaches the chatbot responses for queries."
     )
     async def command(interaction: discord.Interaction):
         return await interaction.response.send_modal(ui.modals.teach())
