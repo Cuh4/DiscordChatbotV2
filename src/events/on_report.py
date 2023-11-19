@@ -39,7 +39,7 @@ async def callback(**data):
     
     # strip text of " ` " to prevent messing up the code block format
     query = helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getQuery()), 200)
-    responseText =helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getResponse()), 200)
+    responseText = helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getResponse()), 200)
     source = discordHelpers.utils.stripHighlightMarkdown(response.getSource())
     messageContent = helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(message.content), 200)
     report = discordHelpers.utils.stripHighlightMarkdown(report)

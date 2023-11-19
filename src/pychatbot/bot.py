@@ -3,19 +3,22 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-from . import knowledge
-from . import helpers
-
+import random
 import difflib
 
+from . import knowledgeBase
+from . import helpers
+
 # // ---- Main
+# // chatbot class
+# main class that should be used for responding to queries, etc
 class chatbot:
-    def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4, allowProfanity: bool = True, customKnowledge: "knowledge" = None):
+    def __init__(self, name: str, knowledgePath: str = "", confidence: float = 0.4, allowProfanity: bool = True, customKnowledgeBase: "knowledgeBase" = None):
         # chatbot name
         self.name = helpers.capitalizeName(name)
         
         # knowledge
-        self.knowledge = customKnowledge or knowledge(self.name, knowledgePath)
+        self.knowledgeBase = customKnowledgeBase or knowledgeBase(self.name, knowledgePath)
         
         # properties
         self.confidence = helpers.clamp(confidence, 0, 1)
@@ -25,7 +28,7 @@ class chatbot:
     def __getQuery(self, query: str, *, overrideConfidence: int|float = None) -> tuple[str, float|int]|tuple[None, None]:
         # find a response for this query
         confidence = overrideConfidence or self.confidence
-        matches = difflib.get_close_matches(query, self.knowledge.getAllQueries(), 6, confidence)
+        matches = difflib.get_close_matches(query, self.knowledgeBase.getAllQueries(), 6, confidence)
 
         if len(matches) > 0:
             match = matches[0]
@@ -39,9 +42,6 @@ class chatbot:
         query, responseConfidence = self.__getQuery(query = query, overrideConfidence = newConfidence)
     
         return query, responseConfidence
-    
-    def __getResponse(self, query: str) :
-        return self.knowledge.getResponsesForQuery(query)
         
     # // methods
     def respond(self, query: str):
@@ -59,22 +59,22 @@ class chatbot:
                 reasonForFailure = "no_query"
             )
         
-        # get a response for the query
-        response = self.__getResponse(knownQuery)
+        # get knowledge for the query
+        knowledge = self.knowledgeBase.getKnowledgeWithQuery(knownQuery)
  
-        # can't find one, so return
-        if response is None or len(response.getResponses()) <= 0:
+        # no responses found, so return here
+        if len(knowledge) <= 1:
             return chatbotResponse(
                 self,
                 isSuccessful = False,
-                reasonForFailure = "no_answer"
+                reasonForFailure = "no_kowledge"
             )
             
-        # get random response
-        chosenResponse = response.getRandomResponse()
+        # get a "random piece of knowledge"
+        chosenKnowledge = random.choice(knowledge)
             
         # check for profanity
-        if helpers.isTextProfane(chosenResponse) and not self.profanityAllowed:
+        if helpers.isTextProfane(chosenKnowledge.getResponse()) and not self.profanityAllowed:
             return chatbotResponse(
                 self,
                 isSuccessful = False,
@@ -84,23 +84,23 @@ class chatbot:
         # return the answer
         return chatbotResponse(
             self,
-            chosenResponse,
-            response.getSource(),
-            response.getData(),
+            chosenKnowledge,
             responseConfidence,
-            knownQuery
+            True
         )
         
+# // chatbot response class
+# represents a response to a query
 class chatbotResponse:
-    def __init__(self, parent: "chatbot", response: str = "", source: str = "", data: dict[str, any] = {}, responseConfidence: float|int = 0, query: str = "", *, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, parent: "chatbot", knowledge: "knowledgeBase" = None, responseConfidence: float|int = 0, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
-        self.__response = response
+        self.__response = knowledge.getResponse()
         self.__responseConfidence = responseConfidence
         
-        self.__source = source
-        self.__data = data
-        self.__query = query
+        self.__source = knowledge.getSource()
+        self.__data = knowledge.getData()
+        self.__query = knowledge.getQuery()
         
         self.__success = isSuccessful
         self.__failureReason = reasonForFailure

@@ -43,12 +43,12 @@ def command():
     # slash command
     @tree.command(
         name = "unlearn",
-        description = "Removes the bot's knowledge on a query."
+        description = "Removes all of the bot's knowledge for a query."
     )
     @discord.app_commands.describe(
-        query = "The query to remove from the bot's knowledge.",
+        query = "The query that should be checked through all of the bot's knowledge. If a piece of the bot's knowledge is for this query, it will be removed.",
         match_quality = "Decides how close a query must match to your desired query when unlearning.",
-        removal_limit = "The amount of queries to remove that match your desired query."
+        removal_limit = "The amount of chatbot knowledge with queries that match the inputted query to remove."
     )
     @discord.app_commands.choices(match_quality = matchQualityChoices)
     async def command(interaction: discord.Interaction, query: str, match_quality: discord.app_commands.Choice[float], removal_limit: int = 1):
@@ -73,7 +73,11 @@ def command():
             match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
 
             if match >= match_quality.value:
-                chatbot.knowledge.unlearn(knownQuery)
+                knowledgeList = chatbot.knowledge.getKnowledgeWithQuery(knownQuery) # get all knowledge for the found query
+
+                for knowledge in knowledgeList:
+                    knowledge.unlearn()
+                
                 removedQueries.append(knownQuery + f" [{round(match * 100, 1)}% match]")
         
         # reply

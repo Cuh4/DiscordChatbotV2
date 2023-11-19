@@ -153,7 +153,7 @@ async def callback(**data):
                 "I don't understand. Sorry.",
                 "I don't understand. Could you say something else?"
             ]) + f" You can teach me a response with </teach:1172895313644769360>.",
-            "no_answer" : "Sorry, I couldn't think of a response.",
+            "no_knowledge" : "Sorry, I couldn't think of a response.",
             "profanity" : "Sorry, my response contained profanity and was therefore not sent."
         }[failureReason]
         
