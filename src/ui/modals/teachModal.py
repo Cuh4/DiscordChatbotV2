@@ -22,7 +22,7 @@ class modal(discord.ui.Modal):
         # // queries input
         # create input
         self.queries = discord.ui.TextInput(
-            label = "Queries (split by new line, exclude grammar)",
+            label = "Queries (split by new line, remove grammar)",
             style = discord.TextStyle.paragraph,
             placeholder = "how are you",
             min_length = 5,
@@ -35,7 +35,7 @@ class modal(discord.ui.Modal):
         # // responses input
         # create input
         self.responses = discord.ui.TextInput(
-            label = f"Responses (split by new line, include grammar)",
+            label = f"Responses (split by new line, add grammar)",
             style = discord.TextStyle.paragraph,
             placeholder = f"Each response has a character limit of {config.maxResponseLength}.\nI'm great!\nI'm alright!",
             min_length = 5,
