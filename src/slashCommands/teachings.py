@@ -27,20 +27,20 @@ def command():
         description = "Displays everything you have taught the chatbot."
     )
     async def command(interaction: discord.Interaction):
-        # get responses made by this person
-        responses = chatbot.knowledge.getResponsesWithSource(interaction.user.id)
+        # get knowledge made by this person
+        knowledgeList = chatbot.knowledgeBase.getKnowledgeWithSource(interaction.user.id)
         
         # sort responses by time
-        if len(responses) >= 1:
-            responses.sort(key = lambda response: response.getTimestamp())
+        if len(knowledgeList) >= 1:
+            knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp())
         
         # format them
-        formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(response.getQuery()), 50) for response in responses][:25]) if len(responses) > 0 else "N/A"
-        responsesCreated = len(responses)
+        formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in knowledgeList][:25]) if len(knowledgeList) > 0 else "N/A"
+        knowledgeCreated = len(knowledgeList)
         
         # send
         await interaction.response.send_message(
-            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{responsesCreated}__ queries:**\n```{formattedQueries}```")
+            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{knowledgeCreated}__ queries:**\n```{formattedQueries}```")
         )
 
 # // start command
