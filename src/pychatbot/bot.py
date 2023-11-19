@@ -7,6 +7,7 @@ import random
 import difflib
 
 from . import knowledgeBase
+from . import knowledge
 from . import helpers
 
 # // ---- Main
@@ -92,7 +93,7 @@ class chatbot:
 # // chatbot response class
 # represents a response to a query
 class chatbotResponse:
-    def __init__(self, parent: "chatbot", knowledge: "knowledgeBase" = None, responseConfidence: float|int = 0, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, parent: "chatbot", knowledge: "knowledge" = None, responseConfidence: float|int = 0, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
         self.__response = knowledge.getResponse()
