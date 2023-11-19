@@ -64,7 +64,7 @@ def command():
         # unlearn stuffs
         removedQueries = []
 
-        for knownQuery in chatbot.knowledge.getAllQueries(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
+        for knownQuery in chatbot.knowledgeBase.getAllQueries(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
             # check if removed enough queries
             if len(removedQueries) >= removal_limit:
                 break
@@ -73,7 +73,7 @@ def command():
             match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
 
             if match >= match_quality.value:
-                knowledgeList = chatbot.knowledge.getKnowledgeWithQuery(knownQuery) # get all knowledge for the found query
+                knowledgeList = chatbot.knowledgeBase.getKnowledgeWithQuery(knownQuery) # get all knowledge for the found query
 
                 for knowledge in knowledgeList:
                     knowledge.unlearn()
