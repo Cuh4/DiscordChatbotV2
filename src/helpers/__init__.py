@@ -2,6 +2,6 @@
 # // ------- [Discord Chatbot v2] Helpers Init
 # // ---------------------------------------------------------------------
 
-# // Imports
+# // ---- Imports
 from . import discord
 from . import general

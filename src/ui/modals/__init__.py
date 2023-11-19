@@ -2,6 +2,6 @@
 # // ------- [Discord Chatbot v2] Modals UI Init
 # // ---------------------------------------------------------------------
 
-# // Imports
+# // ---- Imports
 from .teachModal import modal as teach
 from .reportModal import modal as report
