@@ -193,7 +193,6 @@ addToDefaults(
         "good evening",
         "good night",
         "good morning",
-        "hello [NAME]",
         "hello chatbot",
         "hi chatbot",
         "hey chatbot",
