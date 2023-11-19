@@ -24,7 +24,7 @@ chatbot = pychatbot.chatbot(
 )
 
 # quick print
-helpers.prettyprint.success(f"Created chatbot ({chatbot.name}). Database path: {chatbot.knowledgeBase.fullPath}")
+helpers.prettyprint.success(f"Created chatbot named {chatbot.name}. Database path: {chatbot.knowledgeBase.fullPath}")
 
 # knowledge
 learn.learnDefaults(chatbot) # teach everything necessary i guess
