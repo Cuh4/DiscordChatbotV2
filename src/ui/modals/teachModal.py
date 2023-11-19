@@ -47,7 +47,7 @@ class modal(discord.ui.Modal):
 
     # // Callbacks
     async def on_submit(self, interaction: discord.Interaction):
-        if helpers.misc.doesStringOnlyContainLetter(self.queries.value, " ") or helpers.misc.doesStringOnlyContainLetter(self.answers.value, " "):
+        if helpers.misc.doesStringOnlyContainLetter(self.queries.value, " ") or helpers.misc.doesStringOnlyContainLetter(self.responses.value, " "):
             return await self.on_error(interaction, Exception())
         
         if interaction.is_expired():
@@ -55,7 +55,7 @@ class modal(discord.ui.Modal):
         
         # get needed vars
         queries = self.queries.value.split("\n")
-        responses = self.answers.value.split("\n")
+        responses = self.responses.value.split("\n")
         
         # teach the chatbot
         for query in queries:
