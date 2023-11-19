@@ -1,5 +1,5 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Feedback View UI
+# // ------- [Discord Chatbot v2] Response View UI
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
@@ -22,24 +22,24 @@ class view(template):
         self.chatbotResponse = response
         self.userMessage = userMessage
         
-        # // feedback button
+        # // teach button
         # create button
-        self.feedbackButton = discord.ui.Button(
-            label = random.choice(["Teach me a response"]),
+        self.teachButton = discord.ui.Button(
+            label = random.choice(["Teach Me A Response"]),
             style = discord.ButtonStyle.green,
             emoji = "👩‍🏫"
         )
 
         # callback
-        self.feedbackButton.callback = self.feedbackButtonCallback
+        self.teachButton.callback = self.teachButtonCallback
         
         # add
-        self.add_item(self.feedbackButton)
+        self.add_item(self.teachButton)
         
         # // report response button
         # create button
         self.reportButton = discord.ui.Button(
-            label = "Report response",
+            label = "Report Response",
             style = discord.ButtonStyle.red,
             emoji = "🤬"
         )
@@ -63,7 +63,7 @@ class view(template):
         self.add_item(self.inviteButton)
         
     # // Custom Callbacks
-    async def feedbackButtonCallback(self, interaction: discord.Interaction):
+    async def teachButtonCallback(self, interaction: discord.Interaction):
         return await interaction.response.send_modal(modals.teach())
     
     async def reportButtonCallback(self, interaction: discord.Interaction):

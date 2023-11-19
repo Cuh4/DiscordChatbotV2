@@ -6,7 +6,7 @@
 import discord
 
 from .template import view as template
-from .feedbackView import view as feedback
+from .responseView import view as response
 from .failedResponseView import view as failedResponse
 
 # // Functions

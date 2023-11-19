@@ -131,7 +131,7 @@ async def callback(**data):
         # reply with response
         feedbackView = ui.views.wrap(
             botMessage, # to allow for future edits
-            ui.views.feedback(response, message)
+            ui.views.response(response, message)
         )
 
         await botMessage.edit(
