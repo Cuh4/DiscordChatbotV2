@@ -16,6 +16,7 @@ defaults = []
 
 # // ---- Functions
 def addToDefaults(queries: list[str], responses: list[str]):
+    # this is so slow
     for query in queries:
         for response in responses:
             defaults.append({
