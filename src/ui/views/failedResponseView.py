@@ -7,7 +7,7 @@ import discord
 
 from ui.views import template
 from ui import modals
-from ui.views import feedback
+from ui.views import response
 
 # // ---- Main
 # // UI
@@ -18,18 +18,18 @@ class view(template):
         super().__init__(timeout = 30)
 
         # // class properties
-        self.feedbackView = feedback(None, None) # this is only being created to extract the buttons and plop it in this view
+        self.responseView = response(None, None) # this is only being created to extract the buttons and plop it in this view
         
-        # // feedback button
+        # // teach button
         # create button
-        self.feedbackButton = self.feedbackView.feedbackButton
+        self.teachButton = self.responseView.teachButton
     
         # add
-        self.add_item(self.feedbackButton)
+        self.add_item(self.teachButton)
 
         # // discord invite button
         # create button
-        self.inviteButton = self.feedbackView.inviteButton
+        self.inviteButton = self.responseView.inviteButton
         
         # add
         self.add_item(self.inviteButton)
