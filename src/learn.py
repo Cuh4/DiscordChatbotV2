@@ -12,29 +12,39 @@ import pychatbot
 from helpers import general as helpers
 
 # // ---- Variables
-defaults = {}
+defaults = []
 
 # // ---- Functions
-def addToDefaults(queries: list[str], answers: list[str]):
+def addToDefaults(queries: list[str], responses: list[str]):
     for query in queries:
-        defaults[query] = answers
+        for response in responses:
+            defaults.append({
+                "query" : query,
+                "response" : response
+            })
         
 def getDefaults():
     return defaults
 
 def clearDefaults():
     defaults.clear()
+    
+def learnDefaults(chatbot: pychatbot.chatbot, source: str = "Built-In", data: dict[str, any] = {}):
+    for default in defaults:
+        query = default["query"]
+        response = default["response"]
+        
+        learn(query, response, chatbot, source, data)
 
-def learn(responsesToLearn: dict[str, list[str]], chatbot: pychatbot.chatbot, source: str = "Built-In", data: dict[str, any] = {}):
-    for query, responses in responsesToLearn.items():
-        chatbot.knowledge.learn(
-            query = query,
-            responses = responses,
-            source = source,
-            data = data
-        )
+def learn(query: str, response: str, chatbot: pychatbot.chatbot, source: str = "Built-In", data: dict[str, any] = {}):
+    chatbot.knowledgeBase.learn(
+        query = query,
+        response = response,
+        source = source,
+        data = data
+    )
 
-        helpers.prettyprint.info(f"✨ | Learned responses for: {query} (Source: {source})")
+    helpers.prettyprint.info(f"✨ | Learned response for: {query} (Source: {source})")
         
 # // ---- Main
 # // chatbot interests
@@ -46,7 +56,7 @@ addToDefaults(
         "what is your favourite"
     ],
     
-    answers = [
+    responses = [
         "I personally love talking to idiots.",
         "I'm an avid enjoyer of communicating with others.",
         "I quite like talking to others.",
@@ -63,7 +73,7 @@ addToDefaults(
         "what is your least favourite"
     ],
     
-    answers = [
+    responses = [
         "I don't like eating... because I can't. Haha.",
         "I'm not a big fan of grass.",
         "I absolutely despise the Die Hard movies."
@@ -82,7 +92,7 @@ addToDefaults(
         "my sex is"
     ],
     
-    answers = [
+    responses = [
         "Nice!",
         "Splendid!",
         "Awesome!"
@@ -102,7 +112,7 @@ addToDefaults(
         "hows going"
     ],
  
-    answers = [
+    responses = [
         "I'm good! How about you?",
         "I'm doing alright. You?",
         "I'm doing great. You?",
@@ -118,7 +128,7 @@ addToDefaults(
         "doing fantastic",
     ],
     
-    answers = [
+    responses = [
         "Awesome to hear!",
         "Glad to hear!",
         "That's amazing!"
@@ -132,7 +142,7 @@ addToDefaults(
         "im doing"
     ],
     
-    answers = [
+    responses = [
         "Nice! Keep it up!",
         "Great! Have fun!"
     ]
@@ -146,7 +156,7 @@ addToDefaults(
         "where are you located"
     ],
     
-    answers = [
+    responses = [
         "I don't live anywhere. I'm a bot, silly.",
         "I'm not a human, so I can't really live anywhere.",
         "I'm a bot, silly.",
@@ -160,7 +170,7 @@ addToDefaults(
         "im located"
     ],
     
-    answers = [
+    responses = [
         "Be careful sharing that information online!",
         "Be careful with what you say on here.",
         "Awesome, but be careful with what you share on here.",
@@ -191,7 +201,7 @@ addToDefaults(
         "my name is"
     ], 
 
-    answers = [
+    responses = [
         "Hello! How are you?",
         "Hey! How are we doing?",
         "Hi! What are you up to?",
@@ -211,7 +221,7 @@ addToDefaults(
         "good night"
     ],
     
-    answers = [
+    responses = [
         "Bye! Have a good one!",
         "See you!",
         "Cya!"

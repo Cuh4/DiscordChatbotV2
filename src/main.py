@@ -26,7 +26,7 @@ chatbot = pychatbot.chatbot(
 helpers.prettyprint.success(f"Created chatbot ({chatbot.name}). Database path: {chatbot.knowledgeBase.fullPath}")
 
 # knowledge
-learn.learn(learn.getDefaults(), chatbot) # teach everything necessary i guess
+learn.learnDefaults(chatbot) # teach everything necessary i guess
 
 # // Discord
 # intents
