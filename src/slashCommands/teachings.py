@@ -35,7 +35,7 @@ def command():
         
         # sort responses by time
         if len(knowledgeList) >= 1:
-            knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp())
+            knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp(), reverse = True)
         
         # format them
         formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in knowledgeList][:displayedKnowledgeAmount]) if len(knowledgeList) > 0 else "N/A"
