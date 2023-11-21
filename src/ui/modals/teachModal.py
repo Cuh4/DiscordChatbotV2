@@ -6,6 +6,7 @@
 import discord
 
 import config
+from ui.modals import template
 from helpers import general as helpers
 from helpers import discord as discordHelpers
 import pychatbot
@@ -13,11 +14,11 @@ import learn
 
 # // ---- Main
 # // UI
-class modal(discord.ui.Modal):
+class modal(template):
     # // Main UI
     def __init__(self):
         # // init
-        super().__init__(title = "Teach Chatbot")
+        super().setup("Teach Chatbot")
 
         # // queries input
         # create input
