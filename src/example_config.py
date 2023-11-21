@@ -11,11 +11,15 @@ allowProfanity = False # whether or not to allow the bot to send messages that c
 chatCooldown = 4 # cooldown given to each user. if a user tries to talk to the bot during the cooldown of {chatCooldown} seconds, the user will be ignored
 
 # // ids
-loadingEmoji = "<a:loadingv2:1167901026687393812>" # emoji to use for loading response message. use "\:(emoji name):" (eg: "\:some_custom_emoji:") in discord to get an emoji's id
 responseReportsChannelID = 1234567 # if a user presses the "report response" button for a response, it will show up in the channel with this id
 
 # // character limits
 maxResponseLength = 700 # character limit of bot response
 maxQueryLength = 150 # character limit of user messages
+
+# // ui
+loadingEmoji = "<a:loadingv2:1167901026687393812>" # emoji to use for loading response message. use "\:(emoji name):" (eg: "\:some_custom_emoji:") in discord to get an emoji's id
+uiViewTimeout = 60 # how long it takes for buttons, etc, to be disabled on a bot message in seconds
+uiModalTimeout = 60 # how long it takes for modals (forms that appear on your screen) to be disabled in seconds
 
 # [!!] Rename to config.py [!!]
