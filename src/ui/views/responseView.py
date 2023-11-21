@@ -16,7 +16,7 @@ class view(template):
     # // Main UI
     def __init__(self, response: pychatbot.chatbotResponse, userMessage: discord.Message):
         # // init
-        super().__init__(timeout = 30)
+        super().setup()
         
         # // class properties
         self.chatbotResponse = response
