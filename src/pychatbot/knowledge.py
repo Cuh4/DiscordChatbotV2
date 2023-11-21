@@ -56,7 +56,11 @@ class knowledgeBase:
 
     def getAllQueries(self) -> list[str]:
         cursor = self.__getCursor()
-        allData = cursor.execute("SELECT query FROM KnowledgeBase")
+        allData = cursor.execute("SELECT query FROM KnowledgeBase").fetchall()
+
+        if len(allData) <= 0:
+            return []
+
         queries = self.__fetchAllOfColumn(0, allData)
 
         return queries
@@ -64,7 +68,7 @@ class knowledgeBase:
     def getKnowledgeWithSource(self, source: str) -> list["knowledge"]:
         # execute sql stuffs
         cursor = self.__getCursor()
-        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE source = ?", [source]).fetchall()
+        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE source = ?", [source]).fetchall() or []
         
         # return
         return [self.__toKnowledge(__knowledge) for __knowledge in __savedKnowledge]
@@ -72,7 +76,7 @@ class knowledgeBase:
     def getKnowledgeWithQuery(self, query: str) -> list["knowledge"]:
         # execute sql stuffs
         cursor = self.__getCursor()
-        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE query = ?", [query]).fetchall()
+        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE query = ?", [query]).fetchall() or []
         
         # return
         return [self.__toKnowledge(__knowledge) for __knowledge in __savedKnowledge]
@@ -83,7 +87,7 @@ class knowledgeBase:
         __knowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE id = ?", [id]).fetchone()
         
         # return
-        return self.__toKnowledge(__knowledge)
+        return self.__toKnowledge(__knowledge) if __knowledge else None
     
     def unlearn(self, id: int):
         self.__getCursor().execute("DELETE FROM KnowledgeBase WHERE id = ?", [id])
