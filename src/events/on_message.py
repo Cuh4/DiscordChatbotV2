@@ -12,6 +12,7 @@ import config
 import ui
 from helpers import discord as discordHelpers
 from helpers import general as helpers
+from ui.views import responseView
 
 from . import events
 
@@ -129,14 +130,12 @@ async def callback(**data):
         responseEmbed.set_footer(text = f"Response produced by {source} | Response may be inaccurate. | Response Confidence: {round(response.getResponseConfidence() * 100, 1)}% | ID: {response.getKnowledge().getID()}", icon_url = message.author.display_avatar.url)
 
         # reply with response
-        feedbackView = ui.views.wrap(
-            botMessage, # to allow for future edits
-            ui.views.response(response, message)
-        )
+        responseView = ui.views.response(response, message)
+        responseView.setViewMessage(botMessage)
 
         await botMessage.edit(
             embed = responseEmbed,
-            view = feedbackView
+            view = responseView
         )
     else:
         failureReason = response.getFailureReason()
