@@ -68,7 +68,7 @@ class chatbot:
             return chatbotResponse(
                 self,
                 isSuccessful = False,
-                reasonForFailure = "no_kowledge"
+                reasonForFailure = "no_knowledge"
             )
             
         # get a "random piece of knowledge"
