@@ -9,6 +9,9 @@ import pychatbot
 from helpers import general as helpers
 from helpers import discord as discordHelpers
 
+# // ---- Variables
+displayedKnowledgeAmount = 30
+
 # // ---- Main
 # // create command
 def command():
@@ -35,12 +38,12 @@ def command():
             knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp())
         
         # format them
-        formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in knowledgeList][:25]) if len(knowledgeList) > 0 else "N/A"
+        formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in knowledgeList][:displayedKnowledgeAmount]) if len(knowledgeList) > 0 else "N/A"
         knowledgeCreated = len(knowledgeList)
         
         # send
         await interaction.response.send_message(
-            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{knowledgeCreated}__ queries:**\n```{formattedQueries}```")
+            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{knowledgeCreated}__ queries:**\n```{formattedQueries}```").set_footer(text = f"Showing {displayedKnowledgeAmount} out of {knowledgeCreated}")
         )
 
 # // start command
