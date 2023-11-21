@@ -96,15 +96,17 @@ class chatbotResponse:
     def __init__(self, parent: "chatbot", knowledge: "knowledge" = None, responseConfidence: float|int = 0, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
-        self.__response = knowledge.getResponse()
+        self.__response = knowledge.getResponse() if knowledge else None
         self.__responseConfidence = responseConfidence
         
-        self.__source = knowledge.getSource()
-        self.__data = knowledge.getData()
-        self.__query = knowledge.getQuery()
+        self.__source = knowledge.getSource() if knowledge else None
+        self.__data = knowledge.getData() if knowledge else None
+        self.__query = knowledge.getQuery() if knowledge else None
         
         self.__success = isSuccessful
         self.__failureReason = reasonForFailure
+        
+        self.__knowledge = knowledge
 
     def getChatbot(self):
         return self.__chatbot
@@ -129,3 +131,6 @@ class chatbotResponse:
     
     def getFailureReason(self):
         return self.__failureReason
+    
+    def getKnowledge(self):
+        return self.__knowledge
