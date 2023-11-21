@@ -6,6 +6,8 @@
 import discord
 import difflib
 
+from gevent import idle
+
 import pychatbot
 from helpers import general as helpers
 from helpers import discord as discordHelpers
@@ -22,71 +24,40 @@ def command():
     chatbot: pychatbot.chatbot = helpers.globals.get("chatbot")
 
     # // main command
-    # match quality choices
-    matchQualityChoices = [
-        discord.app_commands.Choice(
-            name = "High",
-            value = 0.9
-        ),
-        
-        discord.app_commands.Choice(
-            name = "Medium",
-            value = 0.7
-        ),
-        
-        discord.app_commands.Choice(
-            name = "Low",
-            value = 0.5
-        )
-    ]
-
     # slash command
     @tree.command(
         name = "unlearn",
-        description = "Removes all of the bot's knowledge for a query."
+        description = "Remove a piece of knowledge from the bot by its ID."
     )
     @discord.app_commands.describe(
-        query = "The query that should be checked through all of the bot's knowledge. If a piece of the bot's knowledge is for this query, it will be removed.",
-        match_quality = "Decides how close a query must match to your desired query when unlearning.",
-        removal_limit = "The amount of chatbot knowledge with queries that match the inputted query to remove."
+        id = "The ID of the knowledge.",
     )
     @discord.app_commands.choices(match_quality = matchQualityChoices)
-    async def command(interaction: discord.Interaction, query: str, match_quality: discord.app_commands.Choice[float], removal_limit: int = 1):
+    async def command(interaction: discord.Interaction, id: int):
         # check if the user running this command is the person who created the bot
         if not discordHelpers.utils.isCreator(client, interaction.user):
             return await interaction.response.send_message(
                 embed = discordHelpers.embeds.failure("Invalid permissions.")
             )
             
-        # clamp removal limit
-        removal_limit = helpers.misc.clamp(removal_limit, 1, 100)
+        # get knowledge
+        knowledge = chatbot.knowledgeBase.getKnowledgeWithID(id)
         
-        # unlearn stuffs
-        removedQueries = []
-
-        for knownQuery in chatbot.knowledgeBase.getAllQueries(): # copy knowledge data to prevent getting the "dict changed size bla bla" error
-            # check if removed enough queries
-            if len(removedQueries) >= removal_limit:
-                break
-            
-            # if this query matches the desired query, remove it
-            match = difflib.SequenceMatcher(None, knownQuery.lower(), query.lower()).quick_ratio()
-
-            if match >= match_quality.value:
-                knowledgeList = chatbot.knowledgeBase.getKnowledgeWithQuery(knownQuery) # get all knowledge for the found query
-
-                for knowledge in knowledgeList:
-                    knowledge.unlearn()
-                
-                removedQueries.append(knownQuery + f" [{round(match * 100, 1)}% match]")
+        # check if it doesnt exist
+        if knowledge is None:        
+            return await interaction.response.send_message(
+                embed = discordHelpers.embeds.failure("A piece of knowledge with the specified ID could not be found.")
+            )
+        
+        # remove it
+        chatbot.knowledgeBase.unlearn(id)
         
         # reply
-        formattedRemovedQueries = discordHelpers.utils.stripHighlightMarkdown("- " + "\n- ".join(removedQueries)) if len(removedQueries) >= 1 else "N/A"
+        knowledgeQuery = discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()).replace("\n", "\\n")
+        knowledgeResponse = discordHelpers.utils.stripHighlightMarkdown(knowledge.getResponse()).replace("\n", "\\n")
         
         return await interaction.response.send_message(
-            embed = discordHelpers.embeds.success(f"**Successfully unlearned responses to the following queries:**\n```{formattedRemovedQueries}```").set_footer(
-                text = f"{len(removedQueries)}/{removal_limit} | Match Quality: {match_quality.name} ({round(match_quality.value * 100, 1)}%)"
-            )
+            embed = discordHelpers.embeds.success(f"**Successfully unlearned the specified knowledge.**\n```Query: {knowledgeQuery}```\n```Response: {knowledgeResponse}```")
         )
 
 # // start command
