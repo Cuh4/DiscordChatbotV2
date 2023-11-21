@@ -126,7 +126,7 @@ async def callback(**data):
             color = discord.Colour.from_rgb(125, 255, 125)
         )
         
-        responseEmbed.set_footer(text = f"Response produced by {source} | Response may be inaccurate. | Response Confidence: {round(response.getResponseConfidence() * 100, 1)}%", icon_url = message.author.display_avatar.url)
+        responseEmbed.set_footer(text = f"Response produced by {source} | Response may be inaccurate. | Response Confidence: {round(response.getResponseConfidence() * 100, 1)}% | ID: {response.getKnowledge().getID()}", icon_url = message.author.display_avatar.url)
 
         # reply with response
         feedbackView = ui.views.wrap(
