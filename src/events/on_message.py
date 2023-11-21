@@ -12,7 +12,6 @@ import config
 import ui
 from helpers import discord as discordHelpers
 from helpers import general as helpers
-from ui.views import responseView
 
 from . import events
 
@@ -156,10 +155,8 @@ async def callback(**data):
             "profanity" : "Sorry, my response contained profanity and was therefore not sent."
         }[failureReason]
         
-        failedResponseView = ui.views.wrap(
-            botMessage,
-            ui.views.failedResponse()
-        )
+        failedResponseView = ui.views.failedResponse()
+        failedResponseView.setViewMessage(botMessage)
     
         await botMessage.edit(
             embed = discord.Embed(
