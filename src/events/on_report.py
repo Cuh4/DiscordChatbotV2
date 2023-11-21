@@ -56,7 +56,9 @@ async def callback(**data):
         "`Source:`",
         f"``` {source}```",
         "`Report:`",
-        f"``` {report}```"
+        f"``` {report}```",
+        "`Knowledge ID:`",
+        f"```{response.getKnowledge().getID()}```"
     ])
 
     # send report message
