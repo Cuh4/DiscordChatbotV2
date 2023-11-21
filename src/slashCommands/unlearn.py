@@ -32,7 +32,6 @@ def command():
     @discord.app_commands.describe(
         id = "The ID of the knowledge.",
     )
-    @discord.app_commands.choices(match_quality = matchQualityChoices)
     async def command(interaction: discord.Interaction, id: int):
         # check if the user running this command is the person who created the bot
         if not discordHelpers.utils.isCreator(client, interaction.user):
