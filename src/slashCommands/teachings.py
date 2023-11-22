@@ -38,7 +38,9 @@ def command():
             knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp(), reverse = True)
         
         # format them
-        formattedQueries = "- " + "\n- ".join([helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in knowledgeList][:displayedKnowledgeAmount]) if len(knowledgeList) > 0 else "N/A"
+        strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in set(knowledgeList)][:displayedKnowledgeAmount] if len(knowledgeList) > 0 else "N/A" # using "set()" to avoid duplicates
+        formattedQueries = "- " + "\n- ".join(strippedQueries)
+
         knowledgeCreated = len(knowledgeList)
         
         # send
