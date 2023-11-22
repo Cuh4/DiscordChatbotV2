@@ -3,6 +3,7 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
+from site import removeduppaths
 import discord
 
 import pychatbot
@@ -11,6 +12,21 @@ from helpers import discord as discordHelpers
 
 # // ---- Variables
 displayedKnowledgeAmount = 30
+
+# // ---- Functions
+def removeDuplicatesOfKnowledge(list: list["pychatbot.knowledge.knowledge"]):
+    new = list.copy()
+    previous = []
+    
+    for index, knowledge in enumerate(new):
+        query = knowledge.getQuery()
+        
+        if query in previous:
+            new.pop(index)
+            
+        previous.append(query)
+        
+    return new
 
 # // ---- Main
 # // create command
@@ -33,18 +49,15 @@ def command():
         # get knowledge made by this person
         knowledgeList = chatbot.knowledgeBase.getKnowledgeWithSource(interaction.user.id)
         
-        # sort knowledge by time
-        if len(knowledgeList) >= 1:
-            knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp(), reverse = True)
+        # sort unique queries by time
+        uniqueKnowledge = removeDuplicatesOfKnowledge(knowledgeList)
         
-        # format knowledge
-        uniqueQueries = set([knowledge.getQuery() for knowledge in knowledgeList])
-        strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(query), 50) for query in uniqueQueries][:displayedKnowledgeAmount]
-        formattedQueries = "- " + "\n- ".join(set(strippedQueries)) if len(knowledgeList) >= 1 else "N/A" # using "set()" to avoid duplicates
+        strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in uniqueKnowledge][:displayedKnowledgeAmount]
+        formattedQueries = "- " + "\n- ".join(strippedQueries) if len(uniqueKnowledge) >= 1 else "N/A" # using "set()" to avoid duplicates
         
         # send
         await interaction.response.send_message(
-            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{len(uniqueQueries)}__ queries:**\n```{formattedQueries}```").set_footer(text = f"Showing {len(strippedQueries)} out of {len(uniqueQueries)}")
+            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{len(strippedQueries)}__ queries:**\n```{formattedQueries}```").set_footer(text = f"Showing {len(strippedQueries)}")
         )
 
 # // start command
