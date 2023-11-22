@@ -33,19 +33,18 @@ def command():
         # get knowledge made by this person
         knowledgeList = chatbot.knowledgeBase.getKnowledgeWithSource(interaction.user.id)
         
-        # sort responses by time
+        # sort knowledge by time
         if len(knowledgeList) >= 1:
             knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp(), reverse = True)
         
-        # format them
-        strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in knowledgeList][:displayedKnowledgeAmount] if len(knowledgeList) > 0 else "N/A"
-        formattedQueries = "- " + "\n- ".join(set(strippedQueries)) # using "set()" to avoid duplicates
-
-        knowledgeCreated = len(knowledgeList)
+        # format knowledge
+        uniqueQueries = set([knowledge.getQuery() for knowledge in knowledgeList])
+        strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(query), 50) for query in uniqueQueries][:displayedKnowledgeAmount]
+        formattedQueries = "- " + "\n- ".join(set(strippedQueries)) if len(knowledgeList) >= 1 else "N/A" # using "set()" to avoid duplicates
         
         # send
         await interaction.response.send_message(
-            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{knowledgeCreated}__ queries:**\n```{formattedQueries}```").set_footer(text = f"Showing {displayedKnowledgeAmount} out of {knowledgeCreated}")
+            embed = discordHelpers.embeds.info(f"**You have taught the bot responses to the following __{len(uniqueQueries)}__ queries:**\n```{formattedQueries}```").set_footer(text = f"Showing {len(strippedQueries)} out of {len(uniqueQueries)}")
         )
 
 # // start command
