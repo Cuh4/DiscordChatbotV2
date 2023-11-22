@@ -3,6 +3,7 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
+from enum import unique
 from site import removeduppaths
 import discord
 
@@ -47,11 +48,13 @@ def command():
     )
     async def command(interaction: discord.Interaction):
         # get knowledge made by this person
-        knowledgeList = chatbot.knowledgeBase.getKnowledgeWithSource(interaction.user.id)
-        
-        # sort unique queries by time
+        knowledgeList = chatbot.knowledgeBase.getKnowledgeWithSource(interaction.user.id) 
         uniqueKnowledge = removeDuplicatesOfKnowledge(knowledgeList)
         
+        # sort unique queries by time
+        uniqueKnowledge.sort(key = lambda knowledge: knowledge.getTimestamp(), reverse = True)
+        
+        # format everything
         strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in uniqueKnowledge][:displayedKnowledgeAmount]
         formattedQueries = "- " + "\n- ".join(strippedQueries) if len(uniqueKnowledge) >= 1 else "N/A" # using "set()" to avoid duplicates
         
