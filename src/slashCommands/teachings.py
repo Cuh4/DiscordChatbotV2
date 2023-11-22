@@ -15,8 +15,8 @@ from helpers import discord as discordHelpers
 displayedKnowledgeAmount = 30
 
 # // ---- Functions
-def removeDuplicatesOfKnowledge(list: list["pychatbot.knowledge.knowledge"]):
-    new = list.copy()
+def removeDuplicatesOfKnowledge(knowledgeList: list["pychatbot.knowledge.knowledge"]):
+    new = knowledgeList.copy()
     previous = []
     
     for index, knowledge in enumerate(new):
