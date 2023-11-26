@@ -5,4 +5,5 @@ __pycache__/
 /src/config.py
 
 # ignore constantly changed stuff that isn't really important nor needed
-/src/bob.db
+*.db
+*.download
