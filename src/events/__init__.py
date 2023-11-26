@@ -17,7 +17,6 @@ discordEvents = [ # thx chatgpt
     "on_connect",
     "on_disconnect",
     "on_resumed",
-    "on_error",
     "on_socket_raw_receive",
     "on_socket_raw_send",
     "on_typing",
