@@ -3,14 +3,13 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-from tkinter import NO
 import discord
 
 import config
 import pychatbot
 import learn
 import slashCommands
-from events import events
+import events
 from helpers import discord as discordHelpers
 from helpers import general as helpers
 
@@ -56,19 +55,11 @@ helpers.globals.save("commandTree", tree)
 # // Register Commands
 slashCommands.start()
 
-# // Discord Events
-# On Ready
+# // Bot Ready
 @client.event
 async def on_ready():
-    await events.on_ready.asyncFire()
-
-# On Message
-@client.event
-async def on_message(message: discord.Message):
-    # fire event
-    await events.on_message.asyncFire(
-        message = message
-    )
+    await events.setup(client)
+    await helpers.events.getSavedEvent("on_ready").asyncFire()
     
 # // Start Bot
 client.run(config.botToken, log_handler = None)
