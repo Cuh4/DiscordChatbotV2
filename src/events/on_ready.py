@@ -9,10 +9,8 @@ import discord
 from helpers import discord as discordHelpers
 from helpers import general as helpers
 
-from . import events
-
 # // ---- Main
-@events.on_ready.attach
+@helpers.events.getSavedEvent("on_ready").attach
 async def callback(**data):
     # // get needed vars
     # get discord stuffs

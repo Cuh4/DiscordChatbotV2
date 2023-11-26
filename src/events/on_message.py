@@ -13,11 +13,9 @@ import ui
 from helpers import discord as discordHelpers
 from helpers import general as helpers
 
-from . import events
-
 # // ---- Main
 # // Chatbot Responses
-@events.on_message.attach
+@helpers.events.getSavedEvent("on_message").attach
 async def callback(**data):
     # // get needed vars
     # get discord stuffs

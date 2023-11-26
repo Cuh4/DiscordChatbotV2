@@ -7,7 +7,6 @@ import discord
 
 import pychatbot
 from ui.modals import template
-from events import events
 from helpers import discord as discordHelpers
 from helpers import general as helpers
 
@@ -42,7 +41,7 @@ class modal(template):
             return
         
         # submit report
-        await events.on_report.asyncFire(
+        await helpers.events.getSavedEvent("on_report").asyncFire(
             message = self.message,
             response = self.chatbotResponse,
             report = self.reportMessage.value,
