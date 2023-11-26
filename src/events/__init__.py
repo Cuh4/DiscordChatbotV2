@@ -141,14 +141,14 @@ async def setup(client: discord.Client):
             if not registerDiscord:
                 return
             
-            setupDiscordEvent(client, event)
+            await setupDiscordEvent(client, event)
     
     # // main
     # setup custom events
-    setupEvents(customEvents)
+    await setupEvents(customEvents)
     
     # setup discord events
-    setupEvents(discordEvents, registerDiscord = True)
+    await setupEvents(discordEvents, registerDiscord = True)
     
     # event listeners
     from . import on_member_join
