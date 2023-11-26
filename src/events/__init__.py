@@ -151,6 +151,6 @@ async def setup(client: discord.Client):
     await setupEvents(discordEvents, registerDiscord = True)
     
     # event listeners
-    from . import on_member_join
+    from . import on_message
     from . import on_ready
     from . import on_report
