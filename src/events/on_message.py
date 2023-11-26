@@ -16,11 +16,11 @@ from helpers import general as helpers
 # // ---- Main
 # // Chatbot Responses
 @helpers.events.getSavedEvent("on_message").attach
-async def callback(*_, **data):
+async def callback(message: discord.Message):
     # // get needed vars
     # get discord stuffs
     client: discord.Client = helpers.globals.get("client")
-    message: discord.Message = data.get("message")
+    message: discord.Message = message
     
     # get chatbot
     chatbot: pychatbot.chatbot = helpers.globals.get("chatbot")
