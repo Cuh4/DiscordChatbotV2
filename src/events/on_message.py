@@ -16,7 +16,7 @@ from helpers import general as helpers
 # // ---- Main
 # // Chatbot Responses
 @helpers.events.getSavedEvent("on_message").attach
-async def callback(**data):
+async def callback(*_, **data):
     # // get needed vars
     # get discord stuffs
     client: discord.Client = helpers.globals.get("client")

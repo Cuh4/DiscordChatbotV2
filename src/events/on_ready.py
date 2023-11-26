@@ -11,7 +11,7 @@ from helpers import general as helpers
 
 # // ---- Main
 @helpers.events.getSavedEvent("on_ready").attach
-async def callback(**data):
+async def callback(*_, **data):
     # // get needed vars
     # get discord stuffs
     client: discord.Client = helpers.globals.get("client")

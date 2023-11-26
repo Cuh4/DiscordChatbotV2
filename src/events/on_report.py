@@ -13,7 +13,7 @@ from helpers import discord as discordHelpers
 
 # // ---- Main
 @helpers.events.getSavedEvent("on_report").attach
-async def callback(**data):
+async def callback(*_, **data):
     # // get needed vars
     # get discord stuffs
     client: discord.Client = helpers.globals.get("client")
