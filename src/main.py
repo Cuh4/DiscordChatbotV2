@@ -10,7 +10,6 @@ from modules import pychatbot
 import learn
 import slashCommands
 import events
-from modules import discord as discordHelpers
 from modules import general as helpers
 
 # // ---- Variables
