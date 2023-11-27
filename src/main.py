@@ -55,7 +55,7 @@ helpers.globals.save("commandTree", tree)
 # // Register Commands
 slashCommands.start()
 
-# // Bot Ready
+# // Setup Bot Events
 @client.event
 async def on_ready():
     await events.setup(client)
