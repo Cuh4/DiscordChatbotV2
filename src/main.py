@@ -46,17 +46,22 @@ client = discord.Client(
 
 tree = discord.app_commands.CommandTree(client)
 
-# // ---- Main
-# // Register Globals
-helpers.globals.save("client", client)
-helpers.globals.save("chatbot", chatbot)
-helpers.globals.save("commandTree", tree)
+# // ---- Setup
+# // Setup Function
+async def setup():
+    # // Register Globals
+    helpers.globals.save("client", client)
+    helpers.globals.save("chatbot", chatbot)
+    helpers.globals.save("commandTree", tree)
 
-# // Register Commands
-slashCommands.start()
-
-# // Setup Bot Events
-asyncio.run(events.setup(client))
+    # // Register Commands
+    slashCommands.start()
     
+    # // Register Events
+    events.setup(client)
+    
+# // Start Setup
+asyncio.run(setup)
+
 # // Start Bot
 client.run(config.botToken, log_handler = None)
