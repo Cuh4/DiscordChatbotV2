@@ -1,8 +1,6 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] UI Init
+# // ------- [Discord Chatbot v2] Embeds UI Init
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-from . import embeds
-from . import modals
-from . import views
+from .response import embed as response
