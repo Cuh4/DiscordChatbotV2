@@ -50,7 +50,7 @@ class chatbot:
         query = helpers.simplifyText(query)
         
         # get the remembered query
-        knownQuery, responseConfidence = self.__getQuery(query)
+        knownQuery, confidence = self.__getQuery(query)
 
         # doesn't exist, so return
         if knownQuery is None:
@@ -86,18 +86,18 @@ class chatbot:
         return chatbotResponse(
             self,
             chosenKnowledge,
-            responseConfidence,
+            confidence,
             True
         )
         
 # // chatbot response class
 # represents a response to a query
 class chatbotResponse:
-    def __init__(self, parent: "chatbot", knowledge: "knowledge" = None, responseConfidence: float|int = 0, isSuccessful: bool = True, reasonForFailure: str = ""):
+    def __init__(self, parent: "chatbot", knowledge: "knowledge" = None, confidence: float|int = 0, isSuccessful: bool = True, reasonForFailure: str = ""):
         self.__chatbot = parent
         
         self.__response = knowledge.getResponse() if knowledge else None
-        self.__responseConfidence = responseConfidence
+        self.__confidence = confidence
         
         self.__source = knowledge.getSource() if knowledge else None
         self.__data = knowledge.getData() if knowledge else None
@@ -123,8 +123,8 @@ class chatbotResponse:
     def getResponse(self):
         return self.__response
     
-    def getResponseConfidence(self):
-        return self.__responseConfidence
+    def getConfidence(self):
+        return self.__confidence
     
     def isSuccessful(self):
         return self.__success
