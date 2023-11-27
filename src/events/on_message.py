@@ -7,7 +7,7 @@
 import discord
 import random
 
-import pychatbot
+from modules import pychatbot
 import config
 import ui
 from modules import discord as discordHelpers

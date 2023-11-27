@@ -6,7 +6,7 @@
 import discord
 
 import config
-import pychatbot
+from modules import pychatbot
 import learn
 import slashCommands
 import events

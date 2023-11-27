@@ -8,7 +8,7 @@
 # and all over the place
 
 # // ---- Imports
-import pychatbot
+from modules import pychatbot
 from modules import general as helpers
 
 # // ---- Variables

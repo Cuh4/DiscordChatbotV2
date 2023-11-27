@@ -7,7 +7,7 @@ from enum import unique
 from site import removeduppaths
 import discord
 
-import pychatbot
+from modules import pychatbot
 from modules import general as helpers
 from modules import discord as discordHelpers
 

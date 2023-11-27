@@ -5,7 +5,7 @@
 # // ---- Imports
 import discord
 
-import pychatbot
+from modules import pychatbot
 from ui.modals import template
 from modules import discord as discordHelpers
 from modules import general as helpers

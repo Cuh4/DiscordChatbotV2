@@ -6,7 +6,7 @@
 # // ---- Imports
 import discord
 
-import pychatbot
+from modules import pychatbot
 import config
 from modules import general as helpers
 from modules import discord as discordHelpers

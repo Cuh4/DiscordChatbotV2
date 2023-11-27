@@ -9,7 +9,7 @@ import config
 from ui.modals import template
 from modules import general as helpers
 from modules import discord as discordHelpers
-import pychatbot
+from modules import pychatbot
 import learn
 
 # // ---- Main

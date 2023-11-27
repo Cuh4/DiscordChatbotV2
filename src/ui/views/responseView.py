@@ -6,7 +6,7 @@
 import discord
 import random
 
-import pychatbot
+from modules import pychatbot
 from ui.views import template
 from ui import modals
 
