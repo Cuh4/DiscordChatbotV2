@@ -17,6 +17,7 @@ class view(discord.ui.View):
     
     def setViewMessage(self, message: discord.Message):
         self.message = message
+        return self
     
     # // discord callbacks
     async def on_timeout(self):
