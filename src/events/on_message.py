@@ -94,10 +94,14 @@ async def callback(message: discord.Message):
 
     # reply with response
     if response.isSuccessful():
+        # get response attributes
         text = response.getResponse()
         query = response.getQuery()
         source = response.getSource()
         data = response.getData()
+        confidence = response.getConfidence()
+        knowledge = response.getKnowledge()
+
         isBuiltIn = not data.get("is_created_by_discord_user", False)
         
         # setup source
@@ -118,20 +122,20 @@ async def callback(message: discord.Message):
         # print success message to terminal
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {text}")
 
-        # setup response embed
-        responseEmbed = discord.Embed(
-            description = f"> :robot: :speech_balloon: `{chatbot.name}` | **{text}**",
-            color = discord.Colour.from_rgb(125, 255, 125)
-        )
-        
-        responseEmbed.set_footer(text = f"Response from {source} | Response Confidence: {round(response.getResponseConfidence() * 100, 1)}% | Knowledge ID: {response.getKnowledge().getID()}", icon_url = message.author.display_avatar.url)
-
         # reply with response
         responseView = ui.views.response(response, message)
         responseView.setViewMessage(botMessage)
 
         await botMessage.edit(
-            embed = responseEmbed,
+            embed = ui.embeds.response(
+                chatbot = chatbot,
+                text = text, 
+                source = source, 
+                responseConfidence = confidence,
+                knowledgeID = knowledge.getID(),
+                icon_url = message.author.display_icon.url
+            ),
+
             view = responseView
         )
     else:
