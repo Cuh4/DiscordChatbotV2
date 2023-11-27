@@ -58,10 +58,10 @@ async def setup():
     slashCommands.start()
     
     # // Register Events
-    events.setup(client)
+    await events.setup(client)
     
 # // Start Setup
-asyncio.run(setup)
+asyncio.run(setup())
 
 # // Start Bot
 client.run(config.botToken, log_handler = None)
