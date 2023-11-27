@@ -31,7 +31,7 @@ async def cooldown(user: discord.User, time: float|int, key: str) -> bool:
     cooldowns[fullKey] = True
 
     # remove it after some time
-    asyncio.get_event_loop().run_until_complete(await __handler(fullKey, time))
+    asyncio.create_task(await __handler(fullKey, time))
 
     # return
     return False 
