@@ -13,7 +13,7 @@ from modules import general as helpers
 # // UI
 def embed(chatbot: pychatbot.chatbot, text: str, source: str, responseConfidence: float|int, knowledgeID: int, icon_url: str):
     responseEmbed = discord.Embed(
-            description = f"> :robot: :speech_balloon: `{chatbot.name}` | **{text}**",
+            description = f"> :speech_balloon: | `{chatbot.name}` | **{text}**",
             color = discord.Colour.from_rgb(125, 255, 125)
         )
         
