@@ -68,7 +68,7 @@ class knowledgeBase:
     def getKnowledgeWithSource(self, source: str) -> list["knowledge"]:
         # execute sql stuffs
         cursor = self.__getCursor()
-        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE source = ?", [source]).fetchall() or []
+        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE source = ?", [source]).fetchall()
         
         # return
         return [self.__toKnowledge(__knowledge) for __knowledge in __savedKnowledge]
@@ -76,7 +76,15 @@ class knowledgeBase:
     def getKnowledgeWithQuery(self, query: str) -> list["knowledge"]:
         # execute sql stuffs
         cursor = self.__getCursor()
-        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE query = ?", [query]).fetchall() or []
+        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE query = ?", [query]).fetchall()
+
+        # return
+        return [self.__toKnowledge(__knowledge) for __knowledge in __savedKnowledge]
+    
+    def getKnowledgeWithQueryAndResponse(self, query: str, response: str) -> list["knowledge"]:
+        # execute sql stuffs
+        cursor = self.__getCursor()
+        __savedKnowledge = cursor.execute("SELECT * FROM KnowledgeBase WHERE query = ? AND response = ?", [query, response]).fetchall()
         
         # return
         return [self.__toKnowledge(__knowledge) for __knowledge in __savedKnowledge]
@@ -94,9 +102,13 @@ class knowledgeBase:
         self.__commit()
         
     def learn(self, query: str, response: str, source: str, *, data: dict[str, any] = {}):
+        # check if exists already
+        if len(self.getKnowledgeWithQueryAndResponse(query, response)) >= 1:
+            return
+        
         # save query and responses
         cursor = self.__getCursor()
-        cursor.execute("INSERT OR IGNORE INTO KnowledgeBase (query, response, source, data, timestamp) VALUES (?, ?, ?, ?, ?)", [query, response, source, json.dumps(data), time.time()])
+        cursor.execute("INSERT INTO KnowledgeBase (query, response, source, data, timestamp) VALUES (?, ?, ?, ?, ?)", [query, response, source, json.dumps(data), time.time()])
         
         self.__commit()
       
