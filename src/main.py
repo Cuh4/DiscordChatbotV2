@@ -4,6 +4,7 @@
 
 # // ---- Imports
 import discord
+import asyncio
 
 import config
 from modules import pychatbot
@@ -55,10 +56,7 @@ helpers.globals.save("commandTree", tree)
 slashCommands.start()
 
 # // Setup Bot Events
-@client.event
-async def on_ready():
-    await events.setup(client)
-    await helpers.events.getSavedEvent("on_ready").asyncFire()
+asyncio.create_task(events.setup(client))
     
 # // Start Bot
 client.run(config.botToken, log_handler = None)
