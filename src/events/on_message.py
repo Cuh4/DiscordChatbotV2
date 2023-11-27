@@ -35,7 +35,7 @@ async def callback(message: discord.Message):
         return
     
     # ignore message if user is on cooldown
-    if await discordHelpers.cooldown.cooldown(message.author, config.chatCooldown, "chat"):
+    if discordHelpers.cooldown.cooldown(message.author, config.chatCooldown, "chat"):
         return await message.add_reaction("🕰")
     
     # // filtering

@@ -19,7 +19,7 @@ async def __handler(fullKey: str, duration: float|int):
     await asyncio.sleep(duration)
     cooldowns.pop(fullKey)
 
-async def cooldown(user: discord.User, time: float|int, key: str) -> bool:
+def cooldown(user: discord.User, time: float|int, key: str) -> bool:
     # get the full key
     fullKey = __key(user, key)
 
