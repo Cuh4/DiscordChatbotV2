@@ -17,7 +17,7 @@ from modules import general as helpers
 # // Chatbot
 # create chatbot
 chatbot = pychatbot.chatbot(
-    name = "Bob",
+    name = "Greggory",
     confidence = 0.53,
     allowProfanity = True # we'll just censor the profanity instead
 )
