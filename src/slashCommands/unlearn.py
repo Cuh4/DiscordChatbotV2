@@ -9,8 +9,8 @@ import difflib
 from gevent import idle
 
 import pychatbot
-from helpers import general as helpers
-from helpers import discord as discordHelpers
+from modules import general as helpers
+from modules import discord as discordHelpers
 
 # // ---- Main
 # // create command

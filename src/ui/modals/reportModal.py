@@ -7,8 +7,8 @@ import discord
 
 import pychatbot
 from ui.modals import template
-from helpers import discord as discordHelpers
-from helpers import general as helpers
+from modules import discord as discordHelpers
+from modules import general as helpers
 
 # // ---- Main
 # // UI

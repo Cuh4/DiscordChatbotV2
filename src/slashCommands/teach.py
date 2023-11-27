@@ -6,7 +6,7 @@
 import discord
 
 import ui
-from helpers import general as helpers
+from modules import general as helpers
 
 # // ---- Main
 # // create command

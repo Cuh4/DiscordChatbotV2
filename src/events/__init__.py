@@ -4,8 +4,8 @@
 
 # // ---- Imports
 import discord
-from helpers.general import events
-from helpers import general as helpers
+from modules.general import events
+from modules import general as helpers
 
 # // ---- Variables
 customEvents = [

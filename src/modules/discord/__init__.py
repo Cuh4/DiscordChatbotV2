@@ -1,7 +1,8 @@
 # // ---------------------------------------------------------------------
-# // ------- [Discord Chatbot v2] Helpers Init
+# // ------- [Discord Chatbot v2] Discord Modules Init
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-from . import discord
-from . import general
+from . import embeds
+from . import utils
+from . import cooldown

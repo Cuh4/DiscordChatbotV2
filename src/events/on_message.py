@@ -10,8 +10,8 @@ import random
 import pychatbot
 import config
 import ui
-from helpers import discord as discordHelpers
-from helpers import general as helpers
+from modules import discord as discordHelpers
+from modules import general as helpers
 
 # // ---- Main
 # // Chatbot Responses

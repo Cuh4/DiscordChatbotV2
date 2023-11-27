@@ -9,7 +9,7 @@
 
 # // ---- Imports
 import pychatbot
-from helpers import general as helpers
+from modules import general as helpers
 
 # // ---- Variables
 defaults = []
