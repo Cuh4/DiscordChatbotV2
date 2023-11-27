@@ -19,7 +19,7 @@ async def __handler(fullKey: str, duration: float|int):
     await asyncio.sleep(duration)
     cooldowns.pop(fullKey)
 
-def cooldown(user: discord.User, time: float|int, key: str) -> bool:
+async def cooldown(user: discord.User, time: float|int, key: str) -> bool:
     # get the full key
     fullKey = __key(user, key)
 
@@ -31,7 +31,7 @@ def cooldown(user: discord.User, time: float|int, key: str) -> bool:
     cooldowns[fullKey] = True
 
     # remove it after some time
-    asyncio.get_event_loop().run_until_complete(__handler(fullKey, time))
+    asyncio.get_event_loop().run_until_complete(await __handler(fullKey, time))
 
     # return
     return False 
