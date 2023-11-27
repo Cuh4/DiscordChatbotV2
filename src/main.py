@@ -56,7 +56,7 @@ helpers.globals.save("commandTree", tree)
 slashCommands.start()
 
 # // Setup Bot Events
-asyncio.create_task(events.setup(client))
+asyncio.run(events.setup(client))
     
 # // Start Bot
 client.run(config.botToken, log_handler = None)
