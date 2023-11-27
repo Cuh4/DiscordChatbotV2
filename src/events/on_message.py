@@ -123,9 +123,6 @@ async def callback(message: discord.Message):
         helpers.prettyprint.success(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)}: {text}")
 
         # reply with response
-        responseView = ui.views.response(response, message)
-        responseView.setViewMessage(botMessage)
-
         await botMessage.edit(
             embed = ui.embeds.response(
                 chatbot = chatbot,
@@ -133,18 +130,19 @@ async def callback(message: discord.Message):
                 source = source, 
                 responseConfidence = confidence,
                 knowledgeID = knowledge.getID(),
-                icon_url = message.author.display_icon.url
+                icon_url = message.author.avatar.url
             ),
 
-            view = responseView
+            view = ui.views.response(response, message).setViewMessage(botMessage)
         )
     else:
+        # get response attributes
         failureReason = response.getFailureReason()
         
         # unsuccessful (timed out or couldn't find appropriate response)
         helpers.prettyprint.warn(f"🤖| Reply to {discordHelpers.utils.formattedName(message.author)} failed. Reason: {failureReason}")
 
-        # reply with error message
+        # get error message
         errorMsg = {
             "no_query" : random.choice([
                 "Sorry, I don't understand.",
@@ -157,14 +155,12 @@ async def callback(message: discord.Message):
             "profanity" : "Sorry, my response contained profanity and was therefore not sent."
         }[failureReason]
         
-        failedResponseView = ui.views.failedResponse()
-        failedResponseView.setViewMessage(botMessage)
-    
+        # reply with error message
         await botMessage.edit(
             embed = discord.Embed(
                 description = f"> :robot: :x: | **{errorMsg}**",
                 color = discord.Colour.from_rgb(255, 125, 125)
             ),
 
-            view = failedResponseView
+            view = ui.views.failedResponse().setViewMessage(botMessage)
         )
