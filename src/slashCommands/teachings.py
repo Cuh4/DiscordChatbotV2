@@ -3,8 +3,6 @@
 # // ---------------------------------------------------------------------
 
 # // ---- Imports
-from enum import unique
-from site import removeduppaths
 import discord
 
 from modules import pychatbot
@@ -15,17 +13,14 @@ from modules import discord as discordHelpers
 displayedKnowledgeAmount = 30
 
 # // ---- Functions
-def removeDuplicatesOfKnowledge(knowledgeList: list["pychatbot.knowledge.knowledge"]):
-    new = knowledgeList.copy()
-    previous = []
+def uniqueList(input: list):
+    new = []
     
-    for index, knowledge in enumerate(new):
-        query = knowledge.getQuery()
+    for value in input:
+        if value in new:
+            continue
         
-        if query in previous:
-            new.pop(index)
-            
-        previous.append(query)
+        new.append(value)
         
     return new
 
@@ -49,14 +44,16 @@ def command():
     async def command(interaction: discord.Interaction):
         # get knowledge made by this person
         knowledgeList = chatbot.knowledgeBase.getKnowledgeWithSource(interaction.user.id) 
-        uniqueKnowledge = removeDuplicatesOfKnowledge(knowledgeList)
         
         # sort unique queries by time
-        uniqueKnowledge.sort(key = lambda knowledge: knowledge.getTimestamp(), reverse = True)
+        knowledgeList.sort(key = lambda knowledge: knowledge.getTimestamp(), reverse = True)
         
-        # format everything
-        strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(knowledge.getQuery()), 50) for knowledge in uniqueKnowledge][:displayedKnowledgeAmount]
-        formattedQueries = "- " + "\n- ".join(strippedQueries) if len(uniqueKnowledge) >= 1 else "N/A" # using "set()" to avoid duplicates
+        # get unique knowledge, plus format a little
+        queries = [knowledge.getQuery() for knowledge in knowledgeList]
+
+        strippedQueries = [helpers.misc.truncateIfTooLong(discordHelpers.utils.stripHighlightMarkdown(query), 50) for query in uniqueList(queries)[:50]]
+        
+        formattedQueries = "- " + "\n- ".join(strippedQueries) if len(knowledgeList) >= 1 else "N/A"
         
         # send
         await interaction.response.send_message(
