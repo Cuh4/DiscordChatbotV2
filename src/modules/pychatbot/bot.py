@@ -62,9 +62,9 @@ class chatbot:
         
         # get knowledge for the query
         knowledge = self.knowledgeBase.getKnowledgeWithQuery(knownQuery)
- 
+
         # no responses found, so return here
-        if len(knowledge) <= 1:
+        if len(knowledge) <= 0:
             return chatbotResponse(
                 self,
                 isSuccessful = False,
